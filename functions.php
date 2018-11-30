@@ -2,10 +2,10 @@
 
 if ( ! function_exists( 'twentynineteen_setup' ) ) :
     function twentynineteen_setup() {
-		add_theme_support( 'wp-block-styles' );
-		add_theme_support( 'align-wide' );
-		add_theme_support( 'editor-styles' );
-		add_editor_style( 'style-editor.css' );
+		//add_theme_support( 'wp-block-styles' );
+		//add_theme_support( 'align-wide' );
+		//add_theme_support( 'editor-styles' );
+		//add_editor_style( 'style-editor.css' );
     }
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
@@ -37,11 +37,11 @@ ENQUEUES
 function to_load_scripts() {
 
 	wp_register_script( 'site-common', get_template_directory_uri() . '/js/site-common.js', array('jquery'),'null',true  );
-	//wp_register_style( 'font-css', 'https://fonts.googleapis.com/css?family=Poppins:400,500,700','','', 'screen' );
+	wp_register_style( 'font-css', 'https://fonts.googleapis.com/css?family=Lato:700|PT+Sans:400,700','','', 'screen' );
 	wp_register_style( 'main-css', get_template_directory_uri() . '/style.css','',time(), 'screen' );
 
 	wp_enqueue_script( 'site-common' );
-	//wp_enqueue_style( 'font-css' );
+	wp_enqueue_style( 'font-css' );
 	wp_enqueue_style( 'main-css' );
 }
 
