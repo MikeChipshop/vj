@@ -210,3 +210,144 @@ $classes[] = $post->post_type . '-' . $post->post_name;
 return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
+
+/***************************************************
+/ Product Post Type
+/***************************************************/
+
+add_action( 'init', 'register_cpt_product' );
+
+function register_cpt_product() {
+
+    $labels = array(
+        'name' => _x( 'Product', 'product' ),
+        'singular_name' => _x( 'Product', 'product' ),
+        'add_new' => _x( 'Add New', 'product' ),
+        'add_new_item' => _x( 'Add New', 'product' ),
+        'edit_item' => _x( 'Edit', 'product' ),
+        'new_item' => _x( 'New', 'product' ),
+        'view_item' => _x( 'View', 'product' ),
+        'search_items' => _x( 'Search', 'product' ),
+        'not_found' => _x( 'None found', 'product' ),
+        'not_found_in_trash' => _x( 'None found in bin', 'product' ),
+        'parent_item_colon' => _x( 'Parent:', 'product' ),
+        'menu_name' => _x( 'Products', 'product' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'description' => 'Post type for products',
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
+        //'taxonomies' => array('category'),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 20,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+		'menu_icon' => 'dashicons-cart',
+        'capability_type' => 'post',
+        'show_in_rest' => true
+    );
+
+    register_post_type( 'product', $args );
+}
+
+/***************************************************
+/ Industry Post Type
+/***************************************************/
+
+add_action( 'init', 'register_cpt_industry' );
+
+function register_cpt_industry() {
+
+    $labels = array(
+        'name' => _x( 'Industry', 'industry' ),
+        'singular_name' => _x( 'Industry', 'industry' ),
+        'add_new' => _x( 'Add New', 'industry' ),
+        'add_new_item' => _x( 'Add New', 'industry' ),
+        'edit_item' => _x( 'Edit', 'industry' ),
+        'new_item' => _x( 'New', 'industry' ),
+        'view_item' => _x( 'View', 'industry' ),
+        'search_items' => _x( 'Search', 'industry' ),
+        'not_found' => _x( 'None found', 'industry' ),
+        'not_found_in_trash' => _x( 'None found in bin', 'industry' ),
+        'parent_item_colon' => _x( 'Parent:', 'industry' ),
+        'menu_name' => _x( 'Industries', 'industry' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'description' => 'Post type for industries',
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
+        //'taxonomies' => array('category'),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 20,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+		'menu_icon' => 'dashicons-admin-tools',
+        'capability_type' => 'post',
+        'show_in_rest' => true
+    );
+
+    register_post_type( 'industry', $args );
+}
+
+/***************************************************
+/ Event Post Type
+/***************************************************/
+
+add_action( 'init', 'register_cpt_event' );
+
+function register_cpt_event() {
+
+    $labels = array(
+        'name' => _x( 'Event', 'event' ),
+        'singular_name' => _x( 'Event', 'event' ),
+        'add_new' => _x( 'Add New', 'event' ),
+        'add_new_item' => _x( 'Add New', 'event' ),
+        'edit_item' => _x( 'Edit', 'event' ),
+        'new_item' => _x( 'New', 'event' ),
+        'view_item' => _x( 'View', 'event' ),
+        'search_items' => _x( 'Search', 'event' ),
+        'not_found' => _x( 'None found', 'event' ),
+        'not_found_in_trash' => _x( 'None found in bin', 'event' ),
+        'parent_item_colon' => _x( 'Parent:', 'event' ),
+        'menu_name' => _x( 'Events', 'event' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'description' => 'Post type for events',
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
+        //'taxonomies' => array('category'),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 20,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+		'menu_icon' => 'dashicons-calendar-alt',
+        'capability_type' => 'post',
+        'show_in_rest' => true
+    );
+
+    register_post_type( 'event', $args );
+}
