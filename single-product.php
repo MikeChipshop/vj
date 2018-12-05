@@ -1,19 +1,7 @@
 <?php get_header(); ?>
 <div class="vj_article-archive">
     <main>
-        <ul>
-        <?php
-				if ( have_posts() ) :
-					while ( have_posts() ) : the_post();
-					?>
-            <li>
-                <div class="vj_article-excerpt-container">
-                    <h1><?php the_title(); ?></h1>
-                </div>
-            </li>
-                <?php endwhile; ?>
-                <?php endif; ?>
-        </ul>
+        Single Product
     </main>
     <nav>
         <ul>

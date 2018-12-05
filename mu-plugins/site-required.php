@@ -239,7 +239,7 @@ function register_cpt_product() {
         'hierarchical' => true,
         'description' => 'Post type for products',
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
-        //'taxonomies' => array('category'),
+        'taxonomies' => array('product-category'),
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
@@ -351,3 +351,86 @@ function register_cpt_event() {
 
     register_post_type( 'event', $args );
 }
+
+/***************************************************
+/ Event Post Type
+/***************************************************/
+
+add_action( 'init', 'register_cpt_newspost' );
+
+function register_cpt_newspost() {
+
+    $labels = array(
+        'name' => _x( 'News', 'newspost' ),
+        'singular_name' => _x( 'News Post', 'newspost' ),
+        'add_new' => _x( 'Add New', 'newspost' ),
+        'add_new_item' => _x( 'Add New', 'newspost' ),
+        'edit_item' => _x( 'Edit', 'newspost' ),
+        'new_item' => _x( 'New', 'newspost' ),
+        'view_item' => _x( 'View', 'newspost' ),
+        'search_items' => _x( 'Search', 'newspost' ),
+        'not_found' => _x( 'None found', 'newspost' ),
+        'not_found_in_trash' => _x( 'None found in bin', 'newspost' ),
+        'parent_item_colon' => _x( 'Parent:', 'newspost' ),
+        'menu_name' => _x( 'News', 'newspost' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'description' => 'Post type for news',
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
+        //'taxonomies' => array('category'),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 20,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+		'menu_icon' => 'dashicons-megaphone',
+        'capability_type' => 'post',
+        'show_in_rest' => true
+    );
+
+    register_post_type( 'newspost', $args );
+}
+
+/***************************************************
+/ Prduct type taxonomy
+/***************************************************/
+
+function vj_productcategory_taxonomy() {	
+	$labels = array(
+		'name' => _x( 'Product Category', 'taxonomy general name' ),
+		'singular_name' => _x( 'Product Category', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search' ),
+		'all_items' => __( 'All Product Categories' ),
+		'parent_item' => __( 'Parent Product Category' ),
+		'parent_item_colon' => __( 'Parent Product Category:' ),
+		'edit_item' => __( 'Edit Product Category' ), 
+		'update_item' => __( 'Update Product Category' ),
+		'add_new_item' => __( 'Add New Product Category' ),
+		'new_item_name' => __( 'New Product Category Name' ),
+		'menu_name' => __( 'Product Categories' ),
+	); 	
+
+	// Now register the taxonomy	
+	register_taxonomy('product-category',array('product'), array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'show_in_nav_menus' => true
+	));	
+}
+add_action('init', 'vj_productcategory_taxonomy', 0);
+
+function my_custom_admin_menu(){
+	remove_menu_page('edit-comments.php');
+}
+add_action('admin_menu', 'my_custom_admin_menu');

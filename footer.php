@@ -1,7 +1,7 @@
 <footer class="vj_global-footer">
     <div class="vj_wrap">
         <div class="vj_footer-section vj_footer-logo">
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/vj-logo.png" alt="VJT">
+            <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/vj-logo.png" alt="VJT"></a>
         </div>
         <div class="vj_footer-section vj_footer-social">
             <ul>
