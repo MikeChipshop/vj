@@ -1,9 +1,9 @@
-<footer class="vj_global-footer">
-    <div class="vj_wrap">
-        <div class="vj_footer-section vj_footer-logo">
+<footer class="vjt_global-footer">
+    <div class="vjt_wrap">
+        <div class="vjt_footer-section vjt_footer-logo">
             <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/vj-logo.png" alt="VJT"></a>
         </div>
-        <div class="vj_footer-section vj_footer-social">
+        <div class="vjt_footer-section vjt_footer-social">
             <ul>
                 <li>
                     <a href="#">
@@ -39,7 +39,7 @@
                 </li>
             </ul>
         </div>
-        <div class="vj_footer-section vj_footer-credits">
+        <div class="vjt_footer-section vjt_footer-credits">
             <p>©2018 VJ Group, Inc. All rights reserved.</p>
             <p>Site by <a href="#">Crucible Creative</a></p>
         </div>

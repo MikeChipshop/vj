@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="vj_article-archive">
+<div class="vjt_article-archive">
     <main>
         <ul>
         <?php
@@ -7,7 +7,7 @@
 					while ( have_posts() ) : the_post();
 					?>
             <li>
-                <div class="vj_article-excerpt-container">
+                <div class="vjt_article-excerpt-container">
                     <h1><?php the_title(); ?></h1>
                 </div>
             </li>

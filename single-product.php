@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="vj_article-archive">
+<div class="vjt_article-archive">
     <main>
         Single Product
     </main>

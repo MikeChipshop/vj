@@ -151,6 +151,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
   	register_nav_menus(
   		array(
             'main_menu' => 'Main Menu',
+            'header_bar_menu' => 'Header Bar Menu',
 			'footer_menu' => 'Footer Menu'
   		)
   	);
@@ -403,7 +404,7 @@ function register_cpt_newspost() {
 / Prduct type taxonomy
 /***************************************************/
 
-function vj_productcategory_taxonomy() {	
+function vj_productcategory_taxonomy() {
 	$labels = array(
 		'name' => _x( 'Product Category', 'taxonomy general name' ),
 		'singular_name' => _x( 'Product Category', 'taxonomy singular name' ),
@@ -411,14 +412,14 @@ function vj_productcategory_taxonomy() {
 		'all_items' => __( 'All Product Categories' ),
 		'parent_item' => __( 'Parent Product Category' ),
 		'parent_item_colon' => __( 'Parent Product Category:' ),
-		'edit_item' => __( 'Edit Product Category' ), 
+		'edit_item' => __( 'Edit Product Category' ),
 		'update_item' => __( 'Update Product Category' ),
 		'add_new_item' => __( 'Add New Product Category' ),
 		'new_item_name' => __( 'New Product Category Name' ),
 		'menu_name' => __( 'Product Categories' ),
-	); 	
+	);
 
-	// Now register the taxonomy	
+	// Now register the taxonomy
 	register_taxonomy('product-category',array('product'), array(
 		'hierarchical' => true,
 		'labels' => $labels,
@@ -426,7 +427,7 @@ function vj_productcategory_taxonomy() {
 		'show_admin_column' => true,
 		'query_var' => true,
 		'show_in_nav_menus' => true
-	));	
+	));
 }
 add_action('init', 'vj_productcategory_taxonomy', 0);
 

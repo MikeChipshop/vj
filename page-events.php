@@ -1,8 +1,8 @@
 <?php get_header(); ?>
-<h1 class="vj_page-title">
+<h1 class="vjt_page-title">
     <?php the_title(); ?> <span>VJ Group</span>
 </h1>
-<div class="vj_article-archive">
+<div class="vjt_article-archive">
     <main>
         <?php
 			$eventargs = array(
@@ -12,7 +12,7 @@
         ?>
         <?php $eventloop = new WP_Query( $eventargs ); ?>
         <?php if ( $eventloop->have_posts() ): ?>
-            <div class="vj_event-list-wrap">
+            <div class="vjt_event-list-wrap">
                 <table>
                     <thead>
                         <tr>

@@ -6,24 +6,18 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header class="vj_global-header">
-    <div class="vj_global-header-right">
-        <div class="vj_header-logo">
+<header class="vjt_global-header">
+    <div class="vjt_global-header-right">
+        <div class="vjt_header-logo">
             <a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/vj-logo.png" alt="VJT"></a>
         </div>
         <nav>
-            <ul>
-                <li><a href="#">VJT</a></li>
-                <li><a href="#">VJE</a></li>
-                <li><a href="#">VJX</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Industries</a></li>
-            </ul>
+            <ul><?php wp_nav_menu( array('theme_location' => 'header_bar_menu' )); ?></ul>
         </nav>
     </div>
-    <div class="vj_global-header-right">
-        <div class="vj_global-header-search">
-            <div class="vj_global-header-search-wrap">
+    <div class="vjt_global-header-right">
+        <div class="vjt_global-header-search">
+            <div class="vjt_global-header-search-wrap">
                 <form>
                     <input type="text">
                     <button>
@@ -37,7 +31,7 @@
                 </form>
             </div>
         </div>
-        <div class="vj_global-header-menu">
+        <div class="vjt_global-header-menu">
             <button>
                 <i class="far fa-bars"></i>
             </button>
