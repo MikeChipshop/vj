@@ -13,7 +13,7 @@
                     <div class="vjt_read-more"><a href="#">Read More</a></div>
                 </div>
                 <div class="vjt_hero-slider-img">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.jpg">
+                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.png">
                 </div>
             </article>
             <article class="vjt_hero-slider-wrap">
@@ -27,7 +27,7 @@
                     <div class="vjt_read-more"><a href="#">Read More</a></div>
                 </div>
                 <div class="vjt_hero-slider-img">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.jpg">
+                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.png">
                 </div>
             </article>
             <article class="vjt_hero-slider-wrap">
@@ -41,7 +41,7 @@
                     <div class="vjt_read-more"><a href="#">Read More</a></div>
                 </div>
                 <div class="vjt_hero-slider-img">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.jpg">
+                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.png">
                 </div>
             </article>
         </div>
