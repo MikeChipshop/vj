@@ -41,7 +41,7 @@
         </div>
         <div class="vjt_footer-section vjt_footer-credits">
             <p>©2018 VJ Group, Inc. All rights reserved.</p>
-            <p>Site by <a href="#">Crucible Creative</a></p>
+            <p>Site by <a href="http://www.cruciblecreative.co.uk/" target="_blank">Crucible Creative</a></p>
         </div>
     </div>
 </footer>

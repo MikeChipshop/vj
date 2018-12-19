@@ -20,6 +20,7 @@
             <div class="vjt_global-header-search-wrap">
                 <form>
                     <input type="text">
+                </form>
                     <button>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             viewBox="0 0 40 50" style="enable-background:new 0 0 40 50;" xml:space="preserve">
@@ -28,13 +29,69 @@
                             s4.3,11.3,0,15.7C19.5,28.3,12.4,28.3,8.1,24z"/>
                         </svg>
                     </button>
-                </form>
             </div>
         </div>
         <div class="vjt_global-header-menu">
             <button>
-                <i class="far fa-bars"></i>
+                <span class="hamburger"></span>
             </button>
         </div>
     </div>
 </header>
+<nav class="vjt_overlay-menu">
+    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/vjgroup-white.png">
+    <div class="vjt_overlay-menu-column-wrap">
+        <div class="vjt_overlay-menu-column">
+            <h1>Menu</h1>
+        </div>
+        <div class="vjt_overlay-menu-column">
+            <h2>Industries</h2>
+            <ul>
+                <li><a href="#">Auto</a></li>
+                <li><a href="#">Aerospace</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Medical</a></li>
+                <li><a href="#">Military &amp; Defence</a></li>
+                <li><a href="#">Nuclear</a></li>
+                <li><a href="#">Oil &amp; Gas</a></li>
+                <li><a href="#">Pipe &amp; Weld</a></li>
+                <li><a href="#">Security</a></li>
+            </ul>
+        </div>
+        <div class="vjt_overlay-menu-column">
+            <h2>VJT</h2>
+            <ul>
+                <li><a href="#">NDT Solutions</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Technologies</a></li>
+                <li><a href="#">Inspection Services</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+
+            <h2>VJE</h2>
+            <ul>
+                <li><a href="#">X-Ray Products</a></li>
+                <li><a href="#">Rework</a></li>
+                <li><a href="#">Customer Service</a></li>
+            </ul>
+
+            <h2>VJX</h2>
+            <ul>
+                <li><a href="#">IXS Integregrated X-Ray Generators</a></li>
+                <li><a href="#">XVG X-ray Generators</a></li>
+            </ul>
+        </div>
+        <div class="vjt_overlay-menu-column">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
