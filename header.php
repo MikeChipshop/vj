@@ -83,15 +83,7 @@
             </ul>
         </div>
         <div class="vjt_overlay-menu-column">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Careers</a></li>
-            </ul>
+            <ul><?php wp_nav_menu( array('theme_location' => 'main_menu' )); ?></ul>
         </div>
     </div>
 </nav>

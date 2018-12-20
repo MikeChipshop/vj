@@ -1169,6 +1169,132 @@ ul.vjt_event-list li > div:first-child {
 }
 
 /* ------------------------------------------------
+ Careers
+------------------------------------------------ */
+.vjt_wide-page-wrap-top {
+    background-color:#f9f9f9;
+}
+.vjt_wide-page-wrap-top-wrap {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-top: 160px;
+    padding: 160px 20px 64px 20px;
+}
+.vjt_wide-page-wrap-top-wrap h1.vjt_page-title {
+    padding-bottom:52px;
+}
+.vjt_wide-page-wrap-top-wrap .vjt_news-title h2 {
+    font-family: Lato;
+    padding-bottom:30px;
+}
+.vjt_wide-page-wrap-top-wrap .rte {
+    line-height:1.5;
+}
+.vjt_wide-page-wrap-top-wrap .rte a {
+    color:#128C8B;
+    text-decoration:none;
+    font-weight:bold;
+}
+.vjt_career-openings h2 {
+    font-size: 20px;
+    color: #128C8B;
+    padding-bottom: 46px;
+}
+.vjt_single-page-content {
+    padding-bottom:50px;
+}
+.vjt_career-openings-lists {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+.vjt_career-openings-list {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.vjt_career-openings-list h3 {
+    color:#128C8B;
+    font-size:14px;
+    text-transform:uppercase;
+    font-weight:bold;
+    padding-bottom:24px;
+}
+.vjt_career-openings-list ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    font-weight:bold;
+}
+.vjt_career-openings-list ul li {
+    padding-bottom:15px;
+}
+.vjt_wide-page-wrap-bottom-wrap {
+    padding: 40px 20px 70px 20px;
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+.vjt_wide-page-wrap-bottom-wrap > h3 {
+    color: #555555;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #128C8B;
+    display: inline-block;
+    margin-bottom: 38px;
+    padding-bottom: 8px;
+}
+.vjt_wide-page-wrap-bottom-wrap .rte ul.vjt_career-benefits {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-bottom: 64px;
+    font-weight:normal;
+}
+ul.vjt_career-benefits li {
+    -webkit-flex-basis: 50%;
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+    padding-bottom: 10px;
+}
+.vjt_wide-page-wrap-bottom-wrap .rte.vjt_single-page-content h3 {
+    color: #128C8B;
+    font-weight: bold;
+    padding: 50px 0px 30px 0px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.vjt_wide-page-wrap-bottom-wrap .rte a {
+    text-decoration:none;
+    font-weight:bold;
+    color:#555555;
+}
+.vjt_wide-page-wrap-bottom-wrap .rte ul {
+    font-weight:bold;
+    padding-top:35px;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.vjt_wide-page-wrap-bottom-wrap .rte ul li {
+    padding-bottom:15px;
+}
+.vjt_wide-page-wrap-bottom-wrap img {
+    float:right;
+    margin-left:80px;
+}
+
+/* ------------------------------------------------
  RTE
 ------------------------------------------------ */
 .rte p {
