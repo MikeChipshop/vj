@@ -647,9 +647,12 @@ li.vjt_list-dropdown-header.active h2 svg {
     transform: rotate(180deg);
 }
 li.vjt_list-dropdown-header ul {
-    display:none;
     padding-bottom: 50px;
 }
+.page-products li.vjt_list-dropdown-header ul {
+    display:none;
+}
+
 
 /* About */
 
@@ -659,9 +662,10 @@ li.vjt_list-dropdown-header ul {
     background-size:100% 100%;
 }
 .vjt_video-container {
-    width:100%;
-    max-width:660px;
-    float:right;
+    width: 100%;
+    max-width: 600px;
+    float: right;
+    padding-left: 80px;
 }
 
 /* Case Studies */
@@ -961,6 +965,9 @@ li.vjt_list-dropdown-header ul {
 
 /* Industries */
 
+.industry-template-default h1.vjt_page-title {
+    padding-bottom:0px;
+}
 .vjt_industry-services-content h2 {
     color: #128C8B;
     font-size: 20px;
@@ -1292,6 +1299,134 @@ ul.vjt_career-benefits li {
 .vjt_wide-page-wrap-bottom-wrap img {
     float:right;
     margin-left:80px;
+}
+
+/* ------------------------------------------------
+ Contact
+------------------------------------------------ */
+
+.vjt_wide-page-wrap.contact {
+    padding-top:160px;
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+}
+.vjt_contact-wrap-inner {
+    background-color:#f5f5f6;
+    width:100%;
+    max-width:800px;
+    margin:0 auto;
+    -webkit-box-shadow: -4px 8px 35px 9px rgba(0,0,0,0.08);
+            box-shadow: -4px 8px 35px 9px rgba(0,0,0,0.08);
+}
+nav.vjt_contact-wrap-nav {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+nav.vjt_contact-wrap-nav div {
+    padding: 28px 10px;
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+    text-align:center;
+    color:#128C8B;
+    text-transform:uppercase;
+    font-size:16px;
+    font-weight:bold;
+    cursor:default;
+    background-color:#f5f5f6;
+    -webkit-transition:background-color .2s;
+    -o-transition:background-color .2s;
+    transition:background-color .2s;
+}
+nav.vjt_contact-wrap-nav div.inactive {
+    background-color:#d1d1d1;
+    -webkit-box-shadow: inset 3px -3px 8px 9px rgba(0,0,0,0.1);
+    box-shadow: inset 3px -3px 8px 9px rgba(0,0,0,0.1);
+    cursor:pointer;
+}
+.vjt_contact-content {
+    padding: 58px 60px 60px 60px;
+}
+.vjt_contact-content-columns {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+.vjt_contact-content-column {
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+}
+.vjt_contact-content-column h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.vjt_contact-content-column:first-child {
+    padding-right:30px;
+}
+.vjt_contact-content-column:last-child {
+    padding-left:30px;
+}
+.vjt_contact-content-section h3 {
+    color: #128C8B;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.4;
+    padding-bottom: 23px;
+}
+.vjt_contact-content-section ul {
+    padding-bottom:65px;
+}
+.vjt_contact-content-section li {
+    padding-bottom:10px;
+    line-height: 1.4;
+}
+.vjt_contact-content.form {
+    display:none;
+}
+.vjt_contact-wrap {
+    background: url(img/contact-bg.png) no-repeat center 100px;
+    background-size: 100% auto;
+    padding-bottom: 160px;
+}
+
+/* Form */
+.vjt_contact-form {
+    padding-top:26px;
+}
+.vjt_contact-form li {
+    width:100%;
+    max-width:500px;
+}
+.vjt_contact-form input[type="text"] {
+    font-size: 15px;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #3da2a1;
+    margin-bottom: 10px;
+    color: #555555;
+    background: transparent;
+}
+.vjt_contact-form input[type="submit"]{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #3da2a1;
+    font-weight: bold;
+    color: #555555;
+    font-size: 13px;
+    padding-bottom: 9px;
+    text-transform: uppercase;
+    margin-top: 48px;
+}
+.vjt_contact-content.form h2 {
+    padding-bottom:20px;
 }
 
 /* ------------------------------------------------

@@ -30,16 +30,18 @@
                     <li class="vjt_list-dropdown-header">
                         <h2>Industries <i class="fas fa-chevron-down"></i></h2>
                         <ul class="vjt_list-dropdown-child">
-                            <li><a href="#">Auto</a></li>
-                            <li><a href="#">Aerospace</a></li>
-                            <li><a href="#">Electronics</a></li>
-                            <li><a href="#">Food</a></li>
-                            <li><a href="#">Medical</a></li>
-                            <li><a href="#">Military &amp; Defence</a></li>
-                            <li><a href="#">Nuclear</a></li>
-                            <li><a href="#">Oil &amp; Gas</a></li>
-                            <li><a href="#">Pipes &amp; Weld</a></li>
-                            <li><a href="#">Security</a></li>
+                            <?php
+                                $industryargs = array(
+                                    'post_type' => 'industry',
+                                    'posts_per_page' => -1
+                                );
+                            ?>
+                            <?php $industryloop = new WP_Query( $industryargs ); ?>
+                            <?php if ( $industryloop->have_posts() ): ?>
+                                <?php while ( $industryloop->have_posts() ) : $industryloop->the_post(); ?>
+                                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                                <?php endwhile; ?>
+                            <?php endif; wp_reset_query(); ?>
                         </ul>
                     </li>
                 </ul>

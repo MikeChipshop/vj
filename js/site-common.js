@@ -16,6 +16,20 @@ jQuery(document).ready(function( $ ) {
         $(this).toggleClass('active');
     });
 
+    // Contact Page Tabs
+    $('.vjt_contact-wrap-nav div').click(function(){
+        $('.vjt_contact-wrap-nav div').addClass('inactive');
+        $(this).removeClass('inactive');
+    });
+    $('.vjt_contact-request-tab.inactive').click(function(){
+        $( ".vjt_contact-content.form" ).fadeIn( "slow", function() {});
+        $( ".vjt_contact-content.details" ).fadeOut( "fast", function() {});
+    });
+    $('.vjt_contact-details-tab,inactive').click(function(){
+        $( ".vjt_contact-content.details" ).fadeIn( "slow", function() {});
+        $( ".vjt_contact-content.form" ).fadeOut( "fast", function() {});
+    });
+
     // Industry Toggle
     $('.vjt_industry-information-item').click(function(){
         $(this).children('.vjt_industry-information-content').slideToggle( "fast", function() {});

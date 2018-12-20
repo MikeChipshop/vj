@@ -112,14 +112,16 @@
         <h2>Custom imaging software and hardware products, solutions and inspection services for industry and government.</h2>
         <div class="vjt_fp-about-copy rte">
             <p>Founded in 1987, VJ Technologies is a leading global provider of X-ray inspection solutions. We apply our radioscopic digital imaging expertise to government agencies and nondestructive testing (NDT) markets throughout the world.</p>
-            <p>VJT develops and manufactures a complete line of automated, manual, and turnkey X-ray inspection systems. Our primary market sectors include: aerospace, automotive, electronics, remediation, nuclear, oil & gas, and pipe & weld applications. VJT X-ray inspection systems are used for radioscopic inspection of products and assemblies to detect defects or foreign matter, reducing cost and time while increasing quality and safety.</p>
-            <p>VJT Inspection Services provide a full range of expert, economical inspection Services (IS). In-house or in-the-field, VJT has innovative systems to meet your needs.</p>
-            <p>VJT delivers a competitive advantage over other companies through our network of global offices. In the 21st century, VJT continues to nurture emerging technologies and provide solutions for global customers.</p>
             <div class="vjt_video-container">
                 <div class="vjt_responsive-video">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/cl1PVw-Lxbk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
+            <p>VJT develops and manufactures a complete line of automated, manual, and turnkey X-ray inspection systems. Our primary market sectors include: aerospace, automotive, electronics, remediation, nuclear, oil & gas, and pipe & weld applications. VJT X-ray inspection systems are used for radioscopic inspection of products and assemblies to detect defects or foreign matter, reducing cost and time while increasing quality and safety.</p>
+
+            <p>VJT Inspection Services provide a full range of expert, economical inspection Services (IS). In-house or in-the-field, VJT has innovative systems to meet your needs.</p>
+            <p>VJT delivers a competitive advantage over other companies through our network of global offices. In the 21st century, VJT continues to nurture emerging technologies and provide solutions for global customers.</p>
+
         </div>
     </div>
 </section>

@@ -4,7 +4,7 @@
         <main>
             <div class="vjt_main-content">
                 <h1 class="vjt_page-title">
-                    Industries <span>Nuclear</span>
+                    Industries <span><?php the_title(); ?></span>
                 </h1>
                 <section class="vjt_product-page-content">
                     <div class="vjt_product-page-content-copy">
@@ -159,16 +159,18 @@
                     <li class="vjt_list-dropdown-header">
                         <h2>Industries <i class="fas fa-chevron-down"></i></h2>
                         <ul class="vjt_list-dropdown-child">
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Auto</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Aerospace</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Electronics</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Food</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Medical</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Military &amp; Defence</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Nuclear</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Oil &amp; Gas</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Pipes &amp; Weld</a></li>
-                            <li><a href="<?php bloginfo('url'); ?>/test-industries/">Security</a></li>
+                            <?php
+                                $industryargs = array(
+                                    'post_type' => 'industry',
+                                    'posts_per_page' => -1
+                                );
+                            ?>
+                            <?php $industryloop = new WP_Query( $industryargs ); ?>
+                            <?php if ( $industryloop->have_posts() ): ?>
+                                <?php while ( $industryloop->have_posts() ) : $industryloop->the_post(); ?>
+                                    <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                                <?php endwhile; ?>
+                            <?php endif; wp_reset_query(); ?>
                         </ul>
                     </li>
                 </ul>
