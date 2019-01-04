@@ -2,48 +2,26 @@
 <section class="vjt_fp-hero vjt_fp-section" id="vjt_fp-hero">
     <div class="vjt_fp-wrap">
         <div class="vjt_hero-slider">
-            <article class="vjt_hero-slider-wrap">
-                <div class="vjt_hero-slider-content">
-                    <h2>about vj group</h2>
-                    <h1>VJT</h1>
-                    <div class="vjt_hero-slider-copy">
-                        <p>Custom imaging software and hardware products, solutions and inspection services for industry and government.</p>
-                        <p>Custom imaging software and hardware products, solutions and inspection services for industry and government.</p>
-                    </div>
-                    <div class="vjt_read-more"><a href="#">Read More</a></div>
-                </div>
-                <div class="vjt_hero-slider-img">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.png">
-                </div>
-            </article>
-            <article class="vjt_hero-slider-wrap">
-                <div class="vjt_hero-slider-content">
-                    <h2>about vj group</h2>
-                    <h1>VJT</h1>
-                    <div class="vjt_hero-slider-copy">
-                        <p>Custom imaging software and hardware products, solutions and inspection services for industry and government.</p>
-                        <p>Custom imaging software and hardware products, solutions and inspection services for industry and government.</p>
-                    </div>
-                    <div class="vjt_read-more"><a href="#">Read More</a></div>
-                </div>
-                <div class="vjt_hero-slider-img">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.png">
-                </div>
-            </article>
-            <article class="vjt_hero-slider-wrap">
-                <div class="vjt_hero-slider-content">
-                    <h2>about vj group</h2>
-                    <h1>VJT</h1>
-                    <div class="vjt_hero-slider-copy">
-                        <p>Custom imaging software and hardware products, solutions and inspection services for industry and government.</p>
-                        <p>Custom imaging software and hardware products, solutions and inspection services for industry and government.</p>
-                    </div>
-                    <div class="vjt_read-more"><a href="#">Read More</a></div>
-                </div>
-                <div class="vjt_hero-slider-img">
-                    <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-placeholder.png">
-                </div>
-            </article>
+            <?php if( have_rows('home_hero_items') ): ?>
+                <?php while ( have_rows('home_hero_items') ) : the_row(); ?>
+                    <article class="vjt_hero-slider-wrap">
+                        <div class="vjt_hero-slider-content">
+                            <h2><?php the_sub_field('hero_item_title'); ?></h2>
+                            <h1><?php the_sub_field('hero_item_subtitle'); ?></h1>
+                            <div class="vjt_hero-slider-copy"><?php the_sub_field('hero_item_content'); ?></div>
+                            <div class="vjt_read-more"><a href="<?php the_sub_field('hero_item_read_more_link'); ?>"><?php the_sub_field('hero_item_read_more_text'); ?></a></div>
+                        </div>
+                        <div class="vjt_hero-slider-img">
+                            <?php
+                                $attachment_id = get_sub_field('hero_item_image');
+                                $size = "full";
+                                $image = wp_get_attachment_image_src( $attachment_id, $size );
+                            ?>
+                            <img src="<?php echo $image[0]; ?>">
+                        </div>
+                    </article>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
         <div class="vjt_hero-poi">
             <ul>

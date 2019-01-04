@@ -152,7 +152,10 @@ if ( function_exists( 'register_nav_menus' ) ) {
   		array(
             'main_menu' => 'Main Menu',
             'header_bar_menu' => 'Header Bar Menu',
-			'footer_menu' => 'Footer Menu'
+            'footer_menu' => 'Footer Menu',
+            'vjt_menu' => 'VJT Menu',
+            'vje_menu' => 'VJE Menu',
+            'vjx_menu' => 'VJX Menu'
   		)
   	);
 }
@@ -175,13 +178,15 @@ add_theme_support( 'title-tag' );
 
 /***************************************************
 / Options Pages
-/***************************************************
-if(function_exists('acf_add_options_page')) {
+/***************************************************/
 
-	acf_add_options_page();
-    acf_add_options_sub_page('Misc');
 
-} */
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page('Contact');
+	acf_add_options_page('Misc');
+
+}
 
 /***************************************************
 / ADD PARENT SLUG TO BODY CLASS

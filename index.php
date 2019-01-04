@@ -3,7 +3,7 @@
     <main>
         <div class="vjt_news-title">
             <h1 class="vjt_page-title">
-                News <span>VJ Group</span>
+                <div>News <span>VJ Group</span></div>
             </h1>
         </div>
         <ul class="vjt_news-landing-list">

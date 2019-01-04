@@ -63,26 +63,13 @@
         </div>
         <div class="vjt_overlay-menu-column">
             <h2>VJT</h2>
-            <ul>
-                <li><a href="#">NDT Solutions</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Technologies</a></li>
-                <li><a href="#">Inspection Services</a></li>
-                <li><a href="#">Resources</a></li>
-            </ul>
+            <ul><?php wp_nav_menu( array('theme_location' => 'vjt_menu' )); ?></ul>
 
             <h2>VJE</h2>
-            <ul>
-                <li><a href="#">X-Ray Products</a></li>
-                <li><a href="#">Rework</a></li>
-                <li><a href="#">Customer Service</a></li>
-            </ul>
+            <ul><?php wp_nav_menu( array('theme_location' => 'vje_menu' )); ?></ul>
 
             <h2>VJX</h2>
-            <ul>
-                <li><a href="#">IXS Integregrated X-Ray Generators</a></li>
-                <li><a href="#">XVG X-ray Generators</a></li>
-            </ul>
+            <ul><?php wp_nav_menu( array('theme_location' => 'vjx_menu' )); ?></ul>
         </div>
         <div class="vjt_overlay-menu-column">
             <ul><?php wp_nav_menu( array('theme_location' => 'main_menu' )); ?></ul>
