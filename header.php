@@ -44,6 +44,9 @@
         <div class="vjt_overlay-menu-column">
             <h1>Menu</h1>
         </div>
+        <div class="vjt_overlay-menu-column vjt_overlay-header-menu">
+            <ul><?php wp_nav_menu( array('theme_location' => 'header_bar_menu' )); ?></ul>
+        </div>
         <div class="vjt_overlay-menu-column">
             <h2>Industries</h2>
             <ul>
