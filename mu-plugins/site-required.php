@@ -155,7 +155,8 @@ if ( function_exists( 'register_nav_menus' ) ) {
             'footer_menu' => 'Footer Menu',
             'vjt_menu' => 'VJT Menu',
             'vje_menu' => 'VJE Menu',
-            'vjx_menu' => 'VJX Menu'
+            'vjx_menu' => 'VJX Menu',
+            'brand_menu' => 'Brand Menu',
   		)
   	);
 }

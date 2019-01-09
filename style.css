@@ -552,10 +552,9 @@ h2 {
     color:#555555;
     text-decoration:none;
 }
-.vjt_fp-intro h1 ul li a:hover {
-    color:#000000;
-}
-.vjt_fp-intro h1 ul li a.active {
+.vjt_fp-intro h1 ul li a:hover,
+.vjt_fp-intro h1 ul li.current_page_item a, 
+.vjt_fp-intro h1 ul li.current-menu-item a  {
     color:#000000;
 }
 .vjt_fp-intro h2 {
