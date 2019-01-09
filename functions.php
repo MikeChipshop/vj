@@ -2,9 +2,13 @@
 
 if ( ! function_exists( 'twentynineteen_setup' ) ) :
     function twentynineteen_setup() {
+	
     }
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
+function twentynineteen_setup(){
+	load_theme_textdomain( 'vjt_theme', get_template_directory() . '/languages' );
+  }
 
 /***************************************************
 / Add Featured Thumbs
@@ -45,19 +49,16 @@ add_action('wp_enqueue_scripts', 'to_load_scripts');
 EXCERPTS
 *****************************************************/
 
-function cust_excerpt_length($length) {
-	return 50;
+function new_excerpt_more($more) {
+	global $post;
+	remove_filter('excerpt_more', 'new_excerpt_more'); 
+	return '';
 }
-add_filter('excerpt_length', 'cust_excerpt_length');
+add_filter('excerpt_more','new_excerpt_more',11);
 
-function twentyeleven_continue_reading_link() {
-	return ' <a class="read-more" href="'. esc_url( get_permalink() ) . '">' . __( 'read more &raquo;', 'twentyeleven' ) . '</a>';
-}
-
-function twentyeleven_auto_excerpt_more( $more ) {
-	return '&hellip;' . twentyeleven_continue_reading_link();
-}
-add_filter( 'excerpt_more', 'twentyeleven_auto_excerpt_more' );
+add_filter( 'excerpt_length', function($length) {
+    return 10;
+} );
 
 
 /****************************************************

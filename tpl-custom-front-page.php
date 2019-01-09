@@ -25,44 +25,32 @@
         </div>
         <div class="vjt_hero-poi">
             <ul>
-                <?php $post_object_one = get_field('hero_poi_box_one'); ?>
-                <?php if( $post_object_one ): ?> 
-                    <?php $post_one = $post_object_one; ?>
-	                <?php setup_postdata( $post_one ); ?>
-                    <li>
-                        <article class="vjt_hero-poi-container">
-                            <div class="vjt_hero-poi-img">
-                                <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-item-placeholder.jpg">
-                            </div>
-                            <div class="vjt_hero-poi-content">
-                                <h1><?php the_title(); ?></h1>
-                                <div class="vjt_date"><?php the_time('d M Y'); ?></div>
-                                <div class="vjt_excerpt"><?php the_excerpt(); ?></div>
-                                <div class="vjt_read-more"><a href="<?php the_permalink(); ?>">Read More</a></div>
-                            </div>
-                        </article>
-                    </li>
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-                <?php $post_object_two = get_field('hero_poi_box_two'); ?>
-                <?php if( $post_object_two ): ?> 
-                    <?php $post_two = $post_object_two; ?>
-	                <?php setup_postdata( $post_two ); ?>
-                    <li>
-                        <article class="vjt_hero-poi-container">
-                            <div class="vjt_hero-poi-img">
-                                <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-item-placeholder.jpg">
-                            </div>
-                            <div class="vjt_hero-poi-content">
-                                <h1><?php echo get_the_title($post->ID); ?></h1>
-                                <div class="vjt_date"><?php the_time('d M Y'); ?></div>
-                                <div class="vjt_excerpt"><?php the_excerpt(); ?></div>
-                                <div class="vjt_read-more"><a href="<?php the_permalink(); ?>">Read More</a></div>
-                            </div>
-                        </article>
-                    </li>
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
+                <li>
+                    <article class="vjt_hero-poi-container">
+                        <div class="vjt_hero-poi-img">
+                            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-item-placeholder.jpg">
+                        </div>
+                        <div class="vjt_hero-poi-content">
+                            <h1>Introducing… Robotic Engine Block Inspection System</h1>
+                            <div class="vjt_date">28 may 2018</div>
+                            <div class="vjt_excerpt">VJ Technologies developed an automated inspection system for an automotive.</div>
+                            <div class="vjt_read-more"><a href="#">Read More</a></div>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="vjt_hero-poi-container">
+                        <div class="vjt_hero-poi-img">
+                        <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-item-placeholder.jpg">
+                        </div>
+                        <div class="vjt_hero-poi-content">
+                            <h1>Introducing… Robotic Engine Block Inspection System</h1>
+                            <div class="vjt_date">28 may 2018</div>
+                            <div class="vjt_excerpt">VJ Technologies developed an automated inspection system for an automotive.</div>
+                            <div class="vjt_read-more"><a href="#">Read More</a></div>
+                        </div>
+                    </article>
+                </li>
             </ul>
         </div>
     </div>
