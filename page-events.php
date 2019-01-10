@@ -4,7 +4,7 @@
         <div class="vjt_events-landing-wrap">
         <div class="vjt_news-title">
             <h1 class="vjt_page-title">
-                Events <span>VJ Group</span>
+                <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
             </h1>
             <img src="<?php bloginfo('stylesheet_directory'); ?>/img/event-hero.png">
         </div>
@@ -19,12 +19,12 @@
         <?php if ( $eventloop->have_posts() ): ?>
             <div class="vjt_event-list-wrap">
                 <div class="vjt_event-list-header">
-                    <div>Date</div>
-                    <div>Location</div>
-                    <div>Show</div>
-                    <div>Facility</div>
-                    <div>Booth</div>
-                    <div>Division</div>
+                    <div><?php _e('Date', 'vjt_theme'); ?></div>
+                    <div><?php _e('Location', 'vjt_theme'); ?></div>
+                    <div><?php _e('Show', 'vjt_theme'); ?></div>
+                    <div><?php _e('Facility', 'vjt_theme'); ?></div>
+                    <div><?php _e('Booth', 'vjt_theme'); ?></div>
+                    <div><?php _e('Division', 'vjt_theme'); ?></div>
                 </div>
                 <ul class="vjt_event-list">
                     <?php while ( $eventloop->have_posts() ) : $eventloop->the_post(); ?>

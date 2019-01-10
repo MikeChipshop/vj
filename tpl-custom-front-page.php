@@ -1,6 +1,6 @@
-<?php 
+<?php
     /* Template Name: Branded Landing Page */
-    get_header(); 
+    get_header();
 ?>
 <section class="vjt_fp-hero vjt_fp-section" id="vjt_fp-hero">
     <div class="vjt_fp-wrap">
@@ -28,44 +28,42 @@
         </div>
         <div class="vjt_hero-poi">
             <ul>
-                <?php $post_object_one = get_field('hero_poi_box_one', 9); ?>
-                <?php if( $post_object_one ): ?> 
-                    <?php $post_one = $post_object_one; ?>
-	                <?php setup_postdata( $post_one ); ?>
-                    <li>
-                        <article class="vjt_hero-poi-container">
-                            <div class="vjt_hero-poi-img">
-                                <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-item-placeholder.jpg">
+                <li>
+                    <article class="vjt_hero-poi-container">
+                        <div class="vjt_hero-poi-img">
+                                <?php
+                                    $attachment_id = get_field('hero_poi_box_one_image',9);
+                                    $size = "full";
+                                    $image = wp_get_attachment_image_src( $attachment_id, $size );
+                                ?>
+                                <img src="<?php echo $image[0]; ?>">
                             </div>
                             <div class="vjt_hero-poi-content">
-                                <h1><?php the_title(); ?></h1>
-                                <div class="vjt_date"><?php the_time('d M Y'); ?></div>
-                                <div class="vjt_excerpt"><?php the_excerpt(); ?></div>
-                                <div class="vjt_read-more"><a href="<?php the_permalink(); ?>"><?php _e('Read more', 'vjt_theme'); ?></a></div>
+                                <h1><?php the_field('hero_poi_box_one_title',9); ?></h1>
+                                <div class="vjt_date"><?php the_field('hero_poi_box_one_subtitle',9); ?></div>
+                                <div class="vjt_excerpt"><?php the_field('hero_poi_box_one_excerpt',9); ?></div>
+                                <div class="vjt_read-more"><a href="<?php the_field('hero_poi_box_one_link',9); ?>">Read More</a></div>
+                            </div>
+                        </article>
+                </li>
+                <li>
+                        <article class="vjt_hero-poi-container">
+                            <div class="vjt_hero-poi-img">
+                                <?php
+                                    $attachment_id = get_field('hero_poi_box_two_image',9);
+                                    $size = "full";
+                                    $image = wp_get_attachment_image_src( $attachment_id, $size );
+                                ?>
+                                <img src="<?php echo $image[0]; ?>">
+                            </div>
+                            <div class="vjt_hero-poi-content">
+                                <h1><?php the_field('hero_poi_box_two_title',9); ?></h1>
+                                <div class="vjt_date"><?php the_field('hero_poi_box_two_subtitle',9); ?></div>
+                                <div class="vjt_excerpt"><?php the_field('hero_poi_box_two_excerpt',9); ?></div>
+                                <div class="vjt_read-more"><a href="<?php the_field('hero_poi_box_two_link',9); ?>">Read More</a></div>
                             </div>
                         </article>
                     </li>
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
-                <?php $post_object_two = get_field('hero_poi_box_two', 9); ?>
-                <?php if( $post_object_two ): ?> 
-                    <?php $post_two = $post_object_two; ?>
-	                <?php setup_postdata( $post_two ); ?>
-                    <li>
-                        <article class="vjt_hero-poi-container">
-                            <div class="vjt_hero-poi-img">
-                                <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-item-placeholder.jpg">
-                            </div>
-                            <div class="vjt_hero-poi-content">
-                                <h1><?php echo get_the_title($post->ID); ?></h1>
-                                <div class="vjt_date"><?php the_time('d M Y'); ?></div>
-                                <div class="vjt_excerpt"><?php the_excerpt(); ?></div>
-                                <div class="vjt_read-more"><a href="<?php the_permalink(); ?>"><?php _e('Read more', 'vjt_theme'); ?></a></div>
-                            </div>
-                        </article>
-                    </li>
-                    <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
             </ul>
         </div>
     </div>

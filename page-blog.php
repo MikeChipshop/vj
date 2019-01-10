@@ -3,7 +3,7 @@
     <main>
         <div class="vjt_news-title">
             <h1 class="vjt_page-title">
-                <div>Blog <span>VJ Group</span></div>
+                <div><?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span></div>
             </h1>
         </div>
         <ul class="vjt_news-landing-list">
@@ -82,7 +82,7 @@
                             At a March 2018 press conference, The Union Cycliste Internationale (UCI) unveiled the detection methods it will use to counter technological fraud during the 2018 season and also presented innovative technologies currently in development.
                             </div>
                             <div class="vjt_article-excerpt-read-more">
-                                <div class="vjt_read-more"><a href="<?php the_permalink(); ?>">Read More</a></div>
+                                <div class="vjt_read-more"><a href="<?php the_permalink(); ?>"><?php _e('Read more', 'vjt_theme'); ?></a></div>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
         <div class="vjt_main-sidebar">
             <ul class="vjt_list-dropdown">
                 <li class="vjt_list-dropdown-header">
-                    <h2>Categories <i class="fas fa-chevron-down"></i></h2>
+                    <h2><?php _e('Categories', 'vjt_theme'); ?> <i class="fas fa-chevron-down"></i></h2>
                     <ul class="vjt_list-dropdown-child">
                         <li><a href="#">Case Studies</a></li>
                         <li><a href="#">Company News</a></li>

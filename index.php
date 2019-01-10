@@ -3,7 +3,7 @@
     <main>
         <div class="vjt_news-title">
             <h1 class="vjt_page-title">
-                <div>News <span>VJ Group</span></div>
+                <div><?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span></div>
             </h1>
         </div>
         <ul class="vjt_news-landing-list">
@@ -20,7 +20,7 @@
                                 Having an accurate inventory is critical to any production process. This is especially true in a dynamic SMT line where frequent changes take place. To maintain the highest accuracy, components must be counted each time they are returned to stock. Many pick-and-place systems will track and report component usage, including mis-picks.
                             </div>
                             <div class="vjt_article-excerpt-read-more">
-                                <div class="vjt_read-more"><a href="<?php the_permalink(); ?>">Read More</a></div>
+                                <div class="vjt_read-more"><a href="<?php the_permalink(); ?>"><?php _e('Read more', 'vjt_theme'); ?></a></div>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
         <div class="vjt_main-sidebar">
             <ul class="vjt_list-dropdown">
                 <li class="vjt_list-dropdown-header">
-                    <h2>Year <i class="fas fa-chevron-down"></i></h2>
+                    <h2><?php _e('Year', 'vjt_theme'); ?> <i class="fas fa-chevron-down"></i></h2>
                     <ul class="vjt_list-dropdown-child">
                         <li><a href="#">2018</a></li>
                         <li><a href="#">2017</a></li>

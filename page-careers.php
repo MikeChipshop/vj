@@ -5,7 +5,7 @@
                 <div class="vjt_wide-page-wrap-top-wrap">
                     <div class="vjt_news-title">
                         <h1 class="vjt_page-title">
-                            Careers <span>VJ Group</span>
+                            <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
                         </h1>
                         <h2>Join our team, be a part of the solution.</h2>
                     </div>

@@ -42,13 +42,13 @@
     <img src="<?php bloginfo('stylesheet_directory'); ?>/img/vjgroup-white.png">
     <div class="vjt_overlay-menu-column-wrap">
         <div class="vjt_overlay-menu-column">
-            <h1>Menu</h1>
+            <h1><?php _e('Menu', 'vjt_theme'); ?></h1>
         </div>
         <div class="vjt_overlay-menu-column vjt_overlay-header-menu">
             <ul><?php wp_nav_menu( array('theme_location' => 'header_bar_menu' )); ?></ul>
         </div>
         <div class="vjt_overlay-menu-column">
-            <h2>Industries</h2>
+            <h2><?php _e('Industries', 'vjt_theme'); ?></h2>
             <ul>
                 <?php
                     $industryargs = array(
@@ -65,13 +65,13 @@
             </ul>
         </div>
         <div class="vjt_overlay-menu-column">
-            <h2>VJT</h2>
+            <h2><?php _e('VJT', 'vjt_theme'); ?></h2>
             <ul><?php wp_nav_menu( array('theme_location' => 'vjt_menu' )); ?></ul>
 
-            <h2>VJE</h2>
+            <h2><?php _e('VJE', 'vjt_theme'); ?></h2>
             <ul><?php wp_nav_menu( array('theme_location' => 'vje_menu' )); ?></ul>
 
-            <h2>VJX</h2>
+            <h2><?php _e('VJX', 'vjt_theme'); ?></h2>
             <ul><?php wp_nav_menu( array('theme_location' => 'vjx_menu' )); ?></ul>
         </div>
         <div class="vjt_overlay-menu-column">
