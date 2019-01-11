@@ -35,13 +35,16 @@
             </div>
             <div class="vjt_wide-page-wrap-bottom">
                 <div class="vjt_wide-page-wrap-bottom-wrap">
-                    <h3>download application form</h3>
+                    <h3>
+                        <a href="<?php the_field('careers_page_download_application_link'); ?>" title="<?php the_field('careers_page_download_application_label'); ?>">
+                            <?php the_field('careers_page_download_application_label'); ?>
+                        </a>
+                    </h3>
                     <div class="rte vjt_single-page-content">
-                        <p>Completed applications can be emailed to: <a href="#">jobopps@vjt.com</a> or faxed to <a href="#">631 589 8992</a></p>
-                        <p>We are proud to offer a comprehensive benefit package that will provide our employees with peace of mind knowing they, and their family, are well taken care of.</p>
+                        <?php the_field('careers_page_download_application_content'); ?></a>
 
                         <?php if( have_rows('benefits_list') ): ?>
-                            <h3>Our benefit package includes:</h3>
+                            <h3><?php the_field('benefits_title'); ?></h3>
                             <ul class="vjt_career-benefits">
                                 <?php while ( have_rows('benefits_list') ) : the_row(); ?>
                                     <li><?php the_sub_field('benefits_item'); ?></li>

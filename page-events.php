@@ -8,11 +8,19 @@
             </h1>
             <img src="<?php bloginfo('stylesheet_directory'); ?>/img/event-hero.png">
         </div>
-
+        <?php $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y"))); ?>
         <?php
 			$eventargs = array(
 				'post_type' => 'event',
-				'posts_per_page' => -1
+                'posts_per_page' => -1,
+                'meta_query'=> array(
+                    array(
+                      'key' => 'event_start_date',
+                      'compare' => '>',
+                      'value' => $currentdate,
+                      'type' => 'DATE',
+                    )
+                ),
 			);
         ?>
         <?php $eventloop = new WP_Query( $eventargs ); ?>
@@ -29,7 +37,12 @@
                 <ul class="vjt_event-list">
                     <?php while ( $eventloop->have_posts() ) : $eventloop->the_post(); ?>
                         <li>
-                            <div>Feb 13 – 15, 2018<?php //the_field('event_start_date'); ?><?php //if(get_field('event_end_date')) : ?><?php //the_field('event_end_date'); ?><?php //endif; ?></div>
+                            <div>
+                                <?php the_field('event_start_date'); ?>
+                                <?php if(get_field('event_end_date')) : ?> -
+                                    <?php the_field('event_end_date'); ?>
+                                <?php endif; ?>
+                            </div>
                             <div><?php the_field('event_location'); ?></div>
                             <div><?php the_title(); ?></div>
                             <div><?php the_field('event_facility'); ?></div>

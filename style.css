@@ -1348,6 +1348,10 @@ ul.vjt_event-list li > div:first-child {
     margin-bottom: 38px;
     padding-bottom: 8px;
 }
+.vjt_wide-page-wrap-bottom-wrap > h3 a {
+    text-decoration:none;
+    color: #555555;
+}
 .vjt_wide-page-wrap-bottom-wrap .rte ul.vjt_career-benefits {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1450,12 +1454,17 @@ nav.vjt_contact-wrap-nav div.inactive {
     display:-ms-flexbox;
     display:-webkit-flex;
     display:flex;
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    -webkit-flex-flow:row wrap;
+    -ms-flex-flow:row wrap;
+    flex-flow:row wrap;
 }
 .vjt_contact-content-column {
     -webkit-box-flex:1;
     -ms-flex:1;
     -webkit-flex:1;
-            flex:1;
+    flex:1;
 }
 .vjt_contact-content-column h2 {
     font-size: 20px;
@@ -1466,6 +1475,11 @@ nav.vjt_contact-wrap-nav div.inactive {
 }
 .vjt_contact-content-column:last-child {
     padding-left:30px;
+}
+.vjt_contact-content-section {
+    -webkit-flex-basis:50%;
+    -ms-flex-preferred-size:50%;
+    flex-basis:50%;
 }
 .vjt_contact-content-section h3 {
     color: #128C8B;
@@ -1499,7 +1513,9 @@ nav.vjt_contact-wrap-nav div.inactive {
     width:100%;
     max-width:500px;
 }
-.vjt_contact-form input[type="text"] {
+.vjt_contact-form input[type="text"],
+.vjt_contact-form input[type="tel"],
+.vjt_contact-form input[type="email"] {
     font-size: 15px;
     padding: 20px;
     width: 100%;
