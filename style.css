@@ -328,6 +328,7 @@ h2 {
     -webkit-transition:all .2s;
     -o-transition:all .2s;
     transition:all .2s;
+    overflow:scroll;
 }
 .vjt_overlay-header-menu {
     display:none;
@@ -583,10 +584,17 @@ h2 {
     text-decoration:none;
 }
 .vjt_fp-intro h1 ul li a:hover,
-.vjt_fp-intro h1 ul li.current_page_item a,
-.vjt_fp-intro h1 ul li.current-menu-item a  {
+.vjt_fp-intro h1 ul li.active a {
     color:#000000;
 }
+.vjt_intro-tab {
+    display:none;
+}
+
+.vjt_intro-tab.active {
+    display:block;
+}
+
 .vjt_fp-intro h2 {
     max-width:740px;
 }
@@ -705,8 +713,7 @@ li.vjt_list-dropdown-header ul {
 .vjt_main-content {
     max-width:900px;
     float:right;
-    padding-bottom: 200px;
-    padding-right:40px;
+    padding:20px 40px 200px 30px;
 }
 /*.vjt_article-archive main li {
     display: -webkit-box;
@@ -1543,6 +1550,13 @@ nav.vjt_contact-wrap-nav div.inactive {
 /* ------------------------------------------------
  RTE
 ------------------------------------------------ */
+
+.rte h1,
+.rte h2,
+.rte h3,
+.rte h4 {
+    font-weight:bold;
+}
 .rte p {
     padding-bottom:20px;
 }
@@ -1562,6 +1576,17 @@ nav.vjt_contact-wrap-nav div.inactive {
     float:right;
     padding:25px 70px 25px 0px;
 }
+.rte ul {
+    list-style-type:disc;
+    list-style-position: inside;
+    padding:10px 0px;
+}
+.rte ol {
+    list-style-type:decimal;
+    list-style-position: inside;
+    padding:10px 0px;
+}
+
 
 /* ------------------------------------------------
  Global Footer
@@ -1625,7 +1650,55 @@ nav.vjt_contact-wrap-nav div.inactive {
 }
 
 
+@media only screen and (max-width : 1120px) {
 
+    /* Home: Hero */
+    .vjt_fp-hero h1 {
+        padding-bottom:20px;
+        font-size:45px;
+    }
+
+    /* Home: Featured */
+    .vjt_hero-poi-content h1 {
+        font-size: 20px;
+    }
+
+    /* Home: Intro */
+    .vjt_fp-intro h1 ul li {
+        padding-right: 20px;
+    }
+    .vjt_fp-intro h1 {
+        padding-bottom:30px;
+    }
+    .vjt_fp-intro h2 {
+        font-size:22px;
+        max-width: 580px;
+        padding-bottom:20px;
+    }
+    .vjt_fp-intro-copy {
+        max-width:620px;
+    }
+    .vjt_fp-intro-menu {
+        padding-top: 45px;
+    }
+
+    /* Home: About */
+    .vjt_fp-about h1 {
+        padding-bottom:30px;
+    }
+    .vjt_fp-about h2 {
+        font-size:22px;
+        padding-bottom:20px;
+    }
+    .vjt_video-container {
+        max-width:450px;
+    }
+
+    /* Home: Case Studies */
+    .vjt_fp-case-studies h1 {
+        padding-bottom:30px;
+    }
+}
 @media only screen and (max-width : 800px) {
 
     /* ------------------------------------------------

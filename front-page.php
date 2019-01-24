@@ -68,11 +68,35 @@
 
 <section class="vjt_fp-intro vjt_fp-section" id="vjt_fp-intro">
     <div class="vjt_fp-wrap">
-        <h1><ul><?php wp_nav_menu( array('theme_location' => 'brand_menu' )); ?></ul></h1>
-        <h2><?php the_field('home_introduction_title', 9); ?></h2>
-        <div class="vjt_fp-intro-copy rte"><?php the_field('home_introduction_content', 9); ?></div>
-        <div class="vjt_fp-intro-menu vjt_menu">
-            <ul><?php wp_nav_menu( array('theme_location' => 'vjt_menu' )); ?></ul>
+        <h1>
+            <ul>
+                <li id="menu-item-219" class="vjt_intro-section active"><a href="#">VJT</a></li>
+                <li id="menu-item-218" class="vjt_intro-section"><a href="#">VJE</a></li>
+                <li id="menu-item-217" class="vjt_intro-section"><a href="#">VJX</a></li>
+            </ul>
+        </h1>
+        <div class="vjt_intro-tabs">
+            <div class="vjt_intro-tab active">                
+                <h2><?php the_field('vjt_home_introduction_title'); ?></h2>
+                <div class="vjt_fp-intro-copy rte"><?php the_field('vjt_home_introduction_content'); ?></div>
+                <div class="vjt_fp-intro-menu vjt_menu">
+                    <ul><?php wp_nav_menu( array('theme_location' => 'vjt_menu' )); ?></ul>
+                </div>
+            </div>
+            <div class="vjt_intro-tab">
+                <h2><?php the_field('vje_home_introduction_title'); ?></h2>
+                <div class="vjt_fp-intro-copy rte"><?php the_field('vje_home_introduction_content'); ?></div>
+                <div class="vjt_fp-intro-menu vjt_menu">
+                    <ul><?php wp_nav_menu( array('theme_location' => 'vje_menu' )); ?></ul>
+                </div>
+            </div>
+            <div class="vjt_intro-tab">
+                <h2><?php the_field('vjx_home_introduction_title'); ?></h2>
+                <div class="vjt_fp-intro-copy rte"><?php the_field('vjx_home_introduction_content'); ?></div>
+                <div class="vjt_fp-intro-menu vjt_menu">
+                    <ul><?php wp_nav_menu( array('theme_location' => 'vjx_menu' )); ?></ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>

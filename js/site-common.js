@@ -34,7 +34,46 @@ jQuery(document).ready(function( $ ) {
     $('.vjt_industry-information-item').click(function(){
         $(this).children('.vjt_industry-information-content').slideToggle( "fast", function() {});
         $(this).toggleClass('active');
-	});
+    });
+    
+    // VJT Links
+    $('.vjt_intro-section:nth-of-type(1)').click(function(event){
+        event.preventDefault();
+        $('html,body').animate({
+            scrollTop: $(".vjt_fp-intro").offset().top
+        }, 600);
+        $('.vjt_intro-section').removeClass('active');
+        $('.vjt_intro-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.vjt_intro-tab:nth-of-type(1)').addClass('active');
+
+    });
+
+    // VJE Links
+    $('.vjt_intro-section:nth-of-type(2)').click(function(event){
+        event.preventDefault();
+        $('html,body').animate({
+            scrollTop: $(".vjt_fp-intro").offset().top
+        }, 600);
+        $('.vjt_intro-section').removeClass('active');
+        $('.vjt_intro-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.vjt_intro-tab:nth-of-type(2)').addClass('active');
+
+    });
+
+    // VJX Links
+    $('.vjt_intro-section:nth-of-type(3)').click(function(event){
+        event.preventDefault();
+        $('html,body').animate({
+            scrollTop: $(".vjt_fp-intro").offset().top
+        }, 600);
+        $('.vjt_intro-section').removeClass('active');
+        $('.vjt_intro-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.vjt_intro-tab:nth-of-type(3)').addClass('active');
+
+    });
 
     // Sliders
     $('.vjt_hero-slider').lightSlider({

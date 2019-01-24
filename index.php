@@ -3,7 +3,7 @@
     <main>
         <div class="vjt_news-title">
             <h1 class="vjt_page-title">
-                <div><?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span></div>
+                <div><?php _e('News', 'vjt_theme'); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span></div>
             </h1>
         </div>
         <ul class="vjt_news-landing-list">
@@ -11,13 +11,13 @@
                 <li>
                     <div class="vjt_news-landing-wrap">
                         <div class="vjt_article-excerpt-img">
-                            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/poi-item-placeholder.jpg">
+                            <?php the_post_thumbnail(); ?>
                         </div>
                         <div class="vjt_article-excerpt-container">
-                            <h1>Improving Inventory Accuracy with X-Ray Component Counting</h1>
-                            <div class="vjt_article-excerpt-date">28 may 2018</div>
+                            <h1><?php the_title(); ?></h1>
+                            <div class="vjt_article-excerpt-date"><?php the_time('d M Y'); ?></div>
                             <div class="vjt_article-excerpt-copy">
-                                Having an accurate inventory is critical to any production process. This is especially true in a dynamic SMT line where frequent changes take place. To maintain the highest accuracy, components must be counted each time they are returned to stock. Many pick-and-place systems will track and report component usage, including mis-picks.
+                                <?php the_excerpt(); ?>
                             </div>
                             <div class="vjt_article-excerpt-read-more">
                                 <div class="vjt_read-more"><a href="<?php the_permalink(); ?>"><?php _e('Read more', 'vjt_theme'); ?></a></div>
