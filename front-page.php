@@ -55,9 +55,9 @@
                         </div>
                         <div class="vjt_hero-poi-content">
                             <h1><?php the_field('hero_poi_box_two_title',9); ?></h1>
-                            <div class="vjt_date"><?php the_field('hero_poi_box_two_subtitle',9); ?></div>
-                            <div class="vjt_excerpt"><?php the_field('hero_poi_box_two_excerpt',9); ?></div>
-                            <div class="vjt_read-more"><a href="<?php the_field('hero_poi_box_two_link',9); ?>"><?php _e('Read More', 'vjt_theme'); ?></a></div>
+                            <div class="vjt_date"><?php the_field('hero_poi_box_two_subtitle'); ?></div>
+                            <div class="vjt_excerpt"><?php the_field('hero_poi_box_two_excerpt'); ?></div>
+                            <div class="vjt_read-more"><a href="<?php the_field('hero_poi_box_two_link'); ?>"><?php _e('Read More', 'vjt_theme'); ?></a></div>
                         </div>
                     </article>
                 </li>
@@ -70,9 +70,9 @@
     <div class="vjt_fp-wrap">
         <h1>
             <ul>
-                <li id="menu-item-219" class="vjt_intro-section active"><a href="#">VJT</a></li>
-                <li id="menu-item-218" class="vjt_intro-section"><a href="#">VJE</a></li>
-                <li id="menu-item-217" class="vjt_intro-section"><a href="#">VJX</a></li>
+                <li id="menu-item-219" class="vjt_intro-section active"><a href="#"><?php _e('VJT', 'vjt_theme'); ?></a></li>
+                <li id="menu-item-218" class="vjt_intro-section"><a href="#"><?php _e('VJE', 'vjt_theme'); ?></a></li>
+                <li id="menu-item-217" class="vjt_intro-section"><a href="#"><?php _e('VJX', 'vjt_theme'); ?></a></li>
             </ul>
         </h1>
         <div class="vjt_intro-tabs">

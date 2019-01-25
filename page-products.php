@@ -118,59 +118,7 @@
                 </div>
             </div>
         </main>
-        <aside>
-            <div class="vjt_main-sidebar">
-                <ul class="vjt_list-dropdown">
-                    <li class="vjt_list-dropdown-header">
-                        <h2>Casting <i class="fas fa-chevron-down"></i></h2>
-                        <ul class="vjt_list-dropdown-child">
-                            <li><a href="#">Vertex II</a></li>
-                            <li><a href="#">C-Arm</a></li>
-                            <li><a href="#">RIX/RIX XL</a></li>
-                            <li><a href="#">T-Conveyor</a></li>
-                            <li><a href="#">In-Line Robotic</a></li>
-                            <li><a href="#">Custom Products</a></li>
-                        </ul>
-                    </li>
-                    <li class="vjt_list-dropdown-header">
-                        <h2>Weld <i class="fas fa-chevron-down"></i></h2>
-                        <ul class="vjt_list-dropdown-child">
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </li>
-                    <li class="vjt_list-dropdown-header">
-                        <h2>Military <i class="fas fa-chevron-down"></i></h2>
-                        <ul class="vjt_list-dropdown-child">
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </li>
-                    <li class="vjt_list-dropdown-header">
-                        <h2>Custom Solutions <i class="fas fa-chevron-down"></i></h2>
-                        <ul class="vjt_list-dropdown-child">
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </li>
-                    <li class="vjt_list-dropdown-header">
-                        <h2>Inspection Services <i class="fas fa-chevron-down"></i></h2>
-                        <ul class="vjt_list-dropdown-child">
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                            <li><a href="#">Item</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </aside>
+        <?php get_sidebar('products'); ?>
     </div>
 </div>
 <?php get_footer(); ?>

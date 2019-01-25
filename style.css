@@ -1698,6 +1698,18 @@ nav.vjt_contact-wrap-nav div.inactive {
     .vjt_fp-case-studies h1 {
         padding-bottom:30px;
     }
+    
+    /* Sidebars */
+    .vjt_article-archive aside {
+        -ms-flex-preferred-size: 30%;
+        -webkit-flex-basis: 30%;
+        flex-basis: 30%;
+    }
+    .vjt_article-archive main {
+        -ms-flex-preferred-size: 70%;
+        -webkit-flex-basis: 70%;
+        flex-basis: 70%;
+    }
 }
 @media only screen and (max-width : 800px) {
 
