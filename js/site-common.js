@@ -35,7 +35,7 @@ jQuery(document).ready(function( $ ) {
         $(this).children('.vjt_industry-information-content').slideToggle( "fast", function() {});
         $(this).toggleClass('active');
     });
-    
+
     // VJT Links
     $('.vjt_intro-section:nth-of-type(1)').click(function(event){
         event.preventDefault();
@@ -96,5 +96,26 @@ jQuery(document).ready(function( $ ) {
         prevHtml:'<i class="fas fa-chevron-left"></i>',
         nextHtml:'<i class="fas fa-chevron-right"></i>',
     });
+
+    $(function(){
+        var nav = $('.vjt_about-wrap'),
+            animateTime = 560,
+            navLink = $('.vjt_show-more-slide');
+        navLink.click(function(){
+          if(nav.height() === 560){
+            autoHeightAnimate(nav, animateTime);
+          } else {
+            nav.stop().animate({ height: '560' }, animateTime);
+          }
+        });
+      })
+
+    /* Function to animate height: auto */
+    function autoHeightAnimate(element, time){
+        var curHeight = element.height(), // Get Default Height
+        autoHeight = element.css('height', 'auto').height(); // Get Auto Height
+        element.height(curHeight); // Reset to Default Height
+        element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
+    }
 
 });
