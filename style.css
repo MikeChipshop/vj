@@ -236,6 +236,12 @@ h2 {
     display:-webkit-flex;
     display:flex;
 }
+.vjt_global-header-search-wrap label {
+    display:none;
+}
+.vjt_global-header-search-wrap form button {
+    display:none;
+}
 .vjt_global-header-search-wrap input[type="text"]{
     background: transparent;
     border: none;
@@ -328,7 +334,7 @@ h2 {
     -webkit-transition:all .2s;
     -o-transition:all .2s;
     transition:all .2s;
-    overflow:hidden;
+    overflow:scroll;
 }
 .vjt_overlay-header-menu {
     display:none;
@@ -1052,8 +1058,9 @@ li.vjt_list-dropdown-header ul {
     bottom: 0px;
     padding: 80px 10px 10px 10px;
     width: 100%;
-    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 48%, rgba(255,255,255,1) 49%);
     background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 48%,rgba(255,255,255,1) 49%);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0)),color-stop(48%, rgba(255,255,255,1)),color-stop(49%, rgba(255,255,255,1)));
+    background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 48%,rgba(255,255,255,1) 49%);
     background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 48%,rgba(255,255,255,1) 49%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
     color: #128C8B;
@@ -1753,11 +1760,20 @@ nav.vjt_contact-wrap-nav div.inactive {
         margin-left:20px;
     }
 
-    /* Header */
+    /* ------------------------------------------------
+     Header
+    ------------------------------------------------ */
     .vjt_global-header {
         background-color: #000;
         position: relative;
     }
+    .vjt_overlay-menu-active .vjt_global-header {
+        position:fixed;
+    }
+
+    /* ------------------------------------------------
+     Main Nav
+    ------------------------------------------------ */
     .vjt_overlay-menu-active .vjt_global-header-right:first-child {
         opacity:1;
     }
@@ -1765,12 +1781,28 @@ nav.vjt_contact-wrap-nav div.inactive {
         display:none;
     }
     .vjt_overlay-menu {
-        overflow: hidden;
         padding: 20px 20px 50px 20px;
     }
     .vjt_overlay-menu-column-wrap {
-        display:block;
         padding-top: 60px;
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+        -webkit-flex-flow:row wrap;
+        -ms-flex-flow:row wrap;
+        flex-flow:row wrap;
+    }
+    .vjt_overlay-menu-column:nth-of-type(1){
+        -webkit-flex-basis:100%;
+        -ms-flex-preferred-size:100%;
+        flex-basis:100%;
+    }
+    .vjt_overlay-menu-column:nth-of-type(2),
+    .vjt_overlay-menu-column:nth-of-type(3),
+    .vjt_overlay-menu-column:nth-of-type(4),
+    .vjt_overlay-menu-column:nth-of-type(5) {
+        -webkit-flex-basis:25%;
+        -ms-flex-preferred-size:25%;
+        flex-basis:25%;
     }
     .vjt_global-header-right nav {
         display:none;
@@ -1784,6 +1816,7 @@ nav.vjt_contact-wrap-nav div.inactive {
     .vjt_global-header-search-wrap.active input[type="text"] {
         width: 100px;
     }
+
     /* ------------------------------------------------
      Home
     ------------------------------------------------ */
@@ -1940,5 +1973,17 @@ nav.vjt_contact-wrap-nav div.inactive {
         -webkit-justify-content:center;
                 justify-content:center;
         padding-bottom:20px;
+    }
+}
+
+@media only screen and (max-width : 600px) {
+
+.vjt_overlay-menu-column:nth-of-type(2),
+    .vjt_overlay-menu-column:nth-of-type(3),
+    .vjt_overlay-menu-column:nth-of-type(4),
+    .vjt_overlay-menu-column:nth-of-type(5) {
+        -webkit-flex-basis:50%;
+        -ms-flex-preferred-size:50%;
+        flex-basis:50%;
     }
 }
