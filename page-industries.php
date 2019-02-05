@@ -1,10 +1,13 @@
 <?php get_header(); ?>
 <div class="vjt_page-wrap">
     <div class="vjt_article-archive">
+
         <main>
-        <h1 class="vjt_page-title">
-                    <div><?php _e('Industries', 'vjt_theme'); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span></div>
-                </h1>
+        <div class="vjt_page-title-wrap">
+            <h1 class="vjt_page-title">
+                <?php _e('Industries', 'vjt_theme'); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
+            </h1>
+        </div>
             <div class="vjt_main-content">
 
                 <section class="vjt_product-page-content">

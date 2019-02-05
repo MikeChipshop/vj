@@ -1,12 +1,14 @@
 <?php get_header(); ?>
     <main>
+        <div class="vjt_page-title-wrap wide">
+            <h1 class="vjt_page-title">
+                <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
+            </h1>
+        </div>
         <div class="vjt_wide-page-wrap">
             <div class="vjt_wide-page-wrap-top">
                 <div class="vjt_wide-page-wrap-top-wrap">
                     <div class="vjt_news-title">
-                        <h1 class="vjt_page-title">
-                            <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
-                        </h1>
                         <h2><?php the_field('careers_page_subtitle'); ?></h2>
                     </div>
                     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

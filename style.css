@@ -51,39 +51,51 @@ h1 {
     font-weight: bold;
     padding-bottom: 60px;
 }
+.vjt_page-title-wrap {
+    margin-bottom:75px;
+}
+.vjt_page-title-wrap::before {
+    content: " ";
+    background-color: #eeeeee;
+    padding-top: 1px;
+    width: 60%;
+    display: block;
+    clear:both;
+}
+.vjt_page-title-wrap::after {
+    content: " ";
+    background-color: #f3f3f3;
+    padding-top: 1px;
+    width: 50%;
+    display: block;
+    clear: both;
+}
 h1.vjt_page-title {
     color: #555555;
     font-size: 60px;
     text-transform: uppercase;
     font-weight: bold;
     line-height: .7;
-    padding-bottom: 60px;
     width: 100%;
-    margin: 0 auto;
-}
-h1.vjt_page-title > div {
-    max-width: 1460px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0px 20px;
-}
-h1.vjt_page-title::before {
-    background-color: #e7e7e7;
-    content: "";
-    padding-top: 1px;
-    display: block;
-    margin-right:60%;
-}
-h1.vjt_page-title::after {
-    background-color: #e7e7e7;
-    content: "";
-    padding-top: 1px;
-    display: block;
-    margin-right:80%;
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    float:right;
+    max-width: 900px;
+    margin: 0px;
+    position: relative;
+    padding-bottom:0px;
 }
 h1.vjt_page-title span {
     color:#128C8B;
     font-size:30px;
+    padding-left:10px;
+}
+.wide .vjt_page-title {
+    float: none;
+    margin: 0 auto;
+    max-width: 1160px;
 }
 h2 {
     font-size:30px;
@@ -737,7 +749,6 @@ li.vjt_list-dropdown-header ul {
     display:-ms-flexbox;
     display:-webkit-flex;
     display:flex;
-    padding-top:70px;
 }
 .vjt_product-page-content-copy {
     font-size:15px;
@@ -761,6 +772,7 @@ li.vjt_list-dropdown-header ul {
     font-weight:700;
     padding-bottom:35px;
     font-family: 'Lato', sans-serif;
+    text-transform:none;
 }
 .vjt_product-page-content-copy p {
     padding-bottom:20px;
@@ -1137,9 +1149,10 @@ li.vjt_list-dropdown-header ul {
 }
 
 /* About Page */
-.page-about main {
+.page-about main,
+.page-contact main {
     background-color: #f9f9f9;
-    padding-top:120px;
+    padding-top:140px;
 }
 .vjt_page-about-top {
     padding: 0px 20px 40px 20px;
@@ -1425,7 +1438,7 @@ ul.vjt_career-benefits li {
 ------------------------------------------------ */
 
 .vjt_wide-page-wrap.contact {
-    padding-top:160px;
+    padding-top:25px;
     width: 100%;
     max-width: 1160px;
     margin: 0 auto;

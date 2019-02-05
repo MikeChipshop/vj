@@ -1,13 +1,14 @@
 <?php get_header(); ?>
 <div class="vjt_article-archive">
     <main>
-        <div class="vjt_events-landing-wrap">
-        <div class="vjt_news-title">
+        <div class="vjt_page-title-wrap">
             <h1 class="vjt_page-title">
                 <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
             </h1>
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/event-hero.png">
         </div>
+        <div class="vjt_events-landing-wrap">
+
+            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/event-hero.png">
         <?php $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y"))); ?>
         <?php
 			$eventargs = array(

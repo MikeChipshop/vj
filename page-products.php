@@ -2,11 +2,14 @@
 <div class="vjt_page-wrap">
     <div class="vjt_article-archive">
         <main>
+            <div class="vjt_page-title-wrap">
+            <h1 class="vjt_page-title">
+                    VJT <span>Products</span>
+            </h1>
+</div>
             <div class="vjt_main-content">
 
-                <h1 class="vjt_page-title">
-                    VJT <span>Products</span>
-                </h1>
+
                 <nav class="vjt_products-menu vjt_menu">
                     <ul>
                         <li><a href="#">Solutions</a></li>

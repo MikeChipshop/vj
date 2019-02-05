@@ -3,7 +3,7 @@
     <main>
         <div class="vjt_page-title-wrap">
             <h1 class="vjt_page-title">
-                <?php _e('News', 'vjt_theme'); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
+                <?php _e('Blog', 'vjt_theme'); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
             </h1>
         </div>
         <ul class="vjt_news-landing-list">
