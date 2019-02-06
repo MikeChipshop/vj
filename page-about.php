@@ -39,7 +39,7 @@
                         <?php the_content(); ?>
                     <?php endwhile; endif; ?>
                 </div>
-                <div class="vjt_show-more-slide">Continue Reading</div>
+                <div class="vjt_show-more-slide"><?php _e('Continue Reading', 'vjt_theme'); ?></div>
             </div>
         </div>
 

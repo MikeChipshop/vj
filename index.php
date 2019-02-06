@@ -3,7 +3,7 @@
     <main>
         <div class="vjt_page-title-wrap">
             <h1 class="vjt_page-title">
-                <?php _e('News', 'vjt_theme'); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
+                <?php _e('Blog', 'vjt_theme'); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
             </h1>
         </div>
         <ul class="vjt_news-landing-list">
@@ -11,10 +11,10 @@
                 <li>
                     <div class="vjt_news-landing-wrap">
                         <div class="vjt_article-excerpt-img">
-                            <?php the_post_thumbnail(); ?>
+                            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
                         </div>
                         <div class="vjt_article-excerpt-container">
-                            <h1><?php the_title(); ?></h1>
+                            <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
                             <div class="vjt_article-excerpt-date"><?php the_time('d M Y'); ?></div>
                             <div class="vjt_article-excerpt-copy">
                                 <?php the_excerpt(); ?>
@@ -25,7 +25,9 @@
                         </div>
                     </div>
                 </li>
-            <?php endwhile; endif; ?>
+            <?php endwhile; ?>
+            <?php miniman_paging_nav(); ?>
+            <?php endif; ?>
         </ul>
     </main>
     <aside>

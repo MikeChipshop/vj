@@ -2,7 +2,7 @@
 
 if ( ! function_exists( 'twentynineteen_setup' ) ) :
     function twentynineteen_setup() {
-	
+
     }
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
@@ -51,7 +51,7 @@ EXCERPTS
 
 function new_excerpt_more($more) {
 	global $post;
-	remove_filter('excerpt_more', 'new_excerpt_more'); 
+	remove_filter('excerpt_more', 'new_excerpt_more');
 	return '';
 }
 add_filter('excerpt_more','new_excerpt_more',11);
@@ -237,3 +237,12 @@ if(function_exists('acf_add_options_page')) {
     acf_add_options_sub_page('Misc');
 
 }
+
+/*  Add responsive container to embeds
+/* ------------------------------------ */
+function vjt_embed_html( $html ) {
+    return '<div class="video-container">' . $html . '</div>';
+}
+
+add_filter( 'embed_oembed_html', 'vjt_embed_html', 10, 3 );
+add_filter( 'video_embed_html', 'vjt_embed_html' ); // Jetpack

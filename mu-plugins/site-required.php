@@ -340,14 +340,13 @@ function register_cpt_event() {
         'hierarchical' => true,
         'description' => 'Post type for events',
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
-        //'taxonomies' => array('category'),
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
         'menu_position' => 20,
         'show_in_nav_menus' => true,
         'publicly_queryable' => true,
-        'exclude_from_search' => false,
+        'exclude_from_search' => true,
         'has_archive' => true,
         'query_var' => true,
         'can_export' => true,
@@ -360,7 +359,7 @@ function register_cpt_event() {
 }
 
 /***************************************************
-/ Event Post Type
+/ News Post Type
 /***************************************************/
 
 add_action( 'init', 'register_cpt_newspost' );
@@ -387,7 +386,7 @@ function register_cpt_newspost() {
         'hierarchical' => true,
         'description' => 'Post type for news',
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'author' ),
-        //'taxonomies' => array('category'),
+        'taxonomies' => array('newscategory'),
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
@@ -436,6 +435,38 @@ function vj_productcategory_taxonomy() {
 	));
 }
 add_action('init', 'vj_productcategory_taxonomy', 0);
+
+
+/***************************************************
+/ News Category taxonomy
+/***************************************************/
+
+function vj_newscategory_taxonomy() {
+	$labels = array(
+		'name' => _x( 'News Category', 'taxonomy general name' ),
+		'singular_name' => _x( 'News Category', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search' ),
+		'all_items' => __( 'All News Categories' ),
+		'parent_item' => __( 'Parent News Category' ),
+		'parent_item_colon' => __( 'Parent News Category:' ),
+		'edit_item' => __( 'Edit News Category' ),
+		'update_item' => __( 'Update News Category' ),
+		'add_new_item' => __( 'Add New News Category' ),
+		'new_item_name' => __( 'New News Category Name' ),
+		'menu_name' => __( 'News Categories' ),
+	);
+
+	// Now register the taxonomy
+	register_taxonomy('news-category',array('newspost'), array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'show_in_nav_menus' => true
+	));
+}
+add_action('init', 'vj_newscategory_taxonomy', 0);
 
 function my_custom_admin_menu(){
 	remove_menu_page('edit-comments.php');
