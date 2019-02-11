@@ -17,7 +17,9 @@
                             $size = "full";
                             $image = wp_get_attachment_image_src( $attachment_id, $size );
                         ?>
-                        <img src="<?php echo $image[0]; ?>">
+                        <div class="vjt_product-page-content-header-img">
+                            <img src="<?php echo $image[0]; ?>">
+                        </div>
                         <h1><?php the_field('industry_content_subtitle'); ?></h1>
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                             <div><?php the_content(); ?></div>

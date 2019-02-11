@@ -8,8 +8,6 @@
             </h1>
 </div>
             <div class="vjt_main-content">
-
-
                 <nav class="vjt_products-menu vjt_menu">
                     <ul>
                         <li><a href="#">Solutions</a></li>
@@ -20,16 +18,11 @@
                     </ul>
                 </nav>
                 <section class="vjt_product-page-content">
-                    <div class="vjt_product-page-content-copy">
-                    <h1>From Purpose-Built to Product Line</h1>
-                        <div>
-                            <p>Although VJ Technologies’ primatry offerings are fully custom solutions, we also offer a set of configurable standard products that provide faster implementation at a reduced cost. </p>
-                            <p>Many of these products began as one-off approaches that evolved into industry standard products that meet a variety of requirements.</p>
-                            <p>No matter which VJT product you use, our proprietary Vi3 software provides fully configurable control of every aspect of your workflow process, from motion control and image acquisition to analysis and archival. It seamlessly automates functions applied in R&D, production and/or QA sampling environments.</p>
-                            <p>Together, VJT hardware and software deliver a system to support all of your needs and processes. They are an important component in risk management issues that impact your employees, the public and the environment.</p>
-                            <p>This perfect marriage of hardware and software allows you to see like you’ve never seen before.</p>
+                    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                        <div class="vjt_product-page-content-copy rte">
+                            <?php the_content(); ?>
                         </div>
-                    </div>
+                    <?php endwhile; endif;  ?>
                     <div class="vjt_product-page-content-img">
                         <img src="<?php bloginfo('stylesheet_directory'); ?>/img/comp6.png">
                     </div>

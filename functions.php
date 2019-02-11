@@ -21,7 +21,7 @@ if ( function_exists( 'add_image_size' ) ) add_theme_support( 'post-thumbnails' 
 /***************************************************/
 
 if ( function_exists( 'add_image_size' ) ) {
-	//add_image_size( 'home-slide', 1400, 400, false );
+	add_image_size( 'product-extras', 680, 380, array( 'center', 'center' )  );
 }
 
 /****************************************************
@@ -238,11 +238,34 @@ if(function_exists('acf_add_options_page')) {
 
 }
 
-/*  Add responsive container to embeds
-/* ------------------------------------ */
+/***************************************************
+/ Responsive Embeds
+/***************************************************/
 function vjt_embed_html( $html ) {
     return '<div class="video-container">' . $html . '</div>';
 }
 
 add_filter( 'embed_oembed_html', 'vjt_embed_html', 10, 3 );
 add_filter( 'video_embed_html', 'vjt_embed_html' ); // Jetpack
+
+/***************************************************
+/ Add Menus to ACF
+/***************************************************/
+function acf_load_menu_field_choices( $field ) {
+    // reset choices
+    $field['choices'] = array();
+    $menus = get_terms( 'nav_menu', array( 'hide_empty' => true ) );
+    //$menus = get_registered_nav_menus();  //uncomment this if you want to populate the dropdown with all Menu Locations
+    $blank_list = json_encode(array( "name" => "Default Menu", "term_id" => ""));
+    $blank_list = json_decode($blank_list);
+    array_unshift($menus, $blank_list);
+    foreach ( $menus as $val ) {
+        $value = $val->term_id;
+        $label = $val->name;
+        $field['choices'][ $value ] = $label;
+    }
+    // return the field
+    return $field;
+
+ }
+ add_filter('acf/load_field/name=product_menu', 'acf_load_menu_field_choices');  //replace custom_menu with your field name
