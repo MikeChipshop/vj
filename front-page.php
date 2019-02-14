@@ -1,4 +1,13 @@
 <?php get_header(); ?>
+<nav class="vjt_nav-dots">
+    <ul>
+        <li><a href="#vjt_fp-hero" class="vjt_dot"><span>Top</span></a></li>
+        <li><a href="#vjt_fp-intro" class="vjt_dot active"><span>Introduction</span></a></li>
+        <li><a href="#vjt_fp-about" class="vjt_dot"><span>About</span></a></li>
+        <li><a href="#vjt_fp-case-studies" class="vjt_dot"><span>Case Studies</span></a></li>
+    </ul>
+</nav>
+<div class="vjt_home-scroll-wrap">
 <section class="vjt_fp-hero vjt_fp-section" id="vjt_fp-hero">
     <div class="vjt_fp-wrap">
         <div class="vjt_hero-slider">
@@ -76,7 +85,7 @@
             </ul>
         </h1>
         <div class="vjt_intro-tabs">
-            <div class="vjt_intro-tab active">                
+            <div class="vjt_intro-tab active">
                 <h2><?php the_field('vjt_home_introduction_title'); ?></h2>
                 <div class="vjt_fp-intro-copy rte"><?php the_field('vjt_home_introduction_content'); ?></div>
                 <div class="vjt_fp-intro-menu vjt_menu">
@@ -136,4 +145,48 @@
         </div>
     </div>
 </section>
+</div>
+<script>
+jQuery(document).ready(function( $ ) {
+  var options = {
+    mode: "vp", // "vp", "set"
+    autoHash: false,
+    sectionScroll: true,
+    initialScroll: true,
+    keepHistory: false,
+    sectionWrapperSelector: ".vjt_home-scroll-wrap",
+    sectionClass: "vjt_fp-section",
+    animationSpeed: 300,
+    headerHash: "header",
+    breakpoint: null,
+    eventEmitter: null,
+    dynamicHeight: false
+  };
+  $.smartscroll(options);
+
+  var sections = $('.vjt_fp-section')
+  , nav = $('vjt_nav-dots')
+  , nav_height = nav.outerHeight();
+
+$(window).on('scroll', function () {
+  var cur_pos = $(this).scrollTop();
+
+  sections.each(function() {
+    var top = $(this).offset().top - nav_height,
+        bottom = top + $(this).outerHeight();
+
+    if (cur_pos >= top && cur_pos <= bottom) {
+      nav.find('a').removeClass('active');
+      sections.removeClass('active');
+
+      $(this).addClass('active');
+      nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+    }
+  });
+});
+
+});
+
+
+</script>
 <?php get_footer(); ?>

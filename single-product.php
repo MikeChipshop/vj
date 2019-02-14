@@ -1,7 +1,4 @@
-<?php
-/* Template Name: Single Product */
-get_header();
-?>
+<?php get_header(); ?>
 <div class="vjt_page-wrap">
     <div class="vjt_article-archive">
         <main>
