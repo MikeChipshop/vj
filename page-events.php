@@ -43,6 +43,17 @@
                                 <?php if(get_field('event_end_date')) : ?> -
                                     <?php the_field('event_end_date'); ?>
                                 <?php endif; ?>
+                                <?php
+                                    // Start date
+                                    $startdate = get_field('event_start_date');
+                                    echo "Start Date: " . $startdate;
+
+                                    // Start Month
+                                    $xstartdate = new DateTime(get_field('event_start_date'));
+                                    echo "XStart: " . $xstartdate->format('F');
+
+
+                                ?>
                             </div>
                             <div><?php the_field('event_location'); ?></div>
                             <div><?php the_title(); ?></div>
@@ -58,6 +69,7 @@
     </main>
     <aside>
         <div class="vjt_main-sidebar">
+            
             <ul class="vjt_list-dropdown">
                 <li class="vjt_list-dropdown-header">
                     <h2>Month <i class="fas fa-chevron-down"></i></h2>

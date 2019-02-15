@@ -32,23 +32,23 @@
     </main>
     <aside>
         <div class="vjt_main-sidebar">
+
             <ul class="vjt_list-dropdown">
                 <li class="vjt_list-dropdown-header">
-                    <h2><?php _e('Year', 'vjt_theme'); ?> <i class="fas fa-chevron-down"></i></h2>
-                    <ul class="vjt_list-dropdown-child">
-                        <li><a href="#">2018</a></li>
-                        <li><a href="#">2017</a></li>
-                        <li><a href="#">2016</a></li>
-                        <li><a href="#">2015</a></li>
-                        <li><a href="#">2014</a></li>
-                        <li><a href="#">2013</a></li>
-                        <li><a href="#">2012</a></li>
-                        <li><a href="#">2011</a></li>
-                        <li><a href="#">2010</a></li>
-                        <li><a href="#">2009</a></li>
-                    </ul>
+                    <h2><?php _e('Categories', 'vjt_theme'); ?> <i class="fas fa-chevron-down"></i></h2>
+                    <?php
+                        $terms = get_terms( 'category' );
+                        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+                            echo '<ul class="vjt_list-dropdown-child">';
+                                foreach ( $terms as $term ) {
+                                    echo '<li><a href="' . esc_url( get_term_link( $term ) ) . '">' . $term->name . '</a></li>';
+                                }
+                            echo '</ul>';
+                        }
+                    ?>
                 </li>
             </ul>
+            
         </div>
     </aside>
 </div>

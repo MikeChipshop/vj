@@ -1,5 +1,27 @@
 jQuery(document).ready(function( $ ) {
 
+    var alterClass = function() {
+        var ww = document.body.clientWidth;
+        if (ww >= 1100) {
+          $('body').removeClass('mobile');
+          $('body').removeClass('tablet');
+          $('body').addClass('desktop');
+        } else if (ww >= 800 && ww < 1099) {
+            $('body').removeClass('mobile');
+            $('body').removeClass('desktop');
+            $('body').addClass('tablet');
+        } else if (ww < 799) {
+            $('body').removeClass('tablet');
+            $('body').removeClass('desktop');
+            $('body').addClass('mobile');
+        };
+      };
+      $(window).resize(function(){
+        alterClass();
+      });
+      //Fire it when the page first loads:
+      alterClass();
+
     // Overlay Menu Toggle
     $('.hamburger').click(function(){
 		$('body').toggleClass('vjt_overlay-menu-active');
@@ -37,7 +59,7 @@ jQuery(document).ready(function( $ ) {
     });
 
     // VJT Links
-    $('.vjt_intro-section:nth-of-type(1)').click(function(event){
+    $('.home .vjt_intro-section:nth-of-type(1)').click(function(event){
         event.preventDefault();
         $('html,body').animate({
             scrollTop: $(".vjt_fp-intro").offset().top
@@ -50,7 +72,7 @@ jQuery(document).ready(function( $ ) {
     });
 
     // VJE Links
-    $('.vjt_intro-section:nth-of-type(2)').click(function(event){
+    $('.home .vjt_intro-section:nth-of-type(2)').click(function(event){
         event.preventDefault();
         $('html,body').animate({
             scrollTop: $(".vjt_fp-intro").offset().top
@@ -63,7 +85,7 @@ jQuery(document).ready(function( $ ) {
     });
 
     // VJX Links
-    $('.vjt_intro-section:nth-of-type(3)').click(function(event){
+    $('.home .vjt_intro-section:nth-of-type(3)').click(function(event){
         event.preventDefault();
         $('html,body').animate({
             scrollTop: $(".vjt_fp-intro").offset().top
@@ -74,6 +96,14 @@ jQuery(document).ready(function( $ ) {
         $('.vjt_intro-tab:nth-of-type(3)').addClass('active');
 
     });
+
+    $(function(){
+        var hash = window.location.hash;
+        if(hash != 'undefined'){
+           $('li'+hash+ ' a').trigger('click');
+            console.log(hash);
+        }
+     });
 
      // VJT Dots
     $(document).on('click', 'a[href^="#"].vjt_dot', function(e) {

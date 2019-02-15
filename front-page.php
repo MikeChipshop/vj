@@ -79,20 +79,20 @@
     <div class="vjt_fp-wrap">
         <h1>
             <ul>
-                <li id="menu-item-219" class="vjt_intro-section active"><a href="#"><?php _e('VJT', 'vjt_theme'); ?></a></li>
-                <li id="menu-item-218" class="vjt_intro-section"><a href="#"><?php _e('VJE', 'vjt_theme'); ?></a></li>
-                <li id="menu-item-217" class="vjt_intro-section"><a href="#"><?php _e('VJX', 'vjt_theme'); ?></a></li>
+                <li id="vjt" class="vjt_intro-section active"><a href="#"><?php _e('VJT', 'vjt_theme'); ?></a></li>
+                <li id="vje" class="vjt_intro-section"><a href="#"><?php _e('VJE', 'vjt_theme'); ?></a></li>
+                <li id="vjx" class="vjt_intro-section"><a href="#"><?php _e('VJX', 'vjt_theme'); ?></a></li>
             </ul>
         </h1>
         <div class="vjt_intro-tabs">
-            <div class="vjt_intro-tab active">
+            <div class="vjt_intro-tab active" id="vjt">
                 <h2><?php the_field('vjt_home_introduction_title'); ?></h2>
                 <div class="vjt_fp-intro-copy rte"><?php the_field('vjt_home_introduction_content'); ?></div>
                 <div class="vjt_fp-intro-menu vjt_menu">
                     <ul><?php wp_nav_menu( array('theme_location' => 'vjt_menu' )); ?></ul>
                 </div>
             </div>
-            <div class="vjt_intro-tab">
+            <div class="vjt_intro-tab" id="vje">
                 <h2><?php the_field('vje_home_introduction_title'); ?></h2>
                 <div class="vjt_fp-intro-copy rte"><?php the_field('vje_home_introduction_content'); ?></div>
                 <div class="vjt_fp-intro-menu vjt_menu">
@@ -154,7 +154,7 @@ jQuery(document).ready(function( $ ) {
     sectionScroll: true,
     initialScroll: true,
     keepHistory: false,
-    sectionWrapperSelector: ".vjt_home-scroll-wrap",
+    sectionWrapperSelector: ".desktop .vjt_home-scroll-wrap",
     sectionClass: "vjt_fp-section",
     animationSpeed: 300,
     headerHash: "header",
