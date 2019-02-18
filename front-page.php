@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <nav class="vjt_nav-dots">
     <ul>
-        <li><a href="#vjt_fp-hero" class="vjt_dot"><span>Top</span></a></li>
-        <li><a href="#vjt_fp-intro" class="vjt_dot active"><span>Introduction</span></a></li>
+        <li class="active"><a href="#vjt_fp-hero" class="vjt_dot"><span>Top</span></a></li>
+        <li><a href="#vjt_fp-intro" class="vjt_dot"><span>Introduction</span></a></li>
         <li><a href="#vjt_fp-about" class="vjt_dot"><span>About</span></a></li>
         <li><a href="#vjt_fp-case-studies" class="vjt_dot"><span>Case Studies</span></a></li>
     </ul>
@@ -10,7 +10,7 @@
 <div class="vjt_home-scroll-wrap">
 <section class="vjt_fp-hero vjt_fp-section" id="vjt_fp-hero">
     <div class="vjt_fp-wrap">
-        <div class="vjt_hero-slider">
+        <div class="vjt_hero-slider cS-hidden">
             <?php if( have_rows('home_hero_items',9) ): ?>
                 <?php while ( have_rows('home_hero_items',9) ) : the_row(); ?>
                     <article class="vjt_hero-slider-wrap">
@@ -121,7 +121,7 @@
     <div class="vjt_fp-wrap">
         <h1><?php _e('Case Studies', 'vjt_theme'); ?></h1>
         <div class="vjt_case-studies-container-wrap">
-            <div class="vjt_case-studies-wrap">
+            <div class="vjt_case-studies-wrap cS-hidden">
                 <?php if( have_rows('case_study_slides',9) ): ?>
                     <?php while ( have_rows('case_study_slides',9) ) : the_row(); ?>
                         <article class="vjt_fp-case-study">
@@ -154,9 +154,9 @@ jQuery(document).ready(function( $ ) {
     sectionScroll: true,
     initialScroll: true,
     keepHistory: false,
-    sectionWrapperSelector: ".desktop .vjt_home-scroll-wrap",
+    sectionWrapperSelector: ".vjt_home-scroll-wrap",
     sectionClass: "vjt_fp-section",
-    animationSpeed: 300,
+    animationSpeed: 500,
     headerHash: "header",
     breakpoint: null,
     eventEmitter: null,

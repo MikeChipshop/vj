@@ -40,6 +40,27 @@
                         </ul>
                     </li>
                 </ul>
+
+                <?php if(get_field('show_products_sidebar')): ?>
+                    <?php if( have_rows('product_sidebar','option') ): ?>
+                        <?php while ( have_rows('product_sidebar','option') ) : the_row(); ?>
+                            <ul class="vjt_list-dropdown">
+                                <li class="vjt_list-dropdown-header">
+                                    <h2><?php the_sub_field('product_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i></h2>
+                                    <?php if( have_rows('product_sidebar_items','option') ): ?>
+                                        <ul class="vjt_list-dropdown-child">
+                                            <?php while ( have_rows('product_sidebar_items','option') ) : the_row(); ?>
+                                                <li><a href="<?php the_sub_field('product_sidebar_link','option'); ?>"><?php the_sub_field('product_sidebar_label','option'); ?></a></li>
+                                            <?php endwhile; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </li>
+                            </ul>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                <?php endif; ?>
+
+                <!--
                 <?php if( have_rows('additional_sidebar') ): ?>
                     <?php while ( have_rows('additional_sidebar') ) : the_row(); ?>
                         <ul class="vjt_list-dropdown">
@@ -56,6 +77,7 @@
                         </ul>
                     <?php endwhile; ?>
                 <?php endif; ?>
+                            -->
             </div>
         </aside>
     </div>

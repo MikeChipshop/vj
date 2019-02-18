@@ -1,6 +1,6 @@
 jQuery(document).ready(function( $ ) {
 
-    var alterClass = function() {
+    /*var alterClass = function() {
         var ww = document.body.clientWidth;
         if (ww >= 1100) {
           $('body').removeClass('mobile');
@@ -21,7 +21,7 @@ jQuery(document).ready(function( $ ) {
       });
       //Fire it when the page first loads:
       alterClass();
-
+*/
     // Overlay Menu Toggle
     $('.hamburger').click(function(){
 		$('body').toggleClass('vjt_overlay-menu-active');
@@ -29,7 +29,8 @@ jQuery(document).ready(function( $ ) {
 
     // Search Bar Toggle
     $('.vjt_global-header-search-wrap button').click(function(){
-		$('.vjt_global-header-search-wrap').toggleClass('active');
+        $('.vjt_global-header-search-wrap').toggleClass('active');
+        $('#s').focus();
     });
 
     // Sidebar Menu Toggle
@@ -68,6 +69,7 @@ jQuery(document).ready(function( $ ) {
         $('.vjt_intro-tab').removeClass('active');
         $(this).addClass('active');
         $('.vjt_intro-tab:nth-of-type(1)').addClass('active');
+        $('.vjt_intro-section:nth-of-type(1)').addClass('active');
 
     });
 
@@ -81,6 +83,7 @@ jQuery(document).ready(function( $ ) {
         $('.vjt_intro-tab').removeClass('active');
         $(this).addClass('active');
         $('.vjt_intro-tab:nth-of-type(2)').addClass('active');
+        $('.vjt_intro-section:nth-of-type(2)').addClass('active');
 
     });
 
@@ -94,12 +97,13 @@ jQuery(document).ready(function( $ ) {
         $('.vjt_intro-tab').removeClass('active');
         $(this).addClass('active');
         $('.vjt_intro-tab:nth-of-type(3)').addClass('active');
+        $('.vjt_intro-section:nth-of-type(3)').addClass('active');
 
     });
 
     $(function(){
         var hash = window.location.hash;
-        if(hash != 'undefined'){
+        if(hash !== ''){
            $('li'+hash+ ' a').trigger('click');
             console.log(hash);
         }
@@ -126,6 +130,7 @@ jQuery(document).ready(function( $ ) {
         $('body, html').animate({scrollTop: pos});
     });
 
+
     // Sliders
     $('.vjt_hero-slider').lightSlider({
         item:1,
@@ -135,6 +140,9 @@ jQuery(document).ready(function( $ ) {
         speed:600,
         slideMargin:0,
         controls:false,
+        onSliderLoad: function() {
+            $('.vjt_hero-slider').removeClass('cS-hidden');
+        }
     });
 
     $('.vjt_case-studies-wrap').lightSlider({
@@ -146,6 +154,9 @@ jQuery(document).ready(function( $ ) {
         slideMargin:0,
         prevHtml:'<i class="fas fa-chevron-left"></i>',
         nextHtml:'<i class="fas fa-chevron-right"></i>',
+        onSliderLoad: function() {
+            $('.vjt_case-studies-wrap').removeClass('cS-hidden');
+        }
     });
 
     $(function(){
@@ -168,5 +179,38 @@ jQuery(document).ready(function( $ ) {
         element.height(curHeight); // Reset to Default Height
         element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
     }
+
+    // Dots active state position
+
+    // Cache selectors
+    var topMenu = $(".vjt_nav-dots"),
+    topMenuHeight = topMenu.outerHeight()+15,
+    // All list items
+    menuItems = topMenu.find("a"),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+        var item = $($(this).attr("href"));
+        if (item.length) { return item; }
+    });
+
+    // Bind to scroll
+    $(window).scroll(function(){
+    // Get container scroll position
+        var fromTop = $(this).scrollTop()+topMenuHeight;
+
+        // Get id of current scroll item
+        var cur = scrollItems.map(function(){
+            if ($(this).offset().top < fromTop)
+            return this;
+        });
+        // Get the id of the current element
+        cur = cur[cur.length-1];
+        var id = cur && cur.length ? cur[0].id : "";
+        // Set/remove active class
+        menuItems
+        .parent().removeClass("active")
+        .end().filter("[href='#"+id+"']").parent().addClass("active");
+    });
+
 
 });
