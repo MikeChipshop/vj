@@ -3,19 +3,12 @@
     <main>
         <div class="vjt_page-title-wrap">
             <h1 class="vjt_page-title">
-                <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
+                <?php _e('News', 'vjt_theme'); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
             </h1>
         </div>
-        <?php
-			$newsargs = array(
-                'post_type' => 'newspost',
-                'year'  => '',
-			);
-        ?>
-        <?php $newsloop = new WP_Query( $newsargs ); ?>
-        <?php if ( $newsloop->have_posts() ): ?>
+        <?php if ( have_posts() ): ?>
             <ul class="vjt_news-landing-list">
-                <?php while ( $newsloop->have_posts() ) : $newsloop->the_post(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
                     <li>
                         <div class="vjt_news-landing-wrap">
                             <div class="vjt_article-excerpt-img">

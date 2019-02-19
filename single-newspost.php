@@ -23,26 +23,6 @@
             <?php endif; ?>
         </ul>
     </main>
-    <aside>
-        <div class="vjt_main-sidebar">
-            <ul class="vjt_list-dropdown">
-                <li class="vjt_list-dropdown-header">
-                    <h2><?php _e('Year', 'vjt_theme'); ?> <i class="fas fa-chevron-down"></i></h2>
-                    <ul class="vjt_list-dropdown-child">
-                        <li><a href="#">2018</a></li>
-                        <li><a href="#">2017</a></li>
-                        <li><a href="#">2016</a></li>
-                        <li><a href="#">2015</a></li>
-                        <li><a href="#">2014</a></li>
-                        <li><a href="#">2013</a></li>
-                        <li><a href="#">2012</a></li>
-                        <li><a href="#">2011</a></li>
-                        <li><a href="#">2010</a></li>
-                        <li><a href="#">2009</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </aside>
+    <?php get_sidebar('news'); ?>
 </div>
 <?php get_footer(); ?>
