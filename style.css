@@ -460,7 +460,7 @@ h1.vjt_page-title span {
 .vjt_nav-dots {
     position: fixed;
     top: 50%;
-    right: 16%;
+    right: 10%;
     margin-top: -18px;
     z-index: 991;
 }
@@ -471,9 +471,9 @@ h1.vjt_page-title span {
     border: 1px solid transparent;
     background: transparent;
     -webkit-border-radius: 50%;
-            border-radius: 50%;
-    width: 16px;
-    height: 16px;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
     display: block;
     padding: 3px;
 }
@@ -1858,7 +1858,16 @@ span.page-numbers.current {
 .vjt_footer-credits a:hover {
     text-decoration:underline;
 }
-
+@media only screen and (max-width : 1600px) {
+    .vjt_nav-dots {
+        right: 5%;
+    }
+}
+@media only screen and (max-width : 1400px) {
+    .vjt_nav-dots {
+        right: 10px;
+    }
+}
 
 @media only screen and (max-width : 1120px) {
 
@@ -1929,10 +1938,6 @@ span.page-numbers.current {
     }
 }
 @media only screen and (max-width : 800px) {
-
-    .vjt_nav-dots {
-        right: 20px;
-    }
 
     /* ------------------------------------------------
      Globals

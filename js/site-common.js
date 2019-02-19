@@ -34,10 +34,15 @@ jQuery(document).ready(function( $ ) {
     });
 
     // Sidebar Menu Toggle
+    $('.vjt_list-dropdown-header h2').click(function(){
+        $(this).parent('li').children('ul').slideToggle( "fast", function() {});
+        $(this).parent('li').toggleClass('active');
+    });
+    /* Sidebar Menu Toggle
     $('.vjt_list-dropdown-header').click(function(){
         $(this).children('ul').slideToggle( "fast", function() {});
         $(this).toggleClass('active');
-    });
+    });*/
 
     // Contact Page Tabs
     $('.vjt_contact-wrap-nav div').click(function(){
