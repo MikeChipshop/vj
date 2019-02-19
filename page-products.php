@@ -55,8 +55,10 @@
                             </ul>
                             <div class="vjt_product-list-notes"><?php the_sub_field('table_notes'); ?></div>
                         </div>
+
                     <?php endwhile; ?>
                 <?php endif; ?>
+
             </div>
         </main>
         <?php get_sidebar('products'); ?>

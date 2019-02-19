@@ -23,6 +23,8 @@ if ( function_exists( 'add_image_size' ) ) add_theme_support( 'post-thumbnails' 
 if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'product-extras', 680, 380, array( 'center', 'center' )  );
     add_image_size( 'product-table', 200, 9999, false );
+    add_image_size( 'pos', 200, 200, true );
+    add_image_size( 'home-hero', 630, 9999, false );
 }
 
 /****************************************************

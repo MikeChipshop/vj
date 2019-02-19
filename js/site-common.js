@@ -141,10 +141,13 @@ jQuery(document).ready(function( $ ) {
         item:1,
         loop:true,
         slideMove:1,
-        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        useCSS:true,
+        pause:5000,
+        cssEasing:'ease',
         speed:600,
         slideMargin:0,
         controls:false,
+        auto:true,
         onSliderLoad: function() {
             $('.vjt_hero-slider').removeClass('cS-hidden');
         }

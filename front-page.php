@@ -11,8 +11,8 @@
 <section class="vjt_fp-hero vjt_fp-section" id="vjt_fp-hero">
     <div class="vjt_fp-wrap">
         <div class="vjt_hero-slider cS-hidden">
-            <?php if( have_rows('home_hero_items',9) ): ?>
-                <?php while ( have_rows('home_hero_items',9) ) : the_row(); ?>
+            <?php if( have_rows('home_hero_items') ): ?>
+                <?php while ( have_rows('home_hero_items') ) : the_row(); ?>
                     <article class="vjt_hero-slider-wrap">
                         <div class="vjt_hero-slider-content">
                             <h2><?php the_sub_field('hero_item_title'); ?></h2>
@@ -23,7 +23,7 @@
                         <div class="vjt_hero-slider-img">
                             <?php
                                 $attachment_id = get_sub_field('hero_item_image');
-                                $size = "full";
+                                $size = "home-hero";
                                 $image = wp_get_attachment_image_src( $attachment_id, $size );
                             ?>
                             <img src="<?php echo $image[0]; ?>">
@@ -38,17 +38,17 @@
                     <article class="vjt_hero-poi-container">
                         <div class="vjt_hero-poi-img">
                             <?php
-                                $attachment_id = get_field('hero_poi_box_one_image',9);
-                                $size = "full";
+                                $attachment_id = get_field('hero_poi_box_one_image');
+                                $size = "pos";
                                 $image = wp_get_attachment_image_src( $attachment_id, $size );
                             ?>
                             <img src="<?php echo $image[0]; ?>">
                         </div>
                         <div class="vjt_hero-poi-content">
-                            <h1><?php the_field('hero_poi_box_one_title',9); ?></h1>
-                            <div class="vjt_date"><?php the_field('hero_poi_box_one_subtitle',9); ?></div>
-                            <div class="vjt_excerpt"><?php the_field('hero_poi_box_one_excerpt',9); ?></div>
-                            <div class="vjt_read-more"><a href="<?php the_field('hero_poi_box_one_link',9); ?>"><?php _e('Read More', 'vjt_theme'); ?></a></div>
+                            <h1><?php the_field('hero_poi_box_one_title'); ?></h1>
+                            <div class="vjt_date"><?php the_field('hero_poi_box_one_subtitle'); ?></div>
+                            <div class="vjt_excerpt"><?php the_field('hero_poi_box_one_excerpt'); ?></div>
+                            <div class="vjt_read-more"><a href="<?php the_field('hero_poi_box_one_link'); ?>"><?php _e('Read More', 'vjt_theme'); ?></a></div>
                         </div>
                     </article>
                 </li>
@@ -56,14 +56,14 @@
                     <article class="vjt_hero-poi-container">
                         <div class="vjt_hero-poi-img">
                             <?php
-                                $attachment_id = get_field('hero_poi_box_two_image',9);
-                                $size = "full";
+                                $attachment_id = get_field('hero_poi_box_two_image');
+                                $size = "pos";
                                 $image = wp_get_attachment_image_src( $attachment_id, $size );
                             ?>
                             <img src="<?php echo $image[0]; ?>">
                         </div>
                         <div class="vjt_hero-poi-content">
-                            <h1><?php the_field('hero_poi_box_two_title',9); ?></h1>
+                            <h1><?php the_field('hero_poi_box_two_title'); ?></h1>
                             <div class="vjt_date"><?php the_field('hero_poi_box_two_subtitle'); ?></div>
                             <div class="vjt_excerpt"><?php the_field('hero_poi_box_two_excerpt'); ?></div>
                             <div class="vjt_read-more"><a href="<?php the_field('hero_poi_box_two_link'); ?>"><?php _e('Read More', 'vjt_theme'); ?></a></div>
@@ -113,8 +113,8 @@
 <section class="vjt_fp-about vjt_fp-section" id="vjt_fp-about">
     <div class="vjt_fp-wrap">
         <h1><?php _e('About', 'vjt_theme'); ?></h1>
-        <h2><?php the_field('home_about_title', 9); ?></h2>
-        <div class="vjt_fp-about-copy rte"><?php the_field('home_about_content', 9); ?></div>
+        <h2><?php the_field('home_about_title'); ?></h2>
+        <div class="vjt_fp-about-copy rte"><?php the_field('home_about_content'); ?></div>
     </div>
 </section>
 <section class="vjt_fp-case-studies vjt_fp-section" id="vjt_fp-case-studies">
@@ -122,8 +122,8 @@
         <h1><?php _e('Case Studies', 'vjt_theme'); ?></h1>
         <div class="vjt_case-studies-container-wrap">
             <div class="vjt_case-studies-wrap cS-hidden">
-                <?php if( have_rows('case_study_slides',9) ): ?>
-                    <?php while ( have_rows('case_study_slides',9) ) : the_row(); ?>
+                <?php if( have_rows('case_study_slides') ): ?>
+                    <?php while ( have_rows('case_study_slides') ) : the_row(); ?>
                         <article class="vjt_fp-case-study">
                             <div class="vjt_fp-case-study-img">
                                 <?php
