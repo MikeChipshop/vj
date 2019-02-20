@@ -30,10 +30,10 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php the_field('social_accounts_soundcloud_url','option'); ?>" target="_blank" rel="noreferrer noopener">
+                    <a href="<?php the_field('social_accounts_linkedin_url','option'); ?>" target="_blank" rel="noreferrer noopener">
                     <span class="fa-stack fa-2x">
                         <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab fa-soundcloud fa-stack-1x fa-inverse"></i>
+                        <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
                     </span>
                     </a>
                 </li>

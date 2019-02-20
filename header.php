@@ -10,9 +10,6 @@
     <div class="vjt_bg-triangle-top">
         <img src="<?php bloginfo('stylesheet_directory'); ?>/img/triangle-top.png">
     </div>
-    <div class="vjt_bg-triangle-bottom">
-        <img src="<?php bloginfo('stylesheet_directory'); ?>/img/triangle-bottom.png">
-    </div>
 <?php endif; ?>
 <header class="vjt_global-header">
     <div class="vjt_global-header-right">

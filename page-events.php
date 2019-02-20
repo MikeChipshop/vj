@@ -39,27 +39,28 @@
                     <?php while ( $eventloop->have_posts() ) : $eventloop->the_post(); ?>
                         <li>
                             <div>
+                                <span class="vjt_mobile-event-labels"><?php _e('Date', 'vjt_theme'); ?></span><span>
                                 <?php the_field('event_start_date'); ?>
                                 <?php if(get_field('event_end_date')) : ?> -
                                     <?php the_field('event_end_date'); ?>
                                 <?php endif; ?>
                                 <?php
-                                    // Start date
+                                    /* Start date
                                     $startdate = get_field('event_start_date');
                                     echo "Start Date: " . $startdate;
 
                                     // Start Month
                                     $xstartdate = new DateTime(get_field('event_start_date'));
-                                    echo "XStart: " . $xstartdate->format('F');
+                                    echo "XStart: " . $xstartdate->format('F'); */
 
 
-                                ?>
+                                ?></span>
                             </div>
-                            <div><?php the_field('event_location'); ?></div>
-                            <div><?php the_title(); ?></div>
-                            <div><?php the_field('event_facility'); ?></div>
-                            <div><?php the_field('event_booth'); ?></div>
-                            <div><?php the_field('event_division'); ?></div>
+                            <div><span class="vjt_mobile-event-labels"><?php _e('Location', 'vjt_theme'); ?></span><span><?php the_field('event_location'); ?></span></div>
+                            <div><span class="vjt_mobile-event-labels"><?php _e('Show', 'vjt_theme'); ?></span><span><?php the_title(); ?></span></div>
+                            <div><span class="vjt_mobile-event-labels"><?php _e('Facility', 'vjt_theme'); ?></span><span><?php the_field('event_facility'); ?></span></div>
+                            <div><span class="vjt_mobile-event-labels"><?php _e('Booth', 'vjt_theme'); ?></span><span><?php the_field('event_booth'); ?></span></div>
+                            <div><span class="vjt_mobile-event-labels"><?php _e('Division', 'vjt_theme'); ?></span><span><?php the_field('event_division'); ?></span></div>
                         </li>
                     <?php endwhile; wp_reset_postdata(); ?>
                 </ul>
@@ -69,7 +70,7 @@
     </main>
     <aside>
         <div class="vjt_main-sidebar">
-            
+
             <ul class="vjt_list-dropdown">
                 <li class="vjt_list-dropdown-header">
                     <h2>Month <i class="fas fa-chevron-down"></i></h2>

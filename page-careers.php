@@ -2,7 +2,7 @@
     <main>
         <div class="vjt_page-title-wrap wide">
             <h1 class="vjt_page-title">
-                <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
+             <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
             </h1>
         </div>
         <div class="vjt_wide-page-wrap">
