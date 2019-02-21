@@ -8,18 +8,17 @@
     <div class="vjt_article-archive">
         <main>
         <div class="vjt_page-title-wrap">
-                    <h1 class="vjt_page-title">
-                        <?php _e('VJT', 'vjt_theme'); ?><span><?php _e('Products', 'vjt_theme'); ?></span>
-                    </h1>
-                </div>
-            <div class="vjt_main-content">
-
-                <?php if(get_field('product_menu')): ?>
-                    <nav class="vjt_products-menu vjt_menu">
-                        <?php $menu_selection = get_field('product_menu'); ?>
-                        <ul><?php wp_nav_menu( array('menu' => $menu_selection )); ?></ul>
-                    </nav>
-                <?php endif; ?>
+            <h1 class="vjt_page-title">
+                <?php _e('VJT', 'vjt_theme'); ?><span><?php _e('Products', 'vjt_theme'); ?></span>
+            </h1>
+        </div>
+        <div class="vjt_main-content">
+            <?php if(get_field('product_menu')): ?>
+                <nav class="vjt_products-menu vjt_menu">
+                    <?php $menu_selection = get_field('product_menu'); ?>
+                    <ul><?php wp_nav_menu( array('menu' => $menu_selection )); ?></ul>
+                </nav>
+            <?php endif; ?>
                 <section class="vjt_product-page-content">
                     <div class="vjt_product-page-content-copy">
                         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -56,7 +55,7 @@
                 <?php endif; ?>
                 <?php if( have_rows('promotional_sections') ): ?>
                     <div class="vjt_product-features">
-                        <h2><?php _e('Features', 'vjt_theme'); ?></h2>
+                        <h2><?php the_field('promotional_section_title'); ?></h2>
                         <?php while ( have_rows('promotional_sections') ) : the_row(); ?>
                             <div class="vjt_product-features-item">
                                 <div class="vjt_product-features-item-img">
@@ -83,9 +82,15 @@
                         <?php endwhile; ?>
                     </div>
                 <?php endif; ?>
+                <?php if(get_field('marketo_product_form')): ?>
+                    <div class="vjt_product-form">
+                        <?php the_field('marketo_product_form'); ?>
+                    </div>
+                <?php endif; ?>
             </div>
+
         </main>
-        <?php get_sidebar('products'); ?>
+        <?php get_sidebar(); ?>
     </div>
 </div>
 <?php get_footer(); ?>

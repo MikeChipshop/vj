@@ -49,14 +49,16 @@
                 <?php if( have_rows('industry_information') ): ?>
                     <div class="vjt_industry-information">
                         <h2><?php _e('Further information', 'vjt_theme'); ?></h2>
-                        <?php while ( have_rows('industry_information') ) : the_row(); ?>
-                            <div class="vjt_industry-information-item">
-                                <h3><span><i class="fas fa-chevron-down"></i></span> <?php the_sub_field('industry_information_item_title'); ?></h3>
-                                <div class="vjt_industry-information-content">
-                                    <?php the_sub_field('industry_information_item_content'); ?>
-                                </div>
-                            </div>
-                        <?php endwhile; ?>
+                        <ul>
+                            <?php while ( have_rows('industry_information') ) : the_row(); ?>
+                                <li class="vjt_industry-information-item">
+                                    <h3><a href="<?php the_sub_field('industry_information_item_link'); ?>"><?php the_sub_field('industry_information_item_title'); ?></a> <span><i class="fas fa-chevron-down"></i></span></h3>
+                                    <!-- <div class="vjt_industry-information-content">
+                                        <?php the_sub_field('industry_information_item_content'); ?>
+                                    </div> -->
+</li>
+                            <?php endwhile; ?>
+                        </ul>
                     </div>
                 <?php endif; ?>
             </div>

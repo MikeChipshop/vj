@@ -740,8 +740,17 @@ li.vjt_list-dropdown-header h2 {
     text-transform: uppercase;
     margin-bottom:30px;
     padding-bottom:0px;
-    cursor:pointer;
     font-weight:bold;
+}
+li.vjt_list-dropdown-header h2 a {
+    color: #128C8B;
+    text-decoration:none;
+    -webkit-transition:color .3s ease-in-out;
+    -o-transition:color .3s ease-in-out;
+    transition:color .3s ease-in-out;
+}
+li.vjt_list-dropdown-header h2 a:hover {
+    color: #000000;
 }
 li.vjt_list-dropdown-header h2 svg {
     color:#6E6E6E;
@@ -749,6 +758,7 @@ li.vjt_list-dropdown-header h2 svg {
     -webkit-transition:all .2s;
     -o-transition:all .2s;
     transition:all .2s;
+    cursor:pointer;
 }
 li.vjt_list-dropdown-header.active h2 svg {
     -webkit-transform: rotate(180deg);
@@ -1067,6 +1077,24 @@ li.vjt_list-dropdown-header ul {
     opacity:1;
 }
 
+.vjt_product-form {
+    padding: 30px 20px;
+    border: 1px solid #f4f4f4;
+    margin-top: 20px;
+}
+.vjt_product-form .mktoForm .mktoButtonWrap.mktoSimple button.mktoButton {
+    text-transform: uppercase;
+    background: transparent!important;
+    border: none;
+    border-bottom: 2px solid #3da2a1;
+    color: #555555;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 1px 6px;
+    padding-bottom: 9px;
+    margin-top: 48px;
+}
+
 /* Industries */
 
 .vjt_industry-services-content h2 {
@@ -1120,20 +1148,34 @@ li.vjt_list-dropdown-header ul {
     text-transform: uppercase;
     font-size: 15px;
     cursor:pointer;
+    max-width: 300px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.vjt_industry-information-item h3 a {
+    color: #128C8B;
+    text-decoration:none;
+    -webkit-transition:color .3s ease-in-out;
+    -o-transition:color .3s ease-in-out;
+    transition:color .3s ease-in-out;
+}
+.vjt_industry-information-item h3 a:hover {
+    color:#000;
 }
 .vjt_industry-information-item h3 span {
     margin-right:20px;
     color:#6E6E6E;
 }
 .vjt_industry-information-item h3 svg {
-    -webkit-transition:all .2s;
-    -o-transition:all .2s;
-    transition:all .2s;
-}
-.vjt_industry-information-item.active h3 svg {
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-        transform: rotate(180deg);
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+        transform: rotate(270deg);
 }
 .vjt_industry-information-content {
     color: #555555;

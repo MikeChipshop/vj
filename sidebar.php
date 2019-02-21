@@ -25,13 +25,20 @@
                 </ul>
             <?php endif; ?>
         <?php endif; ?>
+
         <?php // Load NDT Sidebar?>
         <?php if(get_field('show_ndt_sidebar')): ?>
             <?php if( have_rows('ndt_sidebar','option') ): ?>
                 <?php while ( have_rows('ndt_sidebar','option') ) : the_row(); ?>
                     <ul class="vjt_list-dropdown">
                         <li class="vjt_list-dropdown-header">
-                            <h2><?php the_sub_field('ndt_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i></h2>
+                            <h2>
+                                <?php if(get_sub_field('ndt_sidebar_widget_name_link','option')): ?>
+                                    <a href="<?php the_sub_field('ndt_sidebar_widget_name_link'); ?>"><?php the_sub_field('ndt_sidebar_widget_name','option'); ?></a> <i class="fas fa-chevron-down"></i>
+                                <?php else: ?>
+                                    <?php the_sub_field('ndt_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i>
+                                <?php endif; ?>
+                            </h2>
                             <?php if( have_rows('ndt_sidebar_items','option') ): ?>
                                 <ul class="vjt_list-dropdown-child">
                                     <?php while ( have_rows('ndt_sidebar_items','option') ) : the_row(); ?>
@@ -51,7 +58,13 @@
                 <?php while ( have_rows('product_sidebar','option') ) : the_row(); ?>
                     <ul class="vjt_list-dropdown">
                         <li class="vjt_list-dropdown-header">
-                            <h2><?php the_sub_field('product_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i></h2>
+                            <h2>
+                                <?php if(get_sub_field('product_sidebar_widget_name_link','option')): ?>
+                                    <a href="<?php the_sub_field('product_sidebar_widget_name_link'); ?>"><?php the_sub_field('product_sidebar_widget_name','option'); ?></a> <i class="fas fa-chevron-down"></i>
+                                <?php else: ?>
+                                    <?php the_sub_field('product_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i>
+                                <?php endif; ?>
+                            </h2>
                             <?php if( have_rows('product_sidebar_items','option') ): ?>
                                 <ul class="vjt_list-dropdown-child">
                                     <?php while ( have_rows('product_sidebar_items','option') ) : the_row(); ?>
@@ -71,7 +84,13 @@
                 <?php while ( have_rows('technologies_sidebar','option') ) : the_row(); ?>
                     <ul class="vjt_list-dropdown">
                         <li class="vjt_list-dropdown-header">
-                            <h2><?php the_sub_field('technologies_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i></h2>
+                            <h2>
+                                <?php if(get_sub_field('technologies_sidebar_widget_name_link','option')): ?>
+                                    <a href="<?php the_sub_field('technologies_sidebar_widget_name_link'); ?>"><?php the_sub_field('technologies_sidebar_widget_name','option'); ?></a> <i class="fas fa-chevron-down"></i>
+                                <?php else: ?>
+                                    <?php the_sub_field('technologies_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i>
+                                <?php endif; ?>
+                            </h2>
                             <?php if( have_rows('technologies_sidebar_items','option') ): ?>
                                 <ul class="vjt_list-dropdown-child">
                                     <?php while ( have_rows('technologies_sidebar_items','option') ) : the_row(); ?>
@@ -91,7 +110,13 @@
                 <?php while ( have_rows('vje_sidebar','option') ) : the_row(); ?>
                     <ul class="vjt_list-dropdown">
                         <li class="vjt_list-dropdown-header">
-                            <h2><?php the_sub_field('vje_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i></h2>
+                            <h2>
+                                <?php if(get_sub_field('vje_sidebar_widget_name_link','option')): ?>
+                                    <a href="<?php the_sub_field('vje_sidebar_widget_name_link'); ?>"><?php the_sub_field('vje_sidebar_widget_name','option'); ?></a> <i class="fas fa-chevron-down"></i>
+                                <?php else: ?>
+                                    <?php the_sub_field('vje_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i>
+                                <?php endif; ?>
+                            </h2>
                             <?php if( have_rows('vje_sidebar_items','option') ): ?>
                                 <ul class="vjt_list-dropdown-child">
                                     <?php while ( have_rows('vje_sidebar_items','option') ) : the_row(); ?>
@@ -111,7 +136,13 @@
                 <?php while ( have_rows('vjx_sidebar','option') ) : the_row(); ?>
                     <ul class="vjt_list-dropdown">
                         <li class="vjt_list-dropdown-header">
-                            <h2><?php the_sub_field('vjx_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i></h2>
+                            <h2>
+                                <?php if(get_sub_field('vjx_sidebar_widget_name_link','option')): ?>
+                                    <a href="<?php the_sub_field('vjx_sidebar_widget_name_link'); ?>"><?php the_sub_field('vjx_sidebar_widget_name','option'); ?></a> <i class="fas fa-chevron-down"></i>
+                                <?php else: ?>
+                                    <?php the_sub_field('vjx_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i>
+                                <?php endif; ?>
+                            </h2>
                             <?php if( have_rows('vjx_sidebar_items','option') ): ?>
                                 <ul class="vjt_list-dropdown-child">
                                     <?php while ( have_rows('vjx_sidebar_items','option') ) : the_row(); ?>
@@ -131,7 +162,13 @@
                 <?php while ( have_rows('additional_sidebar') ) : the_row(); ?>
                     <ul class="vjt_list-dropdown">
                         <li class="vjt_list-dropdown-header">
-                            <h2><?php the_sub_field('ndt_sidebar_widget_name'); ?> <i class="fas fa-chevron-down"></i></h2>
+                            <h2>
+                                <?php if(get_sub_field('ndt_sidebar_widget_name_link','option')): ?>
+                                    <a href="<?php the_sub_field('ndt_sidebar_widget_name_link'); ?>"><?php the_sub_field('ndt_sidebar_widget_name','option'); ?></a> <i class="fas fa-chevron-down"></i>
+                                <?php else: ?>
+                                    <?php the_sub_field('ndt_sidebar_widget_name','option'); ?> <i class="fas fa-chevron-down"></i>
+                                <?php endif; ?>
+                            </h2>
                             <?php if( have_rows('ndt_sidebar_items') ): ?>
                                 <ul class="vjt_list-dropdown-child">
                                     <?php while ( have_rows('ndt_sidebar_items') ) : the_row(); ?>

@@ -1,27 +1,5 @@
 jQuery(document).ready(function( $ ) {
 
-    /*var alterClass = function() {
-        var ww = document.body.clientWidth;
-        if (ww >= 1100) {
-          $('body').removeClass('mobile');
-          $('body').removeClass('tablet');
-          $('body').addClass('desktop');
-        } else if (ww >= 800 && ww < 1099) {
-            $('body').removeClass('mobile');
-            $('body').removeClass('desktop');
-            $('body').addClass('tablet');
-        } else if (ww < 799) {
-            $('body').removeClass('tablet');
-            $('body').removeClass('desktop');
-            $('body').addClass('mobile');
-        };
-      };
-      $(window).resize(function(){
-        alterClass();
-      });
-      //Fire it when the page first loads:
-      alterClass();
-*/
     // Overlay Menu Toggle
     $('.hamburger').click(function(){
 		$('body').toggleClass('vjt_overlay-menu-active');
@@ -34,15 +12,10 @@ jQuery(document).ready(function( $ ) {
     });
 
     // Sidebar Menu Toggle
-    $('.vjt_list-dropdown-header h2').click(function(){
-        $(this).parent('li').children('ul').slideToggle( "fast", function() {});
-        $(this).parent('li').toggleClass('active');
+    $(".vjt_list-dropdown-header h2").on('click', '.fa-chevron-down', function() {
+        $(this).parent('h2').next('ul').slideToggle();
+        $(this).parent('h2').parent('li').toggleClass("active");
     });
-    /* Sidebar Menu Toggle
-    $('.vjt_list-dropdown-header').click(function(){
-        $(this).children('ul').slideToggle( "fast", function() {});
-        $(this).toggleClass('active');
-    });*/
 
     // Contact Page Tabs
     $('.vjt_contact-wrap-nav div').click(function(){
@@ -58,15 +31,11 @@ jQuery(document).ready(function( $ ) {
         $( ".vjt_contact-content.form" ).fadeOut( "fast", function() {});
     });
 
-    // Industry Toggle
-    $('.vjt_industry-information-item').click(function(){
-        $(this).children('.vjt_industry-information-content').slideToggle( "fast", function() {});
-        $(this).toggleClass('active');
-    });
-
     // VJT Links
     $('.home .vjt_intro-section:nth-of-type(1)').click(function(event){
         event.preventDefault();
+        history.replaceState(null, null, '/');
+        history.pushState(null, null, '/');
         $('html,body').animate({
             scrollTop: $(".vjt_fp-intro").offset().top
         }, 600);
@@ -75,12 +44,13 @@ jQuery(document).ready(function( $ ) {
         $(this).addClass('active');
         $('.vjt_intro-tab:nth-of-type(1)').addClass('active');
         $('.vjt_intro-section:nth-of-type(1)').addClass('active');
-
     });
 
     // VJE Links
     $('.home .vjt_intro-section:nth-of-type(2)').click(function(event){
         event.preventDefault();
+        history.replaceState(null, null, '/#vje');
+        history.pushState(null, null, '/#vje');
         $('html,body').animate({
             scrollTop: $(".vjt_fp-intro").offset().top
         }, 600);
@@ -89,12 +59,13 @@ jQuery(document).ready(function( $ ) {
         $(this).addClass('active');
         $('.vjt_intro-tab:nth-of-type(2)').addClass('active');
         $('.vjt_intro-section:nth-of-type(2)').addClass('active');
-
     });
 
     // VJX Links
     $('.home .vjt_intro-section:nth-of-type(3)').click(function(event){
         event.preventDefault();
+        history.replaceState(null, null, '/#vjx');
+        history.pushState(null, null, '/#vjx');
         $('html,body').animate({
             scrollTop: $(".vjt_fp-intro").offset().top
         }, 600);
@@ -109,13 +80,13 @@ jQuery(document).ready(function( $ ) {
     $(function(){
         var hash = window.location.hash;
         if(hash !== ''){
-           $('li'+hash+ ' a').trigger('click');
-            console.log(hash);
+            $('li'+hash+ ' a').trigger('click');
         }
-     });
+    });
 
-     // VJT Dots
+    // VJT Dots
     $(document).on('click', 'a[href^="#"].vjt_dot', function(e) {
+
         // target element id
         var id = $(this).attr('href');
 
@@ -135,8 +106,29 @@ jQuery(document).ready(function( $ ) {
         $('body, html').animate({scrollTop: pos});
     });
 
+    /* Hero slider link animations
+    $(document).on('click', '.vjt_hero-slider-content a[href^="#"]', function(e) {
 
-    // Sliders
+        // target element id
+        var id = $(this).attr('href');
+
+        // target element
+        var $id = $(id);
+        if ($id.length === 0) {
+            return;
+        }
+
+        // prevent standard hash navigation (avoid blinking in IE)
+        e.preventDefault();
+
+        // top position relative to the document
+        var pos = $id.offset().top;
+
+        // animated top scrolling
+        $('body, html').animate({scrollTop: pos});
+    }); */
+
+    // Hero Slider
     $('.vjt_hero-slider').lightSlider({
         item:1,
         loop:true,
@@ -153,6 +145,7 @@ jQuery(document).ready(function( $ ) {
         }
     });
 
+    // Case Study Slider
     $('.vjt_case-studies-wrap').lightSlider({
         item:1,
         loop:true,
@@ -167,7 +160,7 @@ jQuery(document).ready(function( $ ) {
         }
     });
 
-    $(function(){
+    /*$(function(){
         var nav = $('.vjt_about-wrap'),
             animateTime = 560,
             navLink = $('.vjt_show-more-slide');
@@ -180,13 +173,14 @@ jQuery(document).ready(function( $ ) {
         });
       })
 
-    /* Function to animate height: auto */
+    /* Function to animate height: auto
     function autoHeightAnimate(element, time){
         var curHeight = element.height(), // Get Default Height
         autoHeight = element.css('height', 'auto').height(); // Get Auto Height
         element.height(curHeight); // Reset to Default Height
         element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
     }
+    */
 
     // Dots active state position
 
