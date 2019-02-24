@@ -14,6 +14,9 @@
 			$eventargs = array(
 				'post_type' => 'event',
                 'posts_per_page' => -1,
+                'meta_key' => 'event_start_date',
+                'orderby' => 'meta_value_num',
+                'order' => 'ASC',
                 'meta_query'=> array(
                     array(
                       'key' => 'event_start_date',
@@ -69,27 +72,69 @@
     </main>
     <aside>
         <div class="vjt_main-sidebar">
-        <?php $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y"))); ?>
+            <?php $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y"))); ?>
+                <?php
+                    $eventargs2 = array(
+                        'post_type' => 'event',
+                        'posts_per_page' => -1,
+                        'meta_key' => 'event_start_date',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'ASC',
+                        'meta_query'=> array(
+                            array(
+                            'key' => 'event_start_date',
+                            'compare' => '>',
+                            'value' => $currentdate,
+                            'type' => 'DATE',
+                            )
+                        ),
+                    );
+                ?>
+                <?php $eventloop2 = new WP_Query( $eventargs2 ); ?>
+                <?php if ( $eventloop2->have_posts() ): ?>
+                    <?php while ( $eventloop2->have_posts() ) : $eventloop2->the_post(); ?>
 
-            <ul class="vjt_list-dropdown">
-                <li class="vjt_list-dropdown-header">
-                    <h2>Month <i class="fas fa-chevron-down"></i></h2>
-                    <ul class="vjt_list-dropdown-child">
-                        <li><a href="#">Jan</a></li>
-                        <li><a href="#">Feb</a></li>
-                        <li><a href="#">March</a></li>
-                        <li><a href="#">April</a></li>
-                        <li><a href="#">May</a></li>
-                        <li><a href="#">June</a></li>
-                        <li><a href="#">July</a></li>
-                        <li><a href="#">August</a></li>
-                        <li><a href="#">Sept</a></li>
-                        <li><a href="#">Oct</a></li>
-                        <li><a href="#">Nov</a></li>
-                        <li><a href="#">Dec</a></li>
-                    </ul>
-                </li>
-            </ul>
+                        <ul class="vjt_list-dropdown">
+
+                            <?php $xstartdate = new DateTime(get_field('event_start_date')); ?>
+                            <?php if($xstartdate->format('Y') !== $currentYear): ?>
+
+                                <!--  Load Year Header -->
+                                <li class="vjt_list-dropdown-header">
+                                    <h2><?php echo $xstartdate->format('Y'); ?> <i class="fas fa-chevron-down"></i></h2>
+
+                                    <!-- Load Children -->
+                                    <ul class="vjt_list-dropdown-child">
+
+                                        <?php if($xstartdate->format('F') !== $currentMonth): ?>
+
+                                            <li><a href="#" data-month="<?php echo $xstartdate->format('F'); ?>"><?php echo $xstartdate->format('F'); ?></a></li>
+
+                                            <?php $currentMonth = $xstartdate->format('F'); ?>
+
+                                        <?php endif; ?>
+
+                                    </ul>
+                                <?php $currentYear = $xstartdate->format('Y'); ?>
+
+                            <?php else: ?>
+                                <ul class="vjt_list-dropdown-child">
+
+                                    <?php if($xstartdate->format('F') !== $currentMonth): ?>
+
+                                        <li><a href="#" data-month="<?php echo $xstartdate->format('F'); ?>"><?php echo $xstartdate->format('F'); ?></a></li>
+
+                                        <?php $currentMonth = $xstartdate->format('F'); ?>
+
+                                    <?php endif; ?>
+
+                                </ul>
+                            <?php endif; ?>
+                            </li>
+
+                        </ul>
+                    <?php endwhile; wp_reset_postdata(); ?>
+                <?php endif; ?>
         </div>
     </aside>
 </div>
