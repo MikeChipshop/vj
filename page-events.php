@@ -41,17 +41,16 @@
                             <div>
                                 <span class="vjt_mobile-event-labels"><?php _e('Date', 'vjt_theme'); ?></span><span>
                                 <?php the_field('event_start_date'); ?>
-                                <?php if(get_field('event_end_date')) : ?> -
-                                    <?php the_field('event_end_date'); ?>
-                                <?php endif; ?>
+                                <?php if(get_field('event_end_date')) : ?> <br /><?php the_field('event_end_date'); ?><?php endif; ?>
                                 <?php
-                                    /* Start date
+                                    // Start date
                                     $startdate = get_field('event_start_date');
-                                    echo "Start Date: " . $startdate;
+                                    //echo "Start Date: " . $startdate;
 
                                     // Start Month
                                     $xstartdate = new DateTime(get_field('event_start_date'));
-                                    echo "XStart: " . $xstartdate->format('F'); */
+                                    echo "Month: " . $xstartdate->format('F');
+                                    echo "Year: " . $xstartdate->format('Y');
 
 
                                 ?></span>
@@ -70,6 +69,7 @@
     </main>
     <aside>
         <div class="vjt_main-sidebar">
+        <?php $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d")-1,date("Y"))); ?>
 
             <ul class="vjt_list-dropdown">
                 <li class="vjt_list-dropdown-header">
