@@ -59,7 +59,7 @@
                                 ?></span>
                             </div>
                             <div><span class="vjt_mobile-event-labels"><?php _e('Location', 'vjt_theme'); ?></span><span><?php the_field('event_location'); ?></span></div>
-                            <div><span class="vjt_mobile-event-labels"><?php _e('Show', 'vjt_theme'); ?></span><span><?php the_title(); ?></span></div>
+                            <div><span class="vjt_mobile-event-labels"><?php _e('Show', 'vjt_theme'); ?></span><span><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span></div>
                             <div><span class="vjt_mobile-event-labels"><?php _e('Facility', 'vjt_theme'); ?></span><span><?php the_field('event_facility'); ?></span></div>
                             <div><span class="vjt_mobile-event-labels"><?php _e('Booth', 'vjt_theme'); ?></span><span><?php the_field('event_booth'); ?></span></div>
                             <div><span class="vjt_mobile-event-labels"><?php _e('Division', 'vjt_theme'); ?></span><span><?php the_field('event_division'); ?></span></div>
@@ -98,21 +98,22 @@
 
                             <?php $xstartdate = new DateTime(get_field('event_start_date')); ?>
                             <?php if($xstartdate->format('Y') !== $currentYear): ?>
-
+                                Not equal to current year
                                 <!--  Load Year Header -->
                                 <li class="vjt_list-dropdown-header">
                                     <h2><?php echo $xstartdate->format('Y'); ?> <i class="fas fa-chevron-down"></i></h2>
 
                                     <!-- Load Children -->
                                     <ul class="vjt_list-dropdown-child">
-
+                                        <?php $currentMonth = $xstartdate->format('F'); ?>
                                         <?php if($xstartdate->format('F') !== $currentMonth): ?>
-
-                                            <li><a href="#" data-month="<?php echo $xstartdate->format('F'); ?>"><?php echo $xstartdate->format('F'); ?></a></li>
+                                            
+                                            <li>Start New Month (<?php echo $xstartdate->format('F'); ?>): <a href="#" data-month="<?php echo $xstartdate->format('F'); ?>"><?php echo $xstartdate->format('F'); ?></a></li>
 
                                             <?php $currentMonth = $xstartdate->format('F'); ?>
 
                                         <?php endif; ?>
+                                        
 
                                     </ul>
                                 <?php $currentYear = $xstartdate->format('Y'); ?>
