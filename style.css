@@ -1773,6 +1773,33 @@ nav.vjt_contact-wrap-nav div.inactive {
 }
 .vjt_form-wrap .location {
     font-weight:bold;
+    padding-top: 10px;
+    display: block;
+}
+.vjt_form-wrap .padded {
+    padding:10px 0px;
+}
+.uploads label {
+    width: 160px;
+    display: inline-block;
+}
+.vjt_form-wrap textarea {
+    margin: 20px 0px;
+    min-height: 100px;
+}
+.rte .vjt_marketo-form.vjt_form-wrap .disability-list {
+    list-style-type:disc;
+    list-style-position: outside;
+    padding-left: 20px;
+}
+.vjt_form-wrap .disability-list li {
+    border-bottom:0px;
+    padding-bottom:5px;
+}
+.vjt_form-wrap .form-notes {
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 10px;
 }
 /* ------------------------------------------------
  Search Results
