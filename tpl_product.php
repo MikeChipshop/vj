@@ -30,6 +30,23 @@
                         <?php the_post_thumbnail(); ?>
                     </div>
                 </section>
+                <?php if( have_rows('functional_links') ): ?>
+                            <div class="vjt_product-applications-menu">
+                                <nav class="vjt_menu">
+                                    <ul>
+                                        <?php while ( have_rows('functional_links') ) : the_row(); ?>
+                                            <li>
+                                                <?php if(get_sub_field('link_type') == "page"): ?>
+                                                    <a href="<?php the_sub_field('functional_link_target'); ?>"><?php the_sub_field('functional_link_label'); ?></a>
+                                                <?php else: ?>
+                                                    <a href="<?php the_sub_field('functional_link_target_media'); ?>"><?php the_sub_field('functional_link_label'); ?></a>
+                                                <?php endif; ?>
+                                            </li>
+                                        <?php endwhile; ?>
+                                    </ul>
+                                </nav>
+                            </div>
+                        <?php endif; ?>
                 <?php if( have_rows('applications_list') ): ?>
                     <div class="vjt_product-applications">
                         <div class="vjt_product-applications-list">
@@ -40,17 +57,7 @@
                                 <?php endwhile; ?>
                             </ul>
                         </div>
-                        <?php if( have_rows('functional_links') ): ?>
-                            <div class="vjt_product-applications-menu">
-                                <nav class="vjt_menu">
-                                    <ul>
-                                        <?php while ( have_rows('functional_links') ) : the_row(); ?>
-                                            <li><a href="<?php the_sub_field('functional_link_target'); ?>"><?php the_sub_field('functional_link_label'); ?></a></li>
-                                        <?php endwhile; ?>
-                                    </ul>
-                                </nav>
-                            </div>
-                        <?php endif; ?>
+
                     </div>
                 <?php endif; ?>
                 <?php if( have_rows('promotional_sections') ): ?>
@@ -80,6 +87,19 @@
                                 </div>
                             </div>
                         <?php endwhile; ?>
+
+                        <?php if( have_rows('information_links') ): ?>
+                            <div class="vjt_industry-information">
+                                <h2><?php _e('Further information', 'vjt_theme'); ?></h2>
+                                <ul>
+                                    <?php while ( have_rows('information_links') ) : the_row(); ?>
+                                        <li class="vjt_industry-information-item">
+                                            <h3><a href="<?php the_sub_field('information_item_link'); ?>"><?php the_sub_field('information_item_title'); ?></a> <span><i class="fas fa-chevron-down"></i></span></h3>
+                                        </li>
+                                    <?php endwhile; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <?php if(get_field('marketo_product_form')): ?>

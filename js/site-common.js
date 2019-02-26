@@ -254,4 +254,17 @@ jQuery(document).ready(function( $ ) {
     });
 
 
+    // Events months
+
+    $('.vjt_filter-month a').click(function(e){
+        e.preventDefault();
+        $('.vjt_filter-month a').removeClass('active');
+        $(this).addClass('active');
+        var monthTrigger = $(this).attr("data-month");
+        console.log(monthTrigger);
+        $( ".vjt_event-list li" ).fadeOut( "slow", function() {});
+        $( ".vjt_event-list li." +monthTrigger ).fadeIn( "fast", function() {});
+    });
+
+
 });

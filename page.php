@@ -17,6 +17,18 @@
                         <?php endwhile; endif; ?>
                     </div>
                 </section>
+                <?php if( have_rows('information_links') ): ?>
+                            <div class="vjt_industry-information">
+                                <h2><?php _e('Further information', 'vjt_theme'); ?></h2>
+                                <ul>
+                                    <?php while ( have_rows('information_links') ) : the_row(); ?>
+                                        <li class="vjt_industry-information-item">
+                                            <h3><a href="<?php the_sub_field('information_item_link'); ?>"><?php the_sub_field('information_item_title'); ?></a> <span><i class="fas fa-chevron-down"></i></span></h3>
+                                        </li>
+                                    <?php endwhile; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
             </div>
         </main>
         <?php get_sidebar(); ?>
