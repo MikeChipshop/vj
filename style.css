@@ -818,6 +818,7 @@ li.vjt_list-dropdown-header ul {
 }
 .vjt_main-content {
     max-width:900px;
+    width:100%;
     float:right;
     padding:20px 40px 200px 30px;
 }
