@@ -4,7 +4,19 @@
         <main>
         <div class="vjt_page-title-wrap">
             <h1 class="vjt_page-title">
-                <?php the_title(); ?> <span><?php _e('VJ Group', 'vjt_theme'); ?></span>
+                <?php // Custom Title ?>
+                <?php if(get_field('custom_page_title')): ?>
+                    <?php the_field('custom_page_title'); ?>
+                <?php else: ?>
+                    <?php the_title(); ?>
+                <?php endif; ?> 
+
+                <?php // Custom Subtitle ?>
+                <?php if(get_field('custom_subtitle')): ?>
+                    <span> <?php the_field('custom_subtitle'); ?></span>
+                <?php else: ?>
+                    <span> <?php _e('VJ Group', 'vjt_theme'); ?></span>
+                <?php endif; ?>
             </h1>
         </div>
             <div class="vjt_main-content">

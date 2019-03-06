@@ -469,6 +469,100 @@ function vj_newscategory_taxonomy() {
 }
 add_action('init', 'vj_newscategory_taxonomy', 0);
 
+/***************************************************
+/ (Wizard) KV
+/***************************************************/
+
+function vj_kv_taxonomy() {
+	$labels = array(
+		'name' => _x( 'KV', 'taxonomy general name' ),
+		'singular_name' => _x( 'KV', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search' ),
+		'all_items' => __( 'All KV\'s' ),
+		'parent_item' => __( 'Parent KV' ),
+		'parent_item_colon' => __( 'Parent KV:' ),
+		'edit_item' => __( 'Edit KV' ),
+		'update_item' => __( 'Update KV' ),
+		'add_new_item' => __( 'Add New KV' ),
+		'new_item_name' => __( 'New KV' ),
+		'menu_name' => __( 'KV' ),
+	);
+
+	// Now register the taxonomy
+	register_taxonomy('kv',array('page'), array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'show_in_nav_menus' => true
+	));
+}
+add_action('init', 'vj_kv_taxonomy', 0);
+
+/***************************************************
+/ (Wizard) Power
+/***************************************************/
+
+function vj_power_taxonomy() {
+	$labels = array(
+		'name' => _x( 'Power', 'taxonomy general name' ),
+		'singular_name' => _x( 'Power', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search' ),
+		'all_items' => __( 'All Power Items' ),
+		'parent_item' => __( 'Parent Power' ),
+		'parent_item_colon' => __( 'Parent Power:' ),
+		'edit_item' => __( 'Edit Power' ),
+		'update_item' => __( 'Update Power' ),
+		'add_new_item' => __( 'Add New Power' ),
+		'new_item_name' => __( 'New Power' ),
+		'menu_name' => __( 'Power' ),
+	);
+
+	// Now register the taxonomy
+	register_taxonomy('power',array('page'), array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'show_in_nav_menus' => true
+	));
+}
+
+add_action('init', 'vj_power_taxonomy', 0);
+
+/***************************************************
+/ (Wizard) Applications
+/***************************************************/
+
+function vj_application_taxonomy() {
+	$labels = array(
+		'name' => _x( 'Application', 'taxonomy general name' ),
+		'singular_name' => _x( 'Application', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search' ),
+		'all_items' => __( 'All Applications' ),
+		'parent_item' => __( 'Parent Application' ),
+		'parent_item_colon' => __( 'Parent Application:' ),
+		'edit_item' => __( 'Edit Application' ),
+		'update_item' => __( 'Update Application' ),
+		'add_new_item' => __( 'Add New Application' ),
+		'new_item_name' => __( 'New Application' ),
+		'menu_name' => __( 'Application' ),
+	);
+
+	// Now register the taxonomy
+	register_taxonomy('application',array('page'), array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'show_in_nav_menus' => true
+	));
+}
+add_action('init', 'vj_application_taxonomy', 0);
+
 function my_custom_admin_menu(){
 	remove_menu_page('edit-comments.php');
 }

@@ -2037,6 +2037,20 @@ span.page-numbers.current {
     height: 100%;
 }
 
+/* Tables */
+
+.jtrt_table_MotherShipContainer .jtrt-table {
+    border:1px solid #ccc;
+}
+.jtrt_table_MotherShipContainer .jtrt-table th {
+    padding:5px 10px;
+    border-bottom:1px solid #ccc;
+    font-weight:bold;
+}
+.jtrt_table_MotherShipContainer .jtrt-table td {
+    padding:5px 10px;
+    border-bottom:1px solid #ccc;
+}
 
 /* ------------------------------------------------
  Global Footer
