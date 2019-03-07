@@ -14,14 +14,14 @@
                     <?php the_field('custom_page_title'); ?>
                 <?php else: ?>
                     <?php _e('VJT', 'vjt_theme'); ?>
-                <?php endif; ?> 
+                <?php endif; ?>
                 <?php // Custom Subtitle ?>
                 <?php if(get_field('custom_subtitle')): ?>
                     <span> <?php the_field('custom_subtitle'); ?></span>
                 <?php else: ?>
                     <span> <?php _e('Products', 'vjt_theme'); ?></span>
                 <?php endif; ?>
-                
+
             </h1>
         </div>
         <div class="vjt_main-content">
@@ -42,6 +42,9 @@
                         <?php the_post_thumbnail(); ?>
                     </div>
                 </section>
+                <div class="vjt_additional-content rte">
+                    <?php the_field('additional_content'); ?>
+                </div>
                 <?php if( have_rows('functional_links') ): ?>
                             <div class="vjt_product-applications-menu">
                                 <nav class="vjt_menu">

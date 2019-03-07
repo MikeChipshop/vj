@@ -1,5 +1,92 @@
 <aside>
     <div class="vjt_main-sidebar">
+
+    <?php if(get_field('show_wizard_sidebar')): ?>
+        <div class="vjt_wizard-widget">
+            <div class="vjt_wizard-widget-wrap">
+                <h2>VJX Equipment Wizard</h2>
+                <p>Choose 1, 2 or All Criteria</p>
+                <form action="<?php bloginfo('url'); ?>/equipment-results/" method="post">
+                    <div class="vjt_wizard-widget-section">
+                            <h3>KV</h3>
+                            <ul>
+                            <?php
+                                if($_POST['kv']) { $kv=$_POST['kv'];} else { $kv[]='';}
+                                $termskv = get_terms( array(
+                                    'taxonomy' => 'kv',
+                                    'parent'   => 0,
+                                    'hide_empty' => false,
+                                    'orderby' => 'name',
+                                    'order' => 'DESC'
+                                ) );
+                                if ( ! empty( $termskv ) && ! is_wp_error( $termskv ) ){
+                                    foreach ( $termskv as $termkv ) {
+                                        ?>
+                                        <li><input type="radio" name="kv[]" value="<?php echo $termkv->slug; ?>" <?php if (in_array($termkv->slug, $kv)) { echo 'checked'; } ?> /><label for=""><?php echo $termkv->name; ?></label></li>
+                                        <?php
+                                    }
+                                }
+                            ?>
+
+
+                        </ul>
+                    </div>
+                    <div class="vjt_wizard-widget-section">
+                    <h3>Power</h3>
+                    <ul>
+                            <?php
+                            if($_POST['power']) { $power=$_POST['power'];} else { $power[]='';}
+                                $termspower = get_terms( array(
+                                    'taxonomy' => 'power',
+                                    'parent'   => 0,
+                                    'hide_empty' => false,
+                                    'orderby' => 'name',
+    'order' => 'DESC'
+                                ) );
+                                if ( ! empty( $termspower ) && ! is_wp_error( $termspower ) ){
+                                    foreach ( $termspower as $termpower ) {
+                                        ?>
+                                        <li><input type="radio" name="power[]" value="<?php echo $termpower->slug; ?>" <?php if (in_array($termpower->slug, $power)) { echo 'checked'; } ?> /><label for=""><?php echo $termpower->name; ?></label></li>
+                                        <?php
+                                    }
+                                }
+                            ?>
+
+
+                        </ul>
+                    </div>
+                    <div class="vjt_wizard-widget-section">
+                    <h3>Applications</h3>
+                    <ul>
+                            <?php
+                            if($_POST['application']) { $application=$_POST['application'];} else { $application[]='';}
+                                $termsapp = get_terms( array(
+                                    'taxonomy' => 'application',
+                                    'parent'   => 0,
+                                    'hide_empty' => false,
+                                    'orderby' => 'name',
+    'order' => 'DESC'
+                                ) );
+                                if ( ! empty( $termsapp ) && ! is_wp_error( $termsapp ) ){
+                                    foreach ( $termsapp as $termapp ) {
+                                        ?>
+                                        <li><input type="checkbox" name="application[]" value="<?php echo $termapp->slug; ?>" <?php if (in_array($termapp->slug, $application)) { echo 'checked'; } ?> /><label for=""><?php echo $termapp->name; ?></label></li>
+                                        <?php
+                                    }
+                                }
+                            ?>
+
+
+                        </ul>
+                    </div>
+                    <div class="vjt_wizard-submit">
+                        <button>Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    <?php endif; ?>
+
         <?php if(get_field('show_industries_sidebar')): ?>
             <?php if(get_field('show_industries_sidebar')): // Load Industries Sidebar?>
                 <ul class="vjt_list-dropdown">

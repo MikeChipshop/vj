@@ -2037,19 +2037,61 @@ span.page-numbers.current {
     height: 100%;
 }
 
+.vjt_additional-content {
+    padding:40px 0px;
+}
+
 /* Tables */
 
+.jtrt_table_MotherShipContainer {
+    max-width:100%!important;
+}
 .jtrt_table_MotherShipContainer .jtrt-table {
-    border:1px solid #ccc;
+    max-width:100%!important;
 }
 .jtrt_table_MotherShipContainer .jtrt-table th {
     padding:5px 10px;
-    border-bottom:1px solid #ccc;
     font-weight:bold;
 }
 .jtrt_table_MotherShipContainer .jtrt-table td {
     padding:5px 10px;
-    border-bottom:1px solid #ccc;
+}
+
+/* ------------------------------------------------
+ Wizard
+------------------------------------------------ */
+
+.vjt_wizard-widget {
+    padding-bottom:50px;
+}
+.vjt_wizard-submit button {
+    color: #606060;
+    text-decoration: none;
+    display: block;
+    padding-bottom: 6px;
+    border: none;
+    border-bottom: 2px solid #128C8B;
+    background: transparent;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor:pointer;
+}
+.vjt_wizard-widget h2 {
+    color: #128C8B;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    padding-bottom: 0px;
+    font-weight: bold;
+}
+.vjt_wizard-widget h3 {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    padding-bottom: 10px;
 }
 
 /* ------------------------------------------------
