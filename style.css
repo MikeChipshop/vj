@@ -2093,6 +2093,60 @@ span.page-numbers.current {
     font-size: 14px;
     padding-bottom: 10px;
 }
+.vjt_wizard-widget label {
+    cursor:pointer;
+}
+.vjt_wizard-widget-section {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.vjt_wizard-widget-section li {
+    padding-bottom:5px;
+}
+.vjt_wizard-widget-section a {
+    font-size: 14px;
+    color: #128C8B;
+    padding-bottom: 5px;
+    display: block;
+    text-decoration:none;
+}
+.vjt_wizard-widget-section a:hover {
+    text-decoration:underline;
+}
+.vjt_wizard-wrap-cont {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-align:center;
+    -webkit-align-items:center;
+        -ms-flex-align:center;
+            align-items:center;
+}
+.vjt_wizard-wrap-cont-img {
+    padding-right:40px;
+}
+.vjt_wizard-wrap-cont-img img {
+    height:auto;
+    max-width:100px;
+}
+.vjt_wizard-wrap-cont h2 {
+    font-size:26px;
+    font-weight:bold;
+}
+.vjt_wizard-wrap-cont h2 a {
+    text-decoration:none;
+    color:#128C8B;
+}
+.vjt_wizard-wrap-cont h2 a:hover {
+    color:#000;
+}
+.vjt_wizard-results li {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #efefef;
+    margin-bottom: 20px;
+}
 
 /* ------------------------------------------------
  Global Footer

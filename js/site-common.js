@@ -267,4 +267,26 @@ jQuery(document).ready(function( $ ) {
     });
 
 
+    $('.kvtogglemaster').click(function (e) {
+        e.preventDefault();
+        var checked = $(this).data('checked');
+        $('.vjt_wizard-widget-section').find(':checkbox.kvtoggle').attr('checked', !checked);
+        $(this).data('checked', !checked);
+    });
+
+    $('.powtogglemaster').click(function (e) {
+        e.preventDefault();
+        var checked = $(this).data('checked');
+        $('.vjt_wizard-widget-section').find(':checkbox.powtoggle').attr('checked', !checked);
+        $(this).data('checked', !checked);
+    });
+
+    $('.apptogglemaster').click(function (e) {
+        e.preventDefault();
+        var checked = $(this).data('checked');
+        $('.vjt_wizard-widget-section').find(':checkbox.apptoggle').attr('checked', !checked);
+        $(this).data('checked', !checked);
+    });
+
+
 });

@@ -22,43 +22,108 @@
                 <section class="vjt_wizard-results-wrap">
                     <div class="vjt_product-page-content-copy">
                         <?php
-$a = ($_POST['kv']);
-$m = ($_POST['power']);
-$o = ($_POST['application']);
+$kv = ($_POST['kv']);
+$pow = ($_POST['power']);
+$app = ($_POST['application']);
 
-echo $a;
-echo $m;
-echo $o;
 
-foreach($o as $o) {
-    echo $o;
+
+// Fetch KV ID's 
+
+if ( is_array($kv) ) {
+    foreach( $kv as $kv_item ){
+        $kv_item = get_term_by( 'slug', $kv_item, 'kv');
+        $kv_IDs[] = $kv_item->term_id;
+    }
+} else {
+    $kv_item = get_category_by_slug( $kv );
+    $kv_IDs[] = $kv_item->term_id;
 }
-                        ?>
+
+// Fetch Power ID's
+if ( is_array($pow) ) {
+    foreach( $pow as $pow_item ){
+        $pow_item = get_term_by( 'slug', $pow_item, 'power');
+        $pow_IDs[] = $pow_item->term_id;
+    }
+} else {
+    $app_item = get_term_by( 'slug', $pow, 'power');
+    $pow_IDs[] = $pow_item->term_id;
+}
+
+
+// Fetch App ID's
+
+
+if ( is_array($app) ) {
+    foreach( $app as $app_item ){
+        $app_item = get_term_by( 'slug', $app_item, 'application');
+        $app_IDs[] = $app_item->term_id;
+    }
+} else {
+    $app_item = get_term_by( 'slug', $app, 'application');
+    $app_IDs[] = $app_item->term_id;
+}
+?>
                         <?php
                             $resultsargs = array(
                                 'post_type' => 'page',
                                 'posts_per_page' => -1,
+
                                 'meta_query' => array(
                                     array(
                                       'key' => 'show_in_wizard',
                                       'value' => '1',
-                                      'compare' => '==' // not really needed, this is the default
                                     )
-                                  )
+                                ),
+
+                                'tax_query' => array(
+                                    'relation' => 'AND',
+                                    array(
+                                        'taxonomy'  => 'kv',
+                                        'terms'     => $kv_IDs,
+                                        'field'     => 'id'
+                                    ),
+                                    array(
+                                        'taxonomy'  => 'power',
+                                        'terms'     => $pow_IDs,
+                                        'field'     => 'id'
+                                    ),
+                                    array(
+                                        'taxonomy'  => 'application',
+                                        'terms'     => $app_IDs,
+                                        'field'     => 'id'
+                                    )
+                                ),
+                                
                             );
                         ?>
                         <?php $resultsloop = new WP_Query( $resultsargs ); ?>
-                        <?php if ( $resultsloop->have_posts() ): while ( $resultsloop->have_posts() ) : $resultsloop->the_post(); ?>
-                            <div class="rte"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
-                        <?php endwhile; endif; wp_reset_postdata(); ?>
+                        <?php if ( $resultsloop->have_posts() ): ?>
+                            <div class="vjt_wizard-results">
+                                <ul>
+                                <?php while ( $resultsloop->have_posts() ) : $resultsloop->the_post(); ?>
+                                    <li>
+                                        <div class="vjt_wizard-wrap-cont">
+                                            <div class="vjt_wizard-wrap-cont-img">
+                                                <?php the_post_thumbnail('pos'); ?>
+                                            </div>
+                                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                                        </div>
+                                    </li>
+                                <?php endwhile; ?>
+                            </div>
+                        <?php else: ?>
+                            <div class="vjt_wizard-noresults">
+                                <h1>Apologies</h1>
+                                <div>
+                                    There were no results found for your criteria. Please try again
+                                </div>
+                            </div>
+                        <?php endif; wp_reset_postdata(); ?>
                     </div>
-                    <div class="vjt_wizard-results">
-                        <ul>
-                            <li>
-                                Result
-                            </li>
-                        </ul>
-                    </div>
+                    
+                        
                 </section>
             </div>
         </main>

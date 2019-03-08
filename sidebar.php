@@ -5,24 +5,23 @@
         <div class="vjt_wizard-widget">
             <div class="vjt_wizard-widget-wrap">
                 <h2>VJX Equipment Wizard</h2>
-                <p>Choose 1, 2 or All Criteria</p>
                 <form action="<?php bloginfo('url'); ?>/equipment-results/" method="post">
                     <div class="vjt_wizard-widget-section">
-                            <h3>KV</h3>
-                            <ul>
+                        <h3>KV</h3>
+                        <ul>
+                        <li><a href="#" class="kvtogglemaster" data-checked="false">Select/Deselect All</a></li>
                             <?php
                                 if($_POST['kv']) { $kv=$_POST['kv'];} else { $kv[]='';}
                                 $termskv = get_terms( array(
                                     'taxonomy' => 'kv',
                                     'parent'   => 0,
                                     'hide_empty' => false,
-                                    'orderby' => 'name',
-                                    'order' => 'DESC'
+                                    'orderby' => 'name'
                                 ) );
                                 if ( ! empty( $termskv ) && ! is_wp_error( $termskv ) ){
                                     foreach ( $termskv as $termkv ) {
                                         ?>
-                                        <li><input type="radio" name="kv[]" value="<?php echo $termkv->slug; ?>" <?php if (in_array($termkv->slug, $kv)) { echo 'checked'; } ?> /><label for=""><?php echo $termkv->name; ?></label></li>
+                                        <li><input class="kvtoggle" id="kv-<?php echo $termkv->slug; ?>" type="checkbox" name="kv[]" value="<?php echo $termkv->slug; ?>" <?php if (in_array($termkv->slug, $kv)) { echo 'checked'; } ?> /><label for="kv-<?php echo $termkv->slug; ?>"><?php echo $termkv->name; ?></label></li>
                                         <?php
                                     }
                                 }
@@ -34,6 +33,7 @@
                     <div class="vjt_wizard-widget-section">
                     <h3>Power</h3>
                     <ul>
+                    <li><a href="#" class="powtogglemaster" data-checked="false">Select/Deselect All</a></li>
                             <?php
                             if($_POST['power']) { $power=$_POST['power'];} else { $power[]='';}
                                 $termspower = get_terms( array(
@@ -46,7 +46,7 @@
                                 if ( ! empty( $termspower ) && ! is_wp_error( $termspower ) ){
                                     foreach ( $termspower as $termpower ) {
                                         ?>
-                                        <li><input type="radio" name="power[]" value="<?php echo $termpower->slug; ?>" <?php if (in_array($termpower->slug, $power)) { echo 'checked'; } ?> /><label for=""><?php echo $termpower->name; ?></label></li>
+                                        <li><input class="powtoggle" id="pow-<?php echo $termpower->slug; ?>" type="checkbox" name="power[]" value="<?php echo $termpower->slug; ?>" <?php if (in_array($termpower->slug, $power)) { echo 'checked'; } ?> /><label for="pow-<?php echo $termpower->slug; ?>"><?php echo $termpower->name; ?></label></li>
                                         <?php
                                     }
                                 }
@@ -58,6 +58,7 @@
                     <div class="vjt_wizard-widget-section">
                     <h3>Applications</h3>
                     <ul>
+                    <li><a href="#" class="apptogglemaster" data-checked="false">Select/Deselect All</a></li>
                             <?php
                             if($_POST['application']) { $application=$_POST['application'];} else { $application[]='';}
                                 $termsapp = get_terms( array(
@@ -70,7 +71,7 @@
                                 if ( ! empty( $termsapp ) && ! is_wp_error( $termsapp ) ){
                                     foreach ( $termsapp as $termapp ) {
                                         ?>
-                                        <li><input type="checkbox" name="application[]" value="<?php echo $termapp->slug; ?>" <?php if (in_array($termapp->slug, $application)) { echo 'checked'; } ?> /><label for=""><?php echo $termapp->name; ?></label></li>
+                                        <li><input class="apptoggle" id="app-<?php echo $termapp->slug; ?>" type="checkbox" name="application[]" value="<?php echo $termapp->slug; ?>" <?php if (in_array($termapp->slug, $application)) { echo 'checked'; } ?> /><label for="app-<?php echo $termapp->slug; ?>"><?php echo $termapp->name; ?></label></li>
                                         <?php
                                     }
                                 }
