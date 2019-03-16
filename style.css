@@ -1509,11 +1509,21 @@ ul.vjt_event-list li > div:first-child {
 }
 .vjt_career-openings-list ul {
     list-style-type: disc;
-    list-style-position: inside;
+    list-style-position: outside;
     font-weight:bold;
+    line-height:1.4;
+    margin-left: 20px;
 }
 .vjt_career-openings-list ul li {
     padding-bottom:15px;
+}
+.vjt_career-openings-list ul a {
+    text-decoration:none;
+    color:#128C8B;
+}
+.vjt_career-openings-list ul a:hover {
+    text-decoration:underline;
+    color:#000000;
 }
 .vjt_wide-page-wrap-bottom-wrap {
     padding: 40px 20px 70px 20px;

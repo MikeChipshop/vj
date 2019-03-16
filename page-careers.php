@@ -6,14 +6,14 @@
                     <?php the_field('custom_page_title'); ?>
                     <?php else: ?>
                     <?php the_title(); ?>
-                    <?php endif; ?> 
+                    <?php endif; ?>
                     <?php // Custom Subtitle ?>
                     <?php if(get_field('custom_subtitle')): ?>
                         <span> <?php the_field('custom_subtitle'); ?></span>
                     <?php else: ?>
                     <span> <?php _e('VJ Group', 'vjt_theme'); ?></span>
                     <?php endif; ?>
-              
+
             </h1>
         </div>
         <div class="vjt_wide-page-wrap">
@@ -36,7 +36,15 @@
                                         <h3><?php the_sub_field('current_openings_list_title'); ?></h3>
                                         <ul>
                                             <?php if( have_rows('current_openings_list_item') ): while ( have_rows('current_openings_list_item') ) : the_row(); ?>
-                                                <li><?php the_sub_field('current_openings_list_item_role'); ?></li>
+                                                <li>
+                                                    <?php if(get_sub_field('position_document_link')): ?>
+                                                        <a href="<?php the_sub_field('position_document_link'); ?>" title="<?php the_sub_field('current_openings_list_item_role'); ?> document" target="_blank">
+                                                    <?php endif; ?>
+                                                        <?php the_sub_field('current_openings_list_item_role'); ?>
+                                                    <?php if(get_sub_field('position_document_link')): ?>
+                                                        </a>
+                                                    <?php endif; ?>
+                                                </li>
                                             <?php endwhile; endif; ?>
                                         </ul>
                                     </div>
