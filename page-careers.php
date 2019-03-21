@@ -56,6 +56,7 @@
             </div>
             <div class="vjt_wide-page-wrap-bottom">
                 <div class="vjt_wide-page-wrap-bottom-wrap">
+                    <div class="rte vjt_careers-download-desc"><?php the_field('careers_page_download_application_description'); ?></div>
                     <h3>
                         <a href="<?php the_field('careers_page_download_application_link'); ?>" title="<?php the_field('careers_page_download_application_label'); ?>">
                             <?php the_field('careers_page_download_application_label'); ?>
