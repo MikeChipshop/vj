@@ -43,6 +43,7 @@
                 <span class="hamburger"></span>
             </button>
         </div>
+        <div class="vjt_language-switcher"><?php do_action('wpml_add_language_selector'); ?></div>
     </div>
 </header>
 <nav class="vjt_overlay-menu">
