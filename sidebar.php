@@ -16,7 +16,6 @@
                                     'taxonomy' => 'kv',
                                     'parent'   => 0,
                                     'hide_empty' => false,
-                                    'orderby' => 'name'
                                 ) );
                                 if ( ! empty( $termskv ) && ! is_wp_error( $termskv ) ){
                                     foreach ( $termskv as $termkv ) {
@@ -40,8 +39,12 @@
                                     'taxonomy' => 'power',
                                     'parent'   => 0,
                                     'hide_empty' => false,
-                                    'orderby' => 'name',
-    'order' => 'DESC'
+                                    'orderby' =>  'meta_value_num',
+                                    'order' =>  'ASC',
+                                    'meta_query' => array(
+                                        'key' => 'taxonomy_order',
+                                        'type' => 'NUMERIC',
+                                     ),
                                 ) );
                                 if ( ! empty( $termspower ) && ! is_wp_error( $termspower ) ){
                                     foreach ( $termspower as $termpower ) {

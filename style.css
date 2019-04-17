@@ -771,6 +771,7 @@ li.vjt_list-dropdown-header.active h2 svg {
 }
 li.vjt_list-dropdown-header ul {
     padding-bottom: 50px;
+    display:none;
 }
 .page-products li.vjt_list-dropdown-header ul {
     display:none;
@@ -2314,6 +2315,11 @@ span.page-numbers.current {
     .vjt_hero-poi-content {
         padding-top:20px;
     }
+    .vjt_hero-poi-content .vjt_read-more {
+        float:none;
+        padding-top:10px;
+    }
+
 }
 @media only screen and (max-width : 800px) {
 
@@ -2589,6 +2595,24 @@ span.page-numbers.current {
     }
     ul.vjt_event-list li > div span {
         display:block
+    }
+}
+
+@media only screen and (max-width : 720px) {
+    .vjt_nav-dots {
+        display:none;
+    }
+    .vjt_hero-poi ul {
+        -webkit-box-orient:horizontal;
+        -webkit-box-direction:normal;
+        -webkit-flex-flow:row wrap;
+            -ms-flex-flow:row wrap;
+                flex-flow:row wrap;
+    }
+    .vjt_hero-poi ul li {
+        -webkit-flex-basis:100%;
+            -ms-flex-preferred-size:100%;
+                flex-basis:100%;
     }
 }
 
