@@ -14,17 +14,14 @@
             <?php if( have_rows('home_hero_items') ): ?>
                 <?php while ( have_rows('home_hero_items') ) : the_row(); ?>
                     <article class="vjt_hero-slider-wrap">
-                        <?php 
-                            $str = get_sub_field('hero_item_read_more_link'); 
-                            //$str1 = substr($str, 1); 
-                            //$str1 = substr($str, 2); 
-                            //echo $str;  
-                        ?> 
+                        <?php
+                            $str = get_sub_field('hero_item_read_more_link');
+                        ?>
                         <div class="vjt_hero-slider-content">
                             <h2><?php the_sub_field('hero_item_title'); ?></h2>
                             <h1><?php the_sub_field('hero_item_subtitle'); ?></h1>
                             <div class="vjt_hero-slider-copy"><?php the_sub_field('hero_item_content'); ?></div>
-                            
+
                             <div class="vjt_read-more">
                             <?php if(get_sub_field('internal_link')): ?>
                                 <a href="<?php the_sub_field('hero_item_read_more_link'); ?>" class="internal <?php the_sub_field('internal_link_content_name'); ?>"><?php the_sub_field('hero_item_read_more_text'); ?></a>

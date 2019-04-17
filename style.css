@@ -573,19 +573,16 @@ h1.vjt_page-title span {
     -webkit-justify-content: space-between;
     justify-content: space-between;
 }
+.vjt_hero-poi ul li {
+    -webkit-flex-basis:50%;
+    -ms-flex-preferred-size:50%;
+    flex-basis:50%;
+}
 .vjt_hero-poi ul li:first-child {
     padding-right:20px;
-    -webkit-box-flex:1;
-    -ms-flex:1;
-    -webkit-flex:1;
-            flex:1;
 }
 .vjt_hero-poi ul li:last-child {
     padding-left:20px;
-    -webkit-box-flex:1;
-    -ms-flex:1;
-    -webkit-flex:1;
-            flex:1;
 }
 .vjt_hero-poi h1 {
     color: #C5C5C5;
@@ -609,6 +606,12 @@ h1.vjt_page-title span {
     max-width:100%;
     display:block;
     height:auto;
+}
+.vjt_hero-poi-content {
+    -webkit-box-flex:1;
+    -webkit-flex:1;
+        -ms-flex:1;
+            flex:1;
 }
 .vjt_hero-poi-container .vjt_date {
     padding-bottom:10px;
@@ -2303,11 +2306,22 @@ span.page-numbers.current {
         flex-basis: 70%;
     }
 }
+
+@media only screen and (max-width : 1000px) {
+    .vjt_hero-poi-container {
+        display:block;
+    }
+    .vjt_hero-poi-content {
+        padding-top:20px;
+    }
+}
 @media only screen and (max-width : 800px) {
 
     .vjt_hero-slider-img {
         max-width:100%;
     }
+
+
 
     /* ------------------------------------------------
      Globals
