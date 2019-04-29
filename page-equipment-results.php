@@ -22,49 +22,63 @@
                 <section class="vjt_wizard-results-wrap">
                     <div class="vjt_product-page-content-copy">
                         <?php
-$kv = ($_POST['kv']);
-$pow = ($_POST['power']);
-$app = ($_POST['application']);
+                            $kv = ($_POST['kv']);
+                            $pow = ($_POST['power']);
+                            $app = ($_POST['application']);
+
+                            // Fetch KV ID's
+                            if ( is_array($kv) ) {
+                                foreach( $kv as $kv_item ){
+                                    $kv_item = get_term_by( 'slug', $kv_item, 'kv');
+                                    $kv_IDs[] = $kv_item->term_id;
+                                }
+                            } else {
+                                $kvterms = get_terms( array(
+                                    'taxonomy' => 'kv',
+                                    'parent'   => 0
+                                ) );
+                                foreach( $kvterms as $kvterm ){
+                                    $kv_IDs[] = $kvterm->term_id;
+                                }
+                            };
+
+                            //$kv_item2 = get_category_by_slug( $kv );
+                            //$kv_IDs[] = $kv_item->term_id;
+                            // Fetch Power ID's
+                            if ( is_array($pow) ) {
+                                foreach( $pow as $pow_item ){
+                                    $pow_item = get_term_by( 'slug', $pow_item, 'power');
+                                    $pow_IDs[] = $pow_item->term_id;
+                                }
+                            } else {
+                                $powterms = get_terms( array(
+                                    'taxonomy' => 'power',
+                                    'parent'   => 0
+                                ) );
+                                foreach( $powterms as $powterm ){
+                                    $pow_IDs[] = $powterm->term_id;
+                                }
+                            };
 
 
-
-// Fetch KV ID's 
-
-if ( is_array($kv) ) {
-    foreach( $kv as $kv_item ){
-        $kv_item = get_term_by( 'slug', $kv_item, 'kv');
-        $kv_IDs[] = $kv_item->term_id;
-    }
-} else {
-    $kv_item = get_category_by_slug( $kv );
-    $kv_IDs[] = $kv_item->term_id;
-}
-
-// Fetch Power ID's
-if ( is_array($pow) ) {
-    foreach( $pow as $pow_item ){
-        $pow_item = get_term_by( 'slug', $pow_item, 'power');
-        $pow_IDs[] = $pow_item->term_id;
-    }
-} else {
-    $app_item = get_term_by( 'slug', $pow, 'power');
-    $pow_IDs[] = $pow_item->term_id;
-}
+                            // Fetch App ID's
 
 
-// Fetch App ID's
-
-
-if ( is_array($app) ) {
-    foreach( $app as $app_item ){
-        $app_item = get_term_by( 'slug', $app_item, 'application');
-        $app_IDs[] = $app_item->term_id;
-    }
-} else {
-    $app_item = get_term_by( 'slug', $app, 'application');
-    $app_IDs[] = $app_item->term_id;
-}
-?>
+                            if ( is_array($app) ) {
+                                foreach( $app as $app_item ){
+                                    $app_item = get_term_by( 'slug', $app_item, 'application');
+                                    $app_IDs[] = $app_item->term_id;
+                                }
+                            } else {
+                                $appterms = get_terms( array(
+                                    'taxonomy' => 'application',
+                                    'parent'   => 0
+                                ) );
+                                foreach( $appterms as $appterm ){
+                                    $app_IDs[] = $appterm->term_id;
+                                }
+                            };
+                        ?>
                         <?php
                             $resultsargs = array(
                                 'post_type' => 'page',
@@ -95,9 +109,10 @@ if ( is_array($app) ) {
                                         'field'     => 'id'
                                     )
                                 ),
-                                
+
                             );
                         ?>
+
                         <?php $resultsloop = new WP_Query( $resultsargs ); ?>
                         <?php if ( $resultsloop->have_posts() ): ?>
                             <div class="vjt_wizard-results">
@@ -115,15 +130,15 @@ if ( is_array($app) ) {
                             </div>
                         <?php else: ?>
                             <div class="vjt_wizard-noresults">
-                                <h1>Apologies</h1>
+                                <h1><?php _e('Apologies', 'vjt_theme'); ?></h1>
                                 <div>
-                                    There were no results found for your criteria. Please try again
+                                <?php _e('There were no results found for your criteria. Please try again', 'vjt_theme'); ?>
                                 </div>
                             </div>
                         <?php endif; wp_reset_postdata(); ?>
                     </div>
-                    
-                        
+
+
                 </section>
             </div>
         </main>

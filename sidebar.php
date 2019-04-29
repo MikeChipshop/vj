@@ -4,12 +4,12 @@
     <?php if(get_field('show_wizard_sidebar')): ?>
         <div class="vjt_wizard-widget">
             <div class="vjt_wizard-widget-wrap">
-                <h2>VJX Equipment Wizard</h2>
+                <h2><?php _e('VJX Equipment Wizard', 'vjt_theme'); ?></h2>
                 <form action="<?php bloginfo('url'); ?>/equipment-results/" method="post">
                     <div class="vjt_wizard-widget-section">
-                        <h3>KV</h3>
+                        <h3><?php _e('KV', 'vjt_theme'); ?></h3>
                         <ul>
-                        <li><a href="#" class="kvtogglemaster" data-checked="false">Select/Deselect All</a></li>
+                        <li><a href="#" class="kvtogglemaster" data-checked="false"><?php _e('Select/Deselect All', 'vjt_theme'); ?></a></li>
                             <?php
                                 if($_POST['kv']) { $kv=$_POST['kv'];} else { $kv[]='';}
                                 $termskv = get_terms( array(
@@ -30,9 +30,9 @@
                         </ul>
                     </div>
                     <div class="vjt_wizard-widget-section">
-                    <h3>Power</h3>
+                    <h3><?php _e('Power', 'vjt_theme'); ?></h3>
                     <ul>
-                    <li><a href="#" class="powtogglemaster" data-checked="false">Select/Deselect All</a></li>
+                    <li><a href="#" class="powtogglemaster" data-checked="false"><?php _e('Select/Deselect All', 'vjt_theme'); ?></a></li>
                             <?php
                             if($_POST['power']) { $power=$_POST['power'];} else { $power[]='';}
                                 $termspower = get_terms( array(
@@ -59,9 +59,9 @@
                         </ul>
                     </div>
                     <div class="vjt_wizard-widget-section">
-                    <h3>Applications</h3>
+                    <h3><?php _e('Applications', 'vjt_theme'); ?></h3>
                     <ul>
-                    <li><a href="#" class="apptogglemaster" data-checked="false">Select/Deselect All</a></li>
+                    <li><a href="#" class="apptogglemaster" data-checked="false"><?php _e('Select/Deselect All', 'vjt_theme'); ?></a></li>
                             <?php
                             if($_POST['application']) { $application=$_POST['application'];} else { $application[]='';}
                                 $termsapp = get_terms( array(
@@ -84,7 +84,7 @@
                         </ul>
                     </div>
                     <div class="vjt_wizard-submit">
-                        <button>Search</button>
+                        <button><?php _e('Search', 'vjt_theme'); ?></button>
                     </div>
                 </form>
             </div>
