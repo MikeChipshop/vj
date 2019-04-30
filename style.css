@@ -685,14 +685,22 @@ h1.vjt_page-title span {
     display:block;
 }
 
+
 .vjt_fp-intro h2 {
     max-width:740px;
     padding-bottom: 40px;
     font-size: 30px;
     font-weight: bold;
 }
+.vjt_intro-tab-content {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
 .vjt_fp-intro-copy {
-    max-width:770px;
+    max-width: 500px;
+    padding-right: 20px;
 }
 .vjt_menu ul {
     display:-webkit-box;
@@ -2322,7 +2330,12 @@ span.page-numbers.current {
 
 }
 @media only screen and (max-width : 800px) {
-
+    .vjt_intro-tab-content {
+        display:block;
+    }
+    .vjt_fp-intro-copy {
+        padding-bottom:40px;
+    }
     .vjt_hero-slider-img {
         max-width:100%;
     }

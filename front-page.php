@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 <nav class="vjt_nav-dots">
     <ul>
-        <li class="active"><a href="#vjt_fp-hero" class="vjt_dot"><span>Top</span></a></li>
-        <li><a href="#vjt_fp-intro" class="vjt_dot"><span>Introduction</span></a></li>
-        <li><a href="#vjt_fp-about" class="vjt_dot"><span>About</span></a></li>
-        <li><a href="#vjt_fp-case-studies" class="vjt_dot"><span>Case Studies</span></a></li>
+        <li class="active"><a href="#vjt_fp-hero" class="vjt_dot"><span><?php _e('Top', 'vjt_theme'); ?></span></a></li>
+        <li><a href="#vjt_fp-intro" class="vjt_dot"><span><?php _e('Introduction', 'vjt_theme'); ?></span></a></li>
+        <li><a href="#vjt_fp-about" class="vjt_dot"><span><?php _e('About', 'vjt_theme'); ?></span></a></li>
+        <li><a href="#vjt_fp-case-studies" class="vjt_dot"><span><?php _e('Case Studies', 'vjt_theme'); ?></span></a></li>
     </ul>
 </nav>
 <div class="vjt_home-scroll-wrap">
@@ -97,21 +97,51 @@
         <div class="vjt_intro-tabs">
             <div class="vjt_intro-tab active" id="vjt">
                 <h2><?php the_field('vjt_home_introduction_title'); ?></h2>
-                <div class="vjt_fp-intro-copy rte"><?php the_field('vjt_home_introduction_content'); ?></div>
+                <div class="vjt_intro-tab-content">
+                    <div class="vjt_fp-intro-copy rte"><?php the_field('vjt_home_introduction_content'); ?></div>
+                    <div class="vjt_fp-intro-copy-img">
+                        <?php
+                            $attachment_id = get_field('vjt_home_introduction_content_img');
+                            $size = "full";
+                            $image = wp_get_attachment_image_src( $attachment_id, $size );
+                        ?>
+                        <img src="<?php echo $image[0]; ?>">
+                    </div>
+                </div>
                 <div class="vjt_fp-intro-menu vjt_menu">
                     <ul><?php wp_nav_menu( array('theme_location' => 'vjt_menu' )); ?></ul>
                 </div>
             </div>
             <div class="vjt_intro-tab" id="vje">
                 <h2><?php the_field('vje_home_introduction_title'); ?></h2>
-                <div class="vjt_fp-intro-copy rte"><?php the_field('vje_home_introduction_content'); ?></div>
+                <div class="vjt_intro-tab-content">
+                    <div class="vjt_fp-intro-copy rte"><?php the_field('vje_home_introduction_content'); ?></div>
+                    <div class="vjt_fp-intro-copy-img">
+                        <?php
+                            $attachment_id = get_field('vje_home_introduction_content_img');
+                            $size = "full";
+                            $image = wp_get_attachment_image_src( $attachment_id, $size );
+                        ?>
+                        <img src="<?php echo $image[0]; ?>">
+                    </div>
+                </div>
                 <div class="vjt_fp-intro-menu vjt_menu">
                     <ul><?php wp_nav_menu( array('theme_location' => 'vje_menu' )); ?></ul>
                 </div>
             </div>
             <div class="vjt_intro-tab">
                 <h2><?php the_field('vjx_home_introduction_title'); ?></h2>
-                <div class="vjt_fp-intro-copy rte"><?php the_field('vjx_home_introduction_content'); ?></div>
+                <div class="vjt_intro-tab-content">
+                    <div class="vjt_fp-intro-copy rte"><?php the_field('vjx_home_introduction_content'); ?></div>
+                    <div class="vjt_fp-intro-copy-img">
+                        <?php
+                            $attachment_id = get_field('vjx_home_introduction_content_img');
+                            $size = "full";
+                            $image = wp_get_attachment_image_src( $attachment_id, $size );
+                        ?>
+                        <img src="<?php echo $image[0]; ?>">
+                    </div>
+                </div>
                 <div class="vjt_fp-intro-menu vjt_menu">
                     <ul><?php wp_nav_menu( array('theme_location' => 'vjx_menu' )); ?></ul>
                 </div>
