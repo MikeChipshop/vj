@@ -734,7 +734,7 @@ h1.vjt_page-title span {
     padding-left: 40px;
     max-width: 222px;
     padding-top: 120px;
-    
+
     position:relative;
     z-index:999991;
 }
@@ -2051,6 +2051,9 @@ span.page-numbers.current {
     list-style-type:decimal;
     list-style-position: inside;
     padding:10px 0px;
+}
+.rte li {
+    padding-bottom:10px;
 }
 .rte .video-container {
     position: relative;

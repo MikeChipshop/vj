@@ -1,11 +1,46 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52487288-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52487288-1');
+</script>
+<script type="text/javascript">
+(function() {
+  var didInit = false;
+  function initMunchkin() {
+    if(didInit === false) {
+      didInit = true;
+      Munchkin.init('164-OIZ-640');
+    }
+  }
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//munchkin.marketo.net/munchkin.js';
+  s.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      initMunchkin();
+    }
+  };
+  s.onload = initMunchkin;
+  document.getElementsByTagName('head')[0].appendChild(s);
+})();
+</script>
+
 <meta charset="<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<script type="text/javascript" src="http://www.nyctrl32.com/js/63692.js"></script>
+<noscript><img src="http://www.nyctrl32.com/63692.png" alt="" style="display:none;" /></noscript>
+
 <?php if(is_front_page()): ?>
     <div class="vjt_bg-triangle-top">
         <img src="<?php bloginfo('stylesheet_directory'); ?>/img/triangle-top.png">
