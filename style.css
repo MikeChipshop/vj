@@ -434,6 +434,7 @@ h1.vjt_page-title span {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    padding: 40px 0px;
 }
 .vjt_fp-wrap {
     width:100%;
@@ -493,6 +494,7 @@ h1.vjt_page-title span {
     background: #000000 url("img/hero-panel.jpg") no-repeat top right;
     -webkit-background-size:100% 100%;
     background-size:100% 100%;
+    padding-top:160px;
 }
 .vjt_hero-slider-wrap {
     display:-webkit-box;
@@ -2667,5 +2669,10 @@ span.page-numbers.current {
     }
     .vjt_product-page-content-img {
         padding-left:0px;
+    }
+}
+@media screen and ( max-height: 900px ) {
+    .vjt_fp-section {
+        height:auto!important;
     }
 }
