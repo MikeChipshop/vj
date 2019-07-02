@@ -41,7 +41,7 @@
         </div>
         <div class="vjt_footer-section vjt_footer-credits">
             <p><?php the_field('footer_text','option'); ?></p>
-            <p><?php _e('Site by', 'vjt_theme'); ?> <a href="http://www.cruciblecreative.co.uk/" target="_blank">Crucible Creative</a></p>
+            <p><?php _e('Site by', 'vjt_theme'); ?> <a href="http://www.cruciblecreative.co.uk/" target="_blank" rel=”noreferrer”>Crucible Creative</a></p>
         </div>
     </div>
 </footer>

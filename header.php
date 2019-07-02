@@ -32,6 +32,8 @@
   document.getElementsByTagName('head')[0].appendChild(s);
 })();
 </script>
+<script type="text/javascript" src="https://secure.leadforensics.com/js/63692.js"></script>
+<noscript><img src="https://secure.leadforensics.com/63692.png" alt="" style="display:none;" /></noscript>
 
 <meta charset="<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
