@@ -84,14 +84,119 @@
         </div>
     </div>
 </section>
-
 <section class="vjt_fp-intro vjt_fp-section" id="vjt_fp-intro">
     <div class="vjt_fp-wrap">
         <h1>
             <ul>
-                <li id="vjt" class="vjt_intro-section active"><a href="#"><?php _e('VJT', 'vjt_theme'); ?></a></li>
-                <li id="vje" class="vjt_intro-section"><a href="#"><?php _e('VJE', 'vjt_theme'); ?></a></li>
-                <li id="vjx" class="vjt_intro-section"><a href="#"><?php _e('VJX', 'vjt_theme'); ?></a></li>
+            <?php
+if(ICL_LANGUAGE_CODE=='en'){
+    ?>
+    <script>
+jQuery(document).ready(function( $ ) {
+                        // VJT Links
+                        $('.home .vjt_intro-section:nth-of-type(1)').click(function(event){
+                            event.preventDefault();
+                            history.replaceState(null, null, '/');
+                            history.pushState(null, null, '/');
+                            $('html,body').animate({
+                                scrollTop: $(".vjt_fp-intro").offset().top
+                            }, 600);
+                            $('.vjt_intro-section').removeClass('active');
+                            $('.vjt_intro-tab').removeClass('active');
+                            $(this).addClass('active');
+                            $('.vjt_intro-tab:nth-of-type(1)').addClass('active');
+                            $('.vjt_intro-section:nth-of-type(1)').addClass('active');
+                        });
+
+                        // VJE Links
+                        $('.home .vjt_intro-section:nth-of-type(2)').click(function(event){
+                            event.preventDefault();
+                            history.replaceState(null, null, '/#vje');
+                            history.pushState(null, null, '/#vje');
+                            $('html,body').animate({
+                                scrollTop: $(".vjt_fp-intro").offset().top
+                            }, 600);
+                            $('.vjt_intro-section').removeClass('active');
+                            $('.vjt_intro-tab').removeClass('active');
+                            $(this).addClass('active');
+                            $('.vjt_intro-tab:nth-of-type(2)').addClass('active');
+                            $('.vjt_intro-section:nth-of-type(2)').addClass('active');
+                        });
+
+                        // VJX Links
+                        $('.home .vjt_intro-section:nth-of-type(3)').click(function(event){
+                            event.preventDefault();
+                            history.replaceState(null, null, '/#vjx');
+                            history.pushState(null, null, '/#vjx');
+                            $('html,body').animate({
+                                scrollTop: $(".vjt_fp-intro").offset().top
+                            }, 600);
+                            $('.vjt_intro-section').removeClass('active');
+                            $('.vjt_intro-tab').removeClass('active');
+                            $(this).addClass('active');
+                            $('.vjt_intro-tab:nth-of-type(3)').addClass('active');
+                            $('.vjt_intro-section:nth-of-type(3)').addClass('active');
+
+                        });
+                    });
+                </script><?php
+}
+else{?>
+    <script>
+jQuery(document).ready(function( $ ) {
+                        // VJT Links
+                        $('.home .vjt_intro-section:nth-of-type(1)').click(function(event){
+                            event.preventDefault();
+                            history.replaceState(null, null, '/zh-hans/');
+                            history.pushState(null, null, '/zh-hans/');
+                            $('html,body').animate({
+                                scrollTop: $(".vjt_fp-intro").offset().top
+                            }, 600);
+                            $('.vjt_intro-section').removeClass('active');
+                            $('.vjt_intro-tab').removeClass('active');
+                            $(this).addClass('active');
+                            $('.vjt_intro-tab:nth-of-type(1)').addClass('active');
+                            $('.vjt_intro-section:nth-of-type(1)').addClass('active');
+                        });
+
+                        // VJE Links
+                        $('.home .vjt_intro-section:nth-of-type(2)').click(function(event){
+                            event.preventDefault();
+                            history.replaceState(null, null, '/zh-hans/#vje');
+                            history.pushState(null, null, '/zh-hans/#vje');
+                            $('html,body').animate({
+                                scrollTop: $(".vjt_fp-intro").offset().top
+                            }, 600);
+                            $('.vjt_intro-section').removeClass('active');
+                            $('.vjt_intro-tab').removeClass('active');
+                            $(this).addClass('active');
+                            $('.vjt_intro-tab:nth-of-type(2)').addClass('active');
+                            $('.vjt_intro-section:nth-of-type(2)').addClass('active');
+                        });
+
+                        // VJX Links
+                        $('.home .vjt_intro-section:nth-of-type(3)').click(function(event){
+                            event.preventDefault();
+                            history.replaceState(null, null, '/zh-hans/#vjx');
+                            history.pushState(null, null, '/zh-hans/#vjx');
+                            $('html,body').animate({
+                                scrollTop: $(".vjt_fp-intro").offset().top
+                            }, 600);
+                            $('.vjt_intro-section').removeClass('active');
+                            $('.vjt_intro-tab').removeClass('active');
+                            $(this).addClass('active');
+                            $('.vjt_intro-tab:nth-of-type(3)').addClass('active');
+                            $('.vjt_intro-section:nth-of-type(3)').addClass('active');
+
+                        });
+                    });
+                </script><?php
+}
+?>
+
+                <li id="vjt" class="vjt_intro-section active"><a href="#vjt"><?php _e('VJT', 'vjt_theme'); ?></a></li>
+                <li id="vje" class="vjt_intro-section"><a href="#vje"><?php _e('VJE', 'vjt_theme'); ?></a></li>
+                <li id="vjx" class="vjt_intro-section"><a href="#vjx"><?php _e('VJX', 'vjt_theme'); ?></a></li>
             </ul>
         </h1>
         <div class="vjt_intro-tabs">

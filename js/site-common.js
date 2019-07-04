@@ -1,5 +1,6 @@
 jQuery(document).ready(function( $ ) {
 
+
     // Overlay Menu Toggle
     $('.hamburger').click(function(){
 		$('body').toggleClass('vjt_overlay-menu-active');
@@ -31,51 +32,6 @@ jQuery(document).ready(function( $ ) {
         $( ".vjt_contact-content.form" ).fadeOut( "fast", function() {});
     });
 
-    // VJT Links
-    $('.home .vjt_intro-section:nth-of-type(1)').click(function(event){
-        event.preventDefault();
-        history.replaceState(null, null, '/');
-        history.pushState(null, null, '/');
-        $('html,body').animate({
-            scrollTop: $(".vjt_fp-intro").offset().top
-        }, 600);
-        $('.vjt_intro-section').removeClass('active');
-        $('.vjt_intro-tab').removeClass('active');
-        $(this).addClass('active');
-        $('.vjt_intro-tab:nth-of-type(1)').addClass('active');
-        $('.vjt_intro-section:nth-of-type(1)').addClass('active');
-    });
-
-    // VJE Links
-    $('.home .vjt_intro-section:nth-of-type(2)').click(function(event){
-        event.preventDefault();
-        history.replaceState(null, null, '/#vje');
-        history.pushState(null, null, '/#vje');
-        $('html,body').animate({
-            scrollTop: $(".vjt_fp-intro").offset().top
-        }, 600);
-        $('.vjt_intro-section').removeClass('active');
-        $('.vjt_intro-tab').removeClass('active');
-        $(this).addClass('active');
-        $('.vjt_intro-tab:nth-of-type(2)').addClass('active');
-        $('.vjt_intro-section:nth-of-type(2)').addClass('active');
-    });
-
-    // VJX Links
-    $('.home .vjt_intro-section:nth-of-type(3)').click(function(event){
-        event.preventDefault();
-        history.replaceState(null, null, '/#vjx');
-        history.pushState(null, null, '/#vjx');
-        $('html,body').animate({
-            scrollTop: $(".vjt_fp-intro").offset().top
-        }, 600);
-        $('.vjt_intro-section').removeClass('active');
-        $('.vjt_intro-tab').removeClass('active');
-        $(this).addClass('active');
-        $('.vjt_intro-tab:nth-of-type(3)').addClass('active');
-        $('.vjt_intro-section:nth-of-type(3)').addClass('active');
-
-    });
 
 
     // VJT Links Hero
@@ -145,28 +101,6 @@ jQuery(document).ready(function( $ ) {
         $('body, html').animate({scrollTop: pos});
     });
 
-    /* Hero slider link animations
-    $(document).on('click', '.vjt_hero-slider-content a[href^="#"]', function(e) {
-
-        // target element id
-        var id = $(this).attr('href');
-
-        // target element
-        var $id = $(id);
-        if ($id.length === 0) {
-            return;
-        }
-
-        // prevent standard hash navigation (avoid blinking in IE)
-        e.preventDefault();
-
-        // top position relative to the document
-        var pos = $id.offset().top;
-
-        // animated top scrolling
-        $('body, html').animate({scrollTop: pos});
-    }); */
-
     // Hero Slider
     $('.vjt_hero-slider').lightSlider({
         item:1,
@@ -198,28 +132,6 @@ jQuery(document).ready(function( $ ) {
             $('.vjt_case-studies-wrap').removeClass('cS-hidden');
         }
     });
-
-    /*$(function(){
-        var nav = $('.vjt_about-wrap'),
-            animateTime = 560,
-            navLink = $('.vjt_show-more-slide');
-        navLink.click(function(){
-          if(nav.height() === 560){
-            autoHeightAnimate(nav, animateTime);
-          } else {
-            nav.stop().animate({ height: '560' }, animateTime);
-          }
-        });
-      })
-
-    /* Function to animate height: auto
-    function autoHeightAnimate(element, time){
-        var curHeight = element.height(), // Get Default Height
-        autoHeight = element.css('height', 'auto').height(); // Get Auto Height
-        element.height(curHeight); // Reset to Default Height
-        element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
-    }
-    */
 
     // Dots active state position
 
