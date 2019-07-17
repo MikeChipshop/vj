@@ -201,4 +201,18 @@ jQuery(document).ready(function( $ ) {
     });
 
 
+    var widgetid2 = localStorage.getItem('widgetid');
+    if (widgetid2) {
+        $('#' + widgetid2).addClass("open");
+        console.log('ID:' + widgetid2);
+    }
+
+    $('.vjt_list-dropdown-header h2').on('click', function(e) {
+        $(this).next('ul').addClass("open");
+        var dataid = $(this).closest('ul').attr("id")
+        localStorage.setItem('widgetid', dataid);
+        e.preventDefault();
+    });
+
+
 });

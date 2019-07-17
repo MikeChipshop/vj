@@ -748,6 +748,7 @@ h1.vjt_page-title span {
     position:relative;
     z-index:999991;
 }
+
 ul.vjt_list-dropdown-child li {
     padding-bottom: 25px;
 }
@@ -795,6 +796,9 @@ li.vjt_list-dropdown-header.active h2 svg {
 li.vjt_list-dropdown-header ul {
     padding-bottom: 50px;
     display:none;
+}
+.open li.vjt_list-dropdown-header ul {
+    display:block;
 }
 .page-products li.vjt_list-dropdown-header ul {
     display:none;

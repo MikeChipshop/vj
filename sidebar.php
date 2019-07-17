@@ -121,7 +121,12 @@
         <?php if(get_field('show_ndt_sidebar')): ?>
             <?php if( have_rows('ndt_sidebar','option') ): ?>
                 <?php while ( have_rows('ndt_sidebar','option') ) : the_row(); ?>
-                    <ul class="vjt_list-dropdown">
+                    <?php
+                        $widgetID = get_sub_field('ndt_sidebar_widget_name','option');
+                        $widgetID = preg_replace('/\s*/', '', $widgetID);
+                        $widgetID = strtolower($widgetID);
+                    ?>
+                    <ul class="vjt_list-dropdown" id="<?php echo $widgetID; ?>">
                         <li class="vjt_list-dropdown-header">
                             <h2>
                                 <?php if(get_sub_field('ndt_sidebar_widget_name_link','option')): ?>
@@ -147,7 +152,12 @@
         <?php if(get_field('show_products_sidebar')): ?>
             <?php if( have_rows('product_sidebar','option') ): ?>
                 <?php while ( have_rows('product_sidebar','option') ) : the_row(); ?>
-                    <ul class="vjt_list-dropdown">
+                    <?php
+                        $widgetID = get_sub_field('product_sidebar_widget_name','option');
+                        $widgetID = preg_replace('/\s*/', '', $widgetID);
+                        $widgetID = strtolower($widgetID);
+                    ?>
+                    <ul class="vjt_list-dropdown" id="<?php echo $widgetID; ?>">
                         <li class="vjt_list-dropdown-header">
                             <h2>
                                 <?php if(get_sub_field('product_sidebar_widget_name_link','option')): ?>
@@ -173,7 +183,12 @@
         <?php if(get_field('show_technologies_sidebar')): ?>
             <?php if( have_rows('technologies_sidebar','option') ): ?>
                 <?php while ( have_rows('technologies_sidebar','option') ) : the_row(); ?>
-                    <ul class="vjt_list-dropdown">
+                    <?php
+                        $widgetID = get_sub_field('technologies_sidebar_widget_name','option');
+                        $widgetID = preg_replace('/\s*/', '', $widgetID);
+                        $widgetID = strtolower($widgetID);
+                    ?>
+                    <ul class="vjt_list-dropdown" id="<?php echo $widgetID; ?>">
                         <li class="vjt_list-dropdown-header">
                             <h2>
                                 <?php if(get_sub_field('technologies_sidebar_widget_name_link','option')): ?>
@@ -199,7 +214,12 @@
         <?php if(get_field('show_vje_sidebar')): ?>
             <?php if( have_rows('vje_sidebar','option') ): ?>
                 <?php while ( have_rows('vje_sidebar','option') ) : the_row(); ?>
-                    <ul class="vjt_list-dropdown">
+                    <?php
+                        $widgetID = get_sub_field('vje_sidebar_widget_name','option');
+                        $widgetID = preg_replace('/\s*/', '', $widgetID);
+                        $widgetID = strtolower($widgetID);
+                    ?>
+                    <ul class="vjt_list-dropdown" id="<?php echo $widgetID; ?>">
                         <li class="vjt_list-dropdown-header">
                             <h2>
                                 <?php if(get_sub_field('vje_sidebar_widget_name_link','option')): ?>
@@ -225,7 +245,12 @@
         <?php if(get_field('show_vjx_sidebar')): ?>
             <?php if( have_rows('vjx_sidebar','option') ): ?>
                 <?php while ( have_rows('vjx_sidebar','option') ) : the_row(); ?>
-                    <ul class="vjt_list-dropdown">
+                    <?php
+                        $widgetID = get_sub_field('vjx_sidebar_widget_name','option');
+                        $widgetID = preg_replace('/\s*/', '', $widgetID);
+                        $widgetID = strtolower($widgetID);
+                    ?>
+                    <ul class="vjt_list-dropdown" id="<?php echo $widgetID; ?>">
                         <li class="vjt_list-dropdown-header">
                             <h2>
                                 <?php if(get_sub_field('vjx_sidebar_widget_name_link','option')): ?>
@@ -251,7 +276,12 @@
         <?php if(get_field('show_additional_sidebar')): ?>
             <?php if( have_rows('additional_sidebar') ): ?>
                 <?php while ( have_rows('additional_sidebar') ) : the_row(); ?>
-                    <ul class="vjt_list-dropdown">
+                    <?php
+                        $widgetID = get_sub_field('ndt_sidebar_widget_name','option');
+                        $widgetID = preg_replace('/\s*/', '', $widgetID);
+                        $widgetID = strtolower($widgetID);
+                    ?>
+                    <ul class="vjt_list-dropdown" id="<?php echo $widgetID; ?>">
                         <li class="vjt_list-dropdown-header">
                             <h2>
                                 <?php if(get_sub_field('ndt_sidebar_widget_name_link','option')): ?>
