@@ -2069,14 +2069,16 @@ span.page-numbers.current {
 .rte li {
     padding-bottom:10px;
 }
-.rte .video-container {
+.rte .video-container,
+.iframe-container {
     position: relative;
     padding-bottom: 56.25%;
     padding-top: 25px;
     height: 0;
     margin-bottom:20px;
 }
-.rte .video-container iframe {
+.rte .video-container iframe,
+.iframe-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -2357,7 +2359,9 @@ span.page-numbers.current {
     .vjt_fp-section {
         height: auto!important;
     }
-
+.vjt_main-content {
+    float:none;
+}
 
     /* ------------------------------------------------
      Globals
