@@ -420,7 +420,6 @@ h1.vjt_page-title span {
     z-index: 9;
     right: 0px;
     width: 43%;
-    display:none;
 }
 .vjt_bg-triangle-top img {
     width: 100%;
@@ -2359,9 +2358,12 @@ span.page-numbers.current {
     .vjt_fp-section {
         height: auto!important;
     }
-.vjt_main-content {
-    float:none;
-}
+    .vjt_main-content {
+        float:none;
+    }
+    .vjt_bg-triangle-top {
+        display:none;
+    }
 
     /* ------------------------------------------------
      Globals
@@ -2658,9 +2660,7 @@ span.page-numbers.current {
             -ms-flex-preferred-size:100%;
                 flex-basis:100%;
     }
-    .vjt_bg-triangle-top {
-        display:none;
-    }
+
     .vjt_fp-section .vjt_fp-wrap {
         padding:40px 20px;
     }
